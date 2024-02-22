@@ -1,23 +1,23 @@
 import React from 'react'
 
-export const Vwhist = () => {
+export const Reqhist = () => {
   return (
     <div className='images2 w-[100%]'>
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-14 ">
+          <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-14 ">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-white uppercase bg-gray-50 dark:bg-gray-700 text-white bg-red-800 rounded">
+        <thead class="text-xs uppercase  dark:bg-gray-700 text-white bg-red-800 rounded">
             <tr>
+                <th scope="col" class="px-6 py-3">
+                    District
+                </th>
                 <th scope="col" class="px-6 py-3">
                     Hospital name
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Place
+                    Blood group
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Email
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Contact
+                    Date
                 </th>
                 <th scope="col" class="px-6 py-3">
                 
@@ -27,19 +27,19 @@ export const Vwhist = () => {
         <tbody>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Aster mims
+                    Kozhikode
                 </th>
                 <td class="px-6 py-4">
-                    mankavu
+                    mims
                 </td>
                 <td class="px-6 py-4">
-                    aster@gmail.com
+                    A +ve
                 </td>
                 <td class="px-6 py-4">
-                    7254524411
+                    7/5/24
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    {/* <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a> */}
                 </td>
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
@@ -56,7 +56,7 @@ export const Vwhist = () => {
                     9782676222
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    {/* <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a> */}
                 </td>
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
@@ -73,7 +73,7 @@ export const Vwhist = () => {
                     $99
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    {/* <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a> */}
                 </td>
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
@@ -90,7 +90,7 @@ export const Vwhist = () => {
                     $799
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    {/* <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a> */}
                 </td>
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
@@ -107,7 +107,7 @@ export const Vwhist = () => {
                     $999
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    {/* <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a> */}
                 </td>
             </tr>
         </tbody>

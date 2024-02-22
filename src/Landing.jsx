@@ -16,7 +16,7 @@ export const Landing = () => {
           <div className=' text-white text-center sm:text-[48px]'>No matter your age,no matter your<br />health status, you can register to <br /> become an donor</div>
            <Link to ='login'><div className='text-center m-auto w-60 '><button className='bg-red-800 p-2 mt-3 rounded-lg w-48  font-bold text-white'>LOGIN</button></div></Link>
         </div>
-        <div className='bg-slate-300 items-center justify-between gap-2 flex flex-wrap p-10 pb-24'>
+        <div className='bg-white items-center justify-between gap-2 flex flex-wrap p-10 pb-24'>
           <div>
             <img className='w-[648px] rounded-full ' src={img1} alt="" />
           </div>

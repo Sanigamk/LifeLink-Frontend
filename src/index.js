@@ -27,6 +27,14 @@ import { Bloodreq } from './User/Bloodreq';
 import { Vwhist } from './User/Vwhist';
 import { Vwprofile } from './User/Vwprofile';
 import { Profile } from './User/Profile';
+import { Donav } from './Bdonor.jsx/Donav';
+import { Donorhome } from './Bdonor.jsx/Donorhome';
+import { Donatereq } from './Bdonor.jsx/Donatereq';
+import { Reqhist } from './Bdonor.jsx/Reqhist';
+import { Editpro } from './Bdonor.jsx/Editpro';
+import { Hosnav } from './Hospital.jsx/Hosnav';
+import { Hospitalhome } from './Hospital.jsx/Hoshome';
+import { Blddonorreq } from './Hospital.jsx/Blddonorreq';
 
 
 
@@ -61,8 +69,22 @@ root.render(
           <Route path='viewhistory' element={<Vwhist/>}/>
           <Route path='viewprofile' element={<Vwprofile/>}/>
           <Route path='profile' element={<Profile/>}/>
+        </Route>
+
+        <Route path='/blooddonor' element={<Donav/>}>
+          <Route index element={<Donorhome/>}/>
+          <Route path='donorreq' element={<Donatereq/>}/>
+          <Route path='donatehist' element={<Reqhist/>}/>
+          <Route path='editpro' element={<Editpro/>}/>
+        </Route>
+
+        <Route path='/hospital' element={<Hosnav/>}>
+        <Route index element={<Hospitalhome/>}/>
+        <Route path='blddonorreq' element={<Blddonorreq/>}/>
+
 
         </Route>
+
      </Routes>
     </BrowserRouter>
 
