@@ -35,6 +35,10 @@ import { Editpro } from './Bdonor.jsx/Editpro';
 import { Hosnav } from './Hospital.jsx/Hosnav';
 import { Hospitalhome } from './Hospital.jsx/Hoshome';
 import { Blddonorreq } from './Hospital.jsx/Blddonorreq';
+import { Mngdonorreq } from './Hospital.jsx/Mngdonorreq';
+import { Addorgandnr } from './Hospital.jsx/Addorgandnr';
+import { Vworgandonor } from './Hospital.jsx/Vworgandonor';
+import { Addorgandonor } from './Hospital.jsx/Addorgandonor';
 
 
 
@@ -81,6 +85,10 @@ root.render(
         <Route path='/hospital' element={<Hosnav/>}>
         <Route index element={<Hospitalhome/>}/>
         <Route path='blddonorreq' element={<Blddonorreq/>}/>
+        <Route path='managedonorrqst' element={<Mngdonorreq/>}/>
+        <Route path='organdonor' element={<Addorgandnr/>}/>
+        <Route path='vworgandonor' element={<Vworgandonor/>}/>
+        <Route path='addorgandonor' element={<Addorgandonor/>}/>
 
 
         </Route>

@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const Mngdonorreq = () => {
+export const Vworgandonor = () => {
   return (
-    <div className='image3'>
+    <div className='image3 h-screen pt-10 w-[100%]'>
         <div className="w-full h-[250px] pt-14 font-bold text-[20px]">
 
 <div className=" flex justify-evenly w-[90%] m-auto mb-8">
@@ -77,8 +77,8 @@ export const Mngdonorreq = () => {
 </div>
 
 <div className='flex flex-wrap gap-20 justify-center my-48 text-white font-bold mt-72'>
-<button className='bg-red-800 w-20 rounded'>ACCEPT</button>
-<button className='bg-red-800 w-20 rounded'>REJECT</button>
+<button className='bg-red-800 w-20 rounded'>UPDATE</button>
+<button className='bg-red-800 w-20 rounded'>DELETE</button>
 </div>
     </div>
   )
