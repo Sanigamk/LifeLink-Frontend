@@ -39,6 +39,26 @@ import { Mngdonorreq } from './Hospital.jsx/Mngdonorreq';
 import { Addorgandnr } from './Hospital.jsx/Addorgandnr';
 import { Vworgandonor } from './Hospital.jsx/Vworgandonor';
 import { Addorgandonor } from './Hospital.jsx/Addorgandonor';
+import { Vwhosreqst } from './Hospital.jsx/Vwhosreqst';
+import { Searchorgandnr } from './Hospital.jsx/Searchorgandnr';
+import { Assignorgan } from './Hospital.jsx/Assignorgan';
+import { Bloodrqsthos } from './Hospital.jsx/BloodRequestToHosp';
+import { Assignrqst } from './Hospital.jsx/Assignrqst';
+import { Managebloodrqsthos } from './Hospital.jsx/Managebloodrqsthos';
+import { Myorgan } from './Hospital.jsx/Myorgan';
+import { Mybloodrqst } from './Hospital.jsx/Mybloodrqst';
+import { Mybloodrqstcollg } from './Hospital.jsx/Mybloodrqstcollg';
+import Collegerqst from './Hospital.jsx/Collegrqst';
+import { Blooddonorhist } from './Hospital.jsx/Blooddonorhist';
+import { Vwblooddnrhist } from './Hospital.jsx/Vwblooddnrhist';
+import { Hospitalbloodhist } from './Hospital.jsx/Hospitalbloodhist';
+import { Vwreivdbloodhist } from './Hospital.jsx/Vwreivdbloodhist';
+import { Sendcollgbloodhist } from './Hospital.jsx/Sendcollgbloodhist';
+import { Recvdcollegehist } from './Hospital.jsx/Recvdcollegehist';
+import { Recvdorganhist } from './Hospital.jsx/Recvdorganhist';
+import { Vworganhist } from './Hospital.jsx/Vworganhist';
+import { Sendorganhist } from './Hospital.jsx/Sendorganhist';
+import { Sendorganrqsthist } from './Hospital.jsx/Sendorganrqsthist';
 
 
 
@@ -89,6 +109,26 @@ root.render(
         <Route path='organdonor' element={<Addorgandnr/>}/>
         <Route path='vworgandonor' element={<Vworgandonor/>}/>
         <Route path='addorgandonor' element={<Addorgandonor/>}/>
+        <Route path='vieworganrqst' element={<Vwhosreqst/>}/>
+        <Route path='vieworganpage' element={<Assignrqst/>}/>
+        <Route path='Searchorgan' element={<Searchorgandnr/>}/>
+        <Route path='assignorgan' element={<Assignorgan/>}/>
+        <Route path='bloodrequesthos' element={<Bloodrqsthos/>}/>
+        <Route path='viewbloodrqsthos' element={<Managebloodrqsthos/>}/>
+        <Route path='myorganrqst' element={<Myorgan/>}/>
+        <Route path='mybloodrqst' element={<Mybloodrqst/>}/>
+        <Route path='mycollegerqst' element={<Mybloodrqstcollg/>}/>
+        <Route path='viewcollegerqst' element={<Collegerqst/>}/>
+        <Route path='blooddonorhist' element={<Blooddonorhist/>}/>
+        <Route path='viewblooddonorhist' element={<Vwblooddnrhist/>}/>
+        <Route path='hospitalbloodhist' element={<Hospitalbloodhist/>}/>
+        <Route path='receivedhosbloodrqst' element={<Vwreivdbloodhist/>}/>
+        <Route path='sendcollegehist' element={<Sendcollgbloodhist/>}/>
+        <Route path='recvdcollegehist' element={<Recvdcollegehist/>}/>
+        <Route path='recvdorganrqst' element={<Recvdorganhist/>}/>
+        <Route path='recvdorganhistpage' element={<Vworganhist/>}/>
+        <Route path='sendorganrqst' element={<Sendorganhist/>}/>
+        <Route path='sendorganhistpage' element={<Sendorganrqsthist/>}/>
 
 
         </Route>
