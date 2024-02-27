@@ -7,7 +7,7 @@ import { Navi} from './Navigation';
 import { Adnav } from './Adnav';
 import { Landing } from './Landing';
 import { Loginn } from './Loginn';
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import {BrowserRouter,Routes,Route, HashRouter} from 'react-router-dom'
 import { Hospital } from './Admin/Hospital'; 
 import './App.css'
 import { Managehospital } from './Admin/Managehospital';
@@ -59,6 +59,13 @@ import { Recvdorganhist } from './Hospital.jsx/Recvdorganhist';
 import { Vworganhist } from './Hospital.jsx/Vworganhist';
 import { Sendorganhist } from './Hospital.jsx/Sendorganhist';
 import { Sendorganrqsthist } from './Hospital.jsx/Sendorganrqsthist';
+import { Updatepro } from './Hospital.jsx/Updateprofile';
+import { Collgnav } from './College/Collnav';
+import { Collegehomel } from './College/Collhome';
+import { Footer } from './Footer';
+import { Collgnav1 } from './College/Collnav1';
+import { Reqstblood } from './College/Reqstblood';
+import Viewrqst from './College/Vwhospitalrqst';
 
 
 
@@ -129,6 +136,18 @@ root.render(
         <Route path='recvdorganhistpage' element={<Vworganhist/>}/>
         <Route path='sendorganrqst' element={<Sendorganhist/>}/>
         <Route path='sendorganhistpage' element={<Sendorganrqsthist/>}/>
+        <Route path='editprofile' element={<Updatepro/>}/>
+
+
+        </Route>
+
+        <Route path='/college1' element={<Collgnav1/>}/>
+
+        <Route path='/college' element={<Collgnav/>}>
+        <Route index element={<Collegehomel/>}/>
+        <Route path='collegerqst' element={<Reqstblood/>}/>
+        <Route path='viewhospitalrqst' element={<Viewrqst/>}/>
+
 
 
         </Route>

@@ -6,12 +6,12 @@ export const Sendorganrqsthist = () => {
       <div className="w-full  pt-20 font-bold text-[20px]">
                 <h1>HOSPITAL REQUEST</h1>
 
-                <div className=" flex justify-evenly w-[90%] m-auto mb-8">
-                    <div className="flex gap-6">
+                <div className=" w-[90%]  m-auto mb-8">
+                    <div className="flex flex-wrap  ">
                         <p>Hospital name :</p>
                         <p>abi</p>
                     </div>
-                    <div className="flex gap-5">
+                    <div className="flex ">
                         <p>Patient name:</p>
                         <p>kannur</p>
                     </div>

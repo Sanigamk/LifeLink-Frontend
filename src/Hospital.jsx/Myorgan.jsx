@@ -8,7 +8,7 @@ export const Myorgan = () => {
 <div className='w-[25%] m-auto mt-9'>
 
   <div class="">
-    <label for="name" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Name :</label>
+    <label for="name" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Patient name :</label>
     <input type="name" id="name" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required />
   </div>
   <div class="">
@@ -16,19 +16,19 @@ export const Myorgan = () => {
     <input type="age" id="age" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div>
   <div class="">
-    <label for="place" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Place:</label>
+    <label for="place" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Health certificate :</label>
     <input type="place" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+  </div>
+  <div class="">
+    <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Hospital name:</label>
+    <input type="email" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div>
   <div class="">
     <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Email :</label>
     <input type="email" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div>
   <div class="">
-    <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Contact:</label>
-    <input type="email" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
-  </div>
-  <div class="">
-    <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Health certificate:</label>
+    <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Contact :</label>
     <input type="file" id="file" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div>
   <div class="">
@@ -36,7 +36,7 @@ export const Myorgan = () => {
     <input type="email" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div>
   <div class="mb-5">
-    <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Post office:</label>
+    <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Place :</label>
     <input type="email" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div>
   <div class="mb-5">
@@ -44,11 +44,11 @@ export const Myorgan = () => {
     <input type="email" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div>
   <div class="mb-5">
-    <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Conformation certificate :</label>
+    <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Organ :</label>
     <input type="email" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div>
   <div class="mb-5">
-    <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Organ:</label>
+    <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Blood group :</label>
     <input type="email" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div>
   

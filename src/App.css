@@ -22,7 +22,7 @@
 }
 .images2{
   background-image: url("im5.png");
-  background-size: 100% 100%;
+  background-size: 100% ;
 
   /* width: 100%; */
   background-repeat: no-repeat;

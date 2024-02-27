@@ -3,8 +3,8 @@ import React from 'react'
 export const Blddonorreq = () => {
   return (
     <div className='images2 w-[100%]'>
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-14 ">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <div class="relative bg-black/50 overflow-x-auto shadow-md sm:rounded-lg p-14 h-[100%]">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
         <thead class="text-xs text-white uppercase bg-gray-50 dark:bg-gray-700 bg-red-800 rounded">
             <tr>
                 <th scope="col" class="px-6 py-3">

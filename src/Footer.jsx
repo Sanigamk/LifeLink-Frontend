@@ -3,7 +3,7 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <div className='flex flex-wrap bg-red-800 text-white justify-between mt-[61px]'>
+    <div className='flex flex-wrap bg-red-800 text-white justify-between mt-[-47px]'>
         <div className=' ms-7 my-5'>
             <div className='text-xl'><h1>JOIN WITH US</h1></div>
             <div className='text-lg'><p>Empowering humanity through the gift of life.<br/>Join "BLOODLINK",where every drop counts.</p></div>
