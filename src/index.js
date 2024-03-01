@@ -66,6 +66,10 @@ import { Footer } from './Footer';
 import { Collgnav1 } from './College/Collnav1';
 import { Reqstblood } from './College/Reqstblood';
 import Viewrqst from './College/Vwhospitalrqst';
+import { Donorregister } from './Bdonor.jsx/Donorregister';
+import { Collgregister } from './College/Collgregister';
+import { Hosregister } from './Hospital.jsx/Hosregister';
+import { Userregister } from './User/Userregister';
 
 
 
@@ -76,6 +80,10 @@ root.render(
      <Routes>
        <Route path='/' element={<Navi/>}>
           <Route index element={<Landing/>}></Route>
+          <Route path='/donorregistration' element={<Donorregister/>}/> 
+          <Route path='/collgregistration' element={<Collgregister/>}/>
+          <Route path='/hospitalregistration' element={<Hosregister/>}/>
+          <Route path='/userregistration' element={<Userregister/>}/>
           <Route path='/login' element={<Loginn/>}/>
         </Route>
        

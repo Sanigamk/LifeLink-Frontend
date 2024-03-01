@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Mybloodrqstcollg = () => {
   return (
-    <div className='images2 w-[100%]'>
+    <div className='images2 w-[100%] h-[42rem]'>
         <form class="w-[100%]">
 
 <div className='w-[25%] m-auto my-32'>

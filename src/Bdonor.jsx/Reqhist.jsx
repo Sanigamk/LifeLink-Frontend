@@ -20,7 +20,7 @@ export const Reqhist = () => {
                     Date
                 </th>
                 <th scope="col" class="px-6 py-3">
-                
+                  Status
                 </th>
             </tr>
         </thead>
@@ -39,7 +39,7 @@ export const Reqhist = () => {
                     7/5/24
                 </td>
                 <td class="px-6 py-4">
-                    {/* <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a> */}
+                    Pending
                 </td>
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
@@ -56,7 +56,7 @@ export const Reqhist = () => {
                     9782676222
                 </td>
                 <td class="px-6 py-4">
-                    {/* <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a> */}
+                    Accepted
                 </td>
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
@@ -73,7 +73,7 @@ export const Reqhist = () => {
                     $99
                 </td>
                 <td class="px-6 py-4">
-                    {/* <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a> */}
+                    Pending
                 </td>
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
@@ -90,7 +90,7 @@ export const Reqhist = () => {
                     $799
                 </td>
                 <td class="px-6 py-4">
-                    {/* <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a> */}
+                    Rejected
                 </td>
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">

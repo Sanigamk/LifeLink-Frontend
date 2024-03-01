@@ -1,10 +1,15 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 export const Addorgandnr = () => {
   return (
-    <div className='images2 w-[100%]'>
+    <div className='images2 w-[100%] h-[42rem]'>
         <div className='line flex flex-wrap translate-x-0 gap-10 justify-around pt-10'>
-        <button className='bg-white rounded-lg w-24 font-bold hover:bg-slate-300'>ADD</button>
+        <button className='bg-white rounded-lg w-24 font-bold hover:bg-slate-300'>
+            <Link to={'/hospital/addorgandonor'}>
+             ADD
+             </Link>
+            </button>
         
       </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-14 ">
@@ -50,7 +55,11 @@ export const Addorgandnr = () => {
                     98786765555
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                        <Link to={'/hospital/vworgandonor'}>
+                        View
+                        </Link>
+                        </a>
                 </td>
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">

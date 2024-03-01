@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Vworganrqst = () => {
   return (
-    <div>
+    <div className='image3 w-[100%]'>
         <form class="w-[100%]">
 
 <div className='w-[25%] m-auto mt-9'>

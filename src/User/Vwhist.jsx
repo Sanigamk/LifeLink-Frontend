@@ -14,14 +14,20 @@ export const Vwhist = () => {
                     Place
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Email
+                    District
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Contact
+                    Blood
                 </th>
                 <th scope="col" class="px-6 py-3">
+                    Blood unit
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Status
+                </th>
+                {/* <th scope="col" class="px-6 py-3">
                 
-                </th>
+                </th> */}
             </tr>
         </thead>
         <tbody>
@@ -36,11 +42,17 @@ export const Vwhist = () => {
                     aster@gmail.com
                 </td>
                 <td class="px-6 py-4">
-                    7254524411
+                    B-ve
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    7254524411
                 </td>
+                <th scope="col" class="px-6 py-3">
+                    Accepted
+                </th>
+                {/* <td class="px-6 py-4">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                </td> */}
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -56,8 +68,14 @@ export const Vwhist = () => {
                     9782676222
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    A+ve
                 </td>
+                <th scope="col" class="px-6 py-3">
+                    Rejected
+                </th>
+                {/* <td class="px-6 py-4">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                </td> */}
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -73,8 +91,14 @@ export const Vwhist = () => {
                     $99
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    o-ve
                 </td>
+                <th scope="col" class="px-6 py-3">
+                    Accepted
+                </th>
+                {/* <td class="px-6 py-4"> */}
+                    {/* <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a> */}
+                {/* </td> */}
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -90,8 +114,14 @@ export const Vwhist = () => {
                     $799
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    AB-ve
                 </td>
+                <td class="px-6 py-4">
+                    Pending
+                </td>
+                {/* <td class="px-6 py-4">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                </td> */}
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -107,8 +137,14 @@ export const Vwhist = () => {
                     $999
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    A-ve
                 </td>
+                <th scope="col" class="px-6 py-3">
+                    Accepted
+                </th>
+                {/* <td class="px-6 py-4">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                </td> */}
             </tr>
         </tbody>
     </table>

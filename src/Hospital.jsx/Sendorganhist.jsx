@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 export const Sendorganhist = () => {
   return (
@@ -36,7 +37,7 @@ export const Sendorganhist = () => {
                     33
                 </td>
                 <td class="px-6 py-4">
-                    <button className='text-black bg-slate-400 rounded-md w-8 text-center'>View</button>
+                    <button className='text-black bg-slate-400 rounded-md w-8'>View</button>
                 </td>
                 <td class="px-6 py-4">
                     New stand
@@ -45,7 +46,11 @@ export const Sendorganhist = () => {
                     Accepted
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                        <Link to={'/hospital/sendorganhistpage'}>
+                        View
+                        </Link>
+                        </a>
                 </td>
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">

@@ -2,8 +2,9 @@ import React from 'react'
 
 export const Addorgandonor = () => {
   return (
-    <div className='images2 w-[100%]'>
-        <form class="w-[100%] ">
+    <div className='images2 w-[100%] h-[43rem] pt-5 '>
+      <div className='text-black font-bold text-center'>ADD ORGAN DONOR</div>
+        <form class="w-[100%] pt-8">
 
 <div className='flex w-[100%] justify-center sm:gap-10'>
 
@@ -67,9 +68,9 @@ export const Addorgandonor = () => {
 
 
 
-<div class="flex flex-wrap mb-5 mt-8">
+<div class="flex flex-wrap mb-5 mt-5">
 
-<button type="submit" class="text-white m-auto m-a bg-red-800 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
+<button type="submit" class="text-white m-auto m-a bg-red-800 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">SUBMIT</button>
 
 </div>
 </form>

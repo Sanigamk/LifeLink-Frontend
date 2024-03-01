@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Mngdonorreq = () => {
   return (
-    <div className='image3'>
+    <div className='image3 h-[40rem]'>
         <div className="w-full h-[250px] pt-14 font-bold text-[20px]">
 
 <div className=" flex justify-evenly w-[90%] m-auto mb-8">

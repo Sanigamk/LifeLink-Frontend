@@ -12,8 +12,8 @@ const Collegerqst= () => {
 
   }
   return (
-    <div className='images2 w-[100%]'>
-        <div  className='basicbg   pt-7 ps-10 pe-10'>
+    <div className='images2 w-[100%] h-[45rem]'>
+        <div  className='  pt-7 ps-10 pe-10'>
             <div className='text-3xl text-[#431515] font-semibold text-center pb-7'>BLOOD REQUEST</div>
         {/* searchbar */}
         
@@ -54,7 +54,7 @@ const Collegerqst= () => {
 
 {/* tableee */}
 
-<div class="relative overflow-x-auto shadow-md">
+<div class="relative h-[screen] overflow-x-auto shadow-md">
     <table class="w-full text-sm text-left rtl:text-right text-black dark:text-black">
         <thead class="text-xs text-black uppercase bg-red-800 border-b-2 dark:text-white">
             <tr>

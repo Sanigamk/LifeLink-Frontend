@@ -1,13 +1,58 @@
-import React from 'react'
+import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
 
 export const Vwreivdbloodhist = () => {
+    const [drop, setDrop] = useState(false)
+        let dropdown = () => {
+            setDrop(!drop)
+            console.log(drop);
+    
+        }
+        const [drops, setDrops] = useState(false)
+        let dropdowns = () => {
+            setDrops(!drops)
+            setDrop(false)
+    }
   return (
     <div className='images2 w-[100%]'>
         <div className='line flex flex-wrap translate-x-0 gap-10 justify-around pt-24'>
-        <button className='bg-white rounded-lg w-24 font-bold'>Donor</button>
-        <button className='bg-slate-400 rounded-lg w-24 font-bold'>Hospital</button>
-        <button className='bg-white rounded-lg w-24 font-bold'>College</button>
+        <button className='bg-white rounded-lg w-24 font-bold hover:bg-slate-500'>
+        <Link to={'/hospital/blooddonorhist'}>
+            Donor
+            </Link>
+            </button>
+        <button onClick={dropdown} className='bg-white rounded-lg w-24 font-bold hover:bg-slate-500'>Hospital</button>
+        {drop &&
+                <div className='list-none p-3 mt-6 absolute bg-white font-bold rounded-md'>
+                    <li className='pb-2'>
+                        <Link to={'/hospital/hospitalbloodhist'}>
+                            Send Request
+                        </Link>
+                    </li>
+                    <li className='pb-2'>
+                        <Link to={'/hospital/receivedhosbloodrqst'}>
+                            Received Request
+                        </Link>
+                    </li>
+                </div>
+            }
+        <button onClick={dropdowns} className='bg-white rounded-lg w-24 font-bold hover:bg-slate-500'>College</button>
+        {drops &&
+                    <div className='list-none p-3 z-1 absolute bg-white font-bold rounded-md'>
+                        <li className='pb-2'>
+                            <Link to={'/hospital/sendcollegehist'}>
+                                Send Request
+                            </Link>
+                        </li>
+                        <li className='pb-2'>
+                            <Link to={'/hospital/recvdcollegehist'}>
+                                Received Request
+                            </Link>
+                        </li>
+                    </div>
+                }
       </div>
+      <div className='text-black font-bold text-[20px] underline'>HOSPITAL RECEIVED REQUEST</div>
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-14 ">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-white uppercase bg-gray-50 dark:bg-gray-700 text-white bg-red-800 rounded">

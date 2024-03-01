@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 export const Assignrqst = () => {
   return (
@@ -69,8 +70,12 @@ export const Assignrqst = () => {
 
 </div>
 
-<div className='flex flex-wrap gap-20 justify-center my-48 text-white font-bold'>
-<button className='bg-red-800 w-28 p-4 rounded'>ASSIGN</button>
+<div className='flex flex-wrap gap-20 justify-center my-48 text-white font-bold '>
+<button className='bg-red-800 w-28 p-4 mt-[101px] rounded'>
+    <Link to={'/hospital/Searchorgan'}>
+    ASSIGN
+    </Link>
+    </button>
 
 </div>
     </div>

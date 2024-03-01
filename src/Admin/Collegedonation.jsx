@@ -1,11 +1,22 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Collegedonation = () => {
   return (
     <div className='images2'>
         <div className='line flex flex-wrap translate-x-0 gap-10 justify-around pt-10'>
-        <button className='bg-white rounded-lg w-24 font-bold'>Donor</button>
-        <button className='bg-white rounded-lg w-24 font-bold'>Hospital</button>
+        <button className='bg-white rounded-lg w-24 font-bold'>
+            <Link to={'/admin/donations'}>
+                Donor
+            </Link>
+            </button>
+        <button className='bg-white rounded-lg w-24 font-bold'>
+            <Link to={'/admin/hospitaldonation'}>
+
+            Hospital
+            </Link>
+            </button>
+            
         <button className='bg-slate-400 rounded-lg w-24 font-bold'>College</button>
       </div>
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-14 ">
