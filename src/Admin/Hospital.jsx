@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 
 export const Hospital = () => {
   return (
-<div className='images2 w-[100%]'>
+<div className='images2 w-[100%] h-[45rem]'>
+    <div className='text-center pt-10 text-lg font-bold text-red-800'>MANAGE HOSPITAL</div>
         
 
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-14 ">

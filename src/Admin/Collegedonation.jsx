@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const Collegedonation = () => {
   return (
-    <div className='images2'>
+    <div className='images2 h-[41rem]'>
         <div className='line flex flex-wrap translate-x-0 gap-10 justify-around pt-10'>
         <button className='bg-white rounded-lg w-24 font-bold'>
             <Link to={'/admin/donations'}>

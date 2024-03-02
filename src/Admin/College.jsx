@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 
 export const College = () => {
   return (
-    <div className='images2'>
+    <div className='images2 h-[41rem]'>
+        <div className='text-lg font-bold text-red-800 pt-10 text-center'>MANAGE COLLEGE</div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-14 ">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-white uppercase bg-gray-50 dark:bg-gray-700 text-white bg-red-800 rounded">

@@ -1,58 +1,70 @@
 import React from 'react'
 
 export const Vwcollege = () => {
-  return (
-    <div className='image3'>
-        <div className="w-full h-[250px] pt-14 font-bold text-[20px]">
-
-<div className=" flex justify-evenly w-[90%] m-auto mb-8">
-    <div className="flex gap-6">
-        <p>college name :</p>
-        <p>awh College</p>
+    return (
+        <div className='image3'>
+            <div class="bg-transparent w-[50%] m-auto overflow-hidden shadow rounded-lg border">
+    <div class="px-4 py-5 sm:px-6">
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+            AWH ENGINEERING COLLEGE
+        </h3>
+        <p class="mt-1 max-w-2xl text-sm text-gray-500">
+            kannur,payyannoor
+        </p>
     </div>
-    <div className="flex gap-5">
-        <p>Certificate :</p>
-        <input type='' placeholder='View'/>
+    <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+        <dl class="sm:divide-y sm:divide-gray-200">
+            
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Email
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    akash@gmail.com
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Contact
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    87363365533
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Certificate
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    view
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Post office
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                     medicl college
+            
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Pin
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                     763764
+            
+                </dd>
+            </div>
+        </dl>
     </div>
 </div>
 
-<div className=" flex justify-evenly w-[90%] m-auto mb-8">
-    <div className="flex gap-6 text-start">
-        <p>Place :</p>
-        <p>kutikkattr</p>
-    </div>
-    <div className="flex gap-5">
-        <p>Post office</p>
-        <p>Mavoor</p>
-    </div>
-</div>
-<div className=" flex justify-evenly w-[90%] m-auto mb-8">
-    <div className="flex gap-6">
-        <p>Email :</p>
-        <p>kuti@gmail.com</p>
-    </div>
-    <div className="flex gap-5">
-        <p>Pin :</p>
-        <p>987384</p>
-    </div>
-</div>
-<div className=" flex justify-evenly w-[90%] m-auto mb-8">
-    <div className="flex gap-6">
-        <p>Contact :</p>
-        <p>978766654</p>
-    </div>
-    <div className="flex gap-5">
-        <p>District :</p>
-        <p>Kozhikkod</p>
-    </div>
-</div>
-
-</div>
-
-<div className='flex flex-wrap gap-20 justify-center my-48 text-white font-bold'>
-<button className='bg-red-800 w-20 rounded'>ACCEPT</button>
-<button className='bg-red-800 w-20 rounded'>REJECT</button>
-</div>
-    </div>
-  )
+            <div className='flex flex-wrap gap-20 justify-center my-48 text-white font-bold'>
+                <button className='bg-red-800 w-20 rounded'>ACCEPT</button>
+                <button className='bg-red-800 w-20 rounded'>REJECT</button>
+            </div>
+        </div>
+    )
 }

@@ -20,7 +20,7 @@ export const UserNav = () => {
     </div>
     <div className='flex'>
 
-    <div className='bg-red-800 w-[15%] h-[40rem] text-white font-bold pt-20 pl-5'>
+    <div className='bg-white-800 w-[15%] h-[40rem] text-red-800 font-bold pt-20 '>
         <div className='flex gap-5 items-center hover:bg-red-800 p-2 hover:text-white'>
           <Link to={'/user/bloodreq'}>
           <span>Blood Requset</span>

@@ -4,28 +4,32 @@ export const Sendorganrqsthist = () => {
   return (
     <div className='image3 w-[100%]'>
       <div className="w-full  pt-20 font-bold text-[20px]">
-                <h1>HOSPITAL REQUEST</h1>
+                <h1 className='text-red-800 underline'>HOSPITAL REQUEST</h1>
 
                 <div className=" w-[90%]  m-auto mb-8">
                     <div className="flex flex-wrap  ">
-                        <p>Hospital name :</p>
+                        <p>Patient name :</p>
                         <p>abi</p>
                     </div>
                     <div className="flex ">
-                        <p>Patient name:</p>
-                        <p>kannur</p>
+                        <p>Age :</p>
+                        <p>22</p>
                     </div>
                     <div className="flex gap-5">
-                        <p>Patient name:</p>
-                        <p>kannur</p>
+                        <p>health certificate :</p>
+                        <p></p>
                     </div>
                     <div className="flex gap-5">
-                        <p>Patient name:</p>
-                        <p>kannur</p>
+                        <p>Organ :</p>
+                        <p>View</p>
+                    </div>
+                    <div className="flex gap-5">
+                        <p>Blood group :</p>
+                        <p>B-ve</p>
                     </div>
                 </div>
                 <div className="w-full  pt-20 font-bold text-[20px]">
-                <h1>ORGAN DONOR DETAILS</h1>
+                <h1 className='text-red-800 underline'>ORGAN DONOR DETAILS</h1>
                 <div className=" flex justify-evenly w-[90%] m-auto mb-8">
                     <div className="flex gap-6">
                         <p>Name :</p>
