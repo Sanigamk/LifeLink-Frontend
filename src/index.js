@@ -70,6 +70,8 @@ import { Donorregister } from './Bdonor.jsx/Donorregister';
 import { Collgregister } from './College/Collgregister';
 import { Hosregister } from './Hospital.jsx/Hosregister';
 import { Userregister } from './User/Userregister';
+import { Vwbloodrqst } from './Bdonor.jsx/Vwbloodrqst';
+import { Vwuserbloodrqst } from './Hospital.jsx/Vwuserbloodrqst';
 
 
 
@@ -90,7 +92,7 @@ root.render(
          <Route path='/admin' element={<Adnav/>}>
           <Route index element={<Adhome/>}/>
           <Route path='adhospital' element={<Hospital/>}/>
-          <Route path='managehosptl' element={<Managehospital/>}/>
+          <Route path='managehosptl/:id' element={<Managehospital/>}/>
           <Route path='user' element={<User/>}/>
           <Route path='viewuser' element={<Vwuser/>}/>
           <Route path='bloodonor' element={<Blooddonor/>}/>
@@ -114,6 +116,7 @@ root.render(
           <Route index element={<Donorhome/>}/>
           <Route path='donorreq' element={<Donatereq/>}/>
           <Route path='donatehist' element={<Reqhist/>}/>
+          <Route path='viewbloodrqst' element={<Vwbloodrqst/>}/>
           <Route path='editpro' element={<Editpro/>}/>
         </Route>
 
@@ -145,6 +148,7 @@ root.render(
         <Route path='sendorganrqst' element={<Sendorganhist/>}/>
         <Route path='sendorganhistpage' element={<Sendorganrqsthist/>}/>
         <Route path='editprofile' element={<Updatepro/>}/>
+        <Route path='viewuserbloodrqst' element={<Vwuserbloodrqst/>}/>
 
 
         </Route>

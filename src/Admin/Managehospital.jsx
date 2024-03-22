@@ -1,6 +1,8 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect } from 'react'
 
 export const Managehospital = () => {
+
     return (
         <div className='main image3'>
 <div class="bg-transparent w-[50%] m-auto overflow-hidden shadow rounded-lg border">

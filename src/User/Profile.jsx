@@ -1,6 +1,9 @@
 import React from 'react'
 
 export const Profile = () => {
+
+  let id=localStorage.getItem('id')
+  console.log(id);
   return (
     <div className='image3'>
 
