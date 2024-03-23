@@ -94,7 +94,7 @@ root.render(
           <Route path='adhospital' element={<Hospital/>}/>
           <Route path='managehosptl/:id' element={<Managehospital/>}/>
           <Route path='user' element={<User/>}/>
-          <Route path='viewuser' element={<Vwuser/>}/>
+          <Route path='viewuser/:id' element={<Vwuser/>}/>
           <Route path='bloodonor' element={<Blooddonor/>}/>
           <Route path='viewblood' element={<Vwblooddonor/>}/>
           <Route path='donations' element={<Donations/>}/>

@@ -3,14 +3,12 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 export const Hospital = () => {
+    
     const [data,setData]=useState([''])
-    const {id}=useParams()
-    console.log(id);
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response = await axios.get(`http://localhost:5000/user/mnghos/${id}`)
+            let response = await axios.get(`http://localhost:5000/user/managehos`)
             console.log(response.data)
-
             setData(response.data)
         }
         fetchdata()
@@ -18,7 +16,7 @@ export const Hospital = () => {
     },[])
   return (
 <div className='images2 w-[100%] h-[45rem]'>
-    <div className='text-center pt-10 text-lg font-bold text-red-800'>MANAGE HOSPITAL</div>
+    <div className='text-center text-[20px] pt-10 text-lg font-bold text-red-800'>MANAGE HOSPITAL</div>
         
 
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-14 ">

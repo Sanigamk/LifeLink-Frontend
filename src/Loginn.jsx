@@ -20,6 +20,18 @@ let handleSubmit=async (event)=>{
     if(response.data.userType=='user'){
       navigate('/user')
     }
+    else if(response.data.userType=='blooddonor'){
+      navigate('/blooddonor')
+    }
+    else if(response.data.userType=='college'){
+      navigate('/college')
+    }
+    else if(response.data.userType=='hospital'){
+      navigate('/hospital')
+    }
+    else if (response.data.userType=='admin'){
+      navigate('/admin')
+    }
     
    }
    else{

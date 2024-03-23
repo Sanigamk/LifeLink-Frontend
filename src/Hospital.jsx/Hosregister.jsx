@@ -3,6 +3,13 @@ import axios from 'axios'
 
 export const Hosregister = () => {
   const [data,setData]=useState('')
+
+
+  let handlefile=(event)=>{
+    console.log(event.target.files);
+    setData({...data,[event.target.name]:event.target.files[0]})
+    console.log(data);
+  }
     
     
      
@@ -10,9 +17,27 @@ export const Hosregister = () => {
             setData({...data,[event.target.name]:event.target.value})
         }
         let handleSubmit=async (event)=>{
-            event.preventDefault()
+          let formData = new FormData();
+          formData.append('name', data.name);
+          formData.append('place', data.place);
+          formData.append('email', data.email);
+          formData.append('contact', data.contact);
+          formData.append('liscence',data.liscence);
+          formData.append('postoffice',data.postoffice);
+          formData.append('pin',data.pin);
+          formData.append('district',data.district);
+          formData.append('password', data.password);
+          formData.append('proof', data.proof);
+          formData.append('userType', 'blooddonor');
+              event.preventDefault()
+            
             console.log(data);
-           let response=await axios.post('http://localhost:5000/user/register',{...data,userType:'hospital'})
+           let response=await axios.post('http://localhost:5000/user/register',formData,{
+            headers: {
+              'Content-Type': 'multipart/form-data'  // Set the content type for FormData
+            }
+           })
+
            console.log(response);
             
         }
