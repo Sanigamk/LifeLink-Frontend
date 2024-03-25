@@ -28,7 +28,7 @@ export const Hosregister = () => {
           formData.append('district',data.district);
           formData.append('password', data.password);
           formData.append('proof', data.proof);
-          formData.append('userType', 'blooddonor');
+          formData.append('userType', 'hospital');
               event.preventDefault()
             
             console.log(data);
@@ -72,7 +72,7 @@ export const Hosregister = () => {
     </div>
     <div class="mb-5">
       <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Proof :</label>
-      <input onChange={handleChange} value={data.proof} name="proof" type="file" id="file" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+      <input onChange={handlefile}  name="proof" type="file" id="file" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
     </div>
     
     

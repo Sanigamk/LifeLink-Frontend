@@ -96,12 +96,12 @@ root.render(
           <Route path='user' element={<User/>}/>
           <Route path='viewuser/:id' element={<Vwuser/>}/>
           <Route path='bloodonor' element={<Blooddonor/>}/>
-          <Route path='viewblood' element={<Vwblooddonor/>}/>
+          <Route path='viewblood/:id' element={<Vwblooddonor/>}/>
           <Route path='donations' element={<Donations/>}/>
           <Route path='hospitaldonation' element={<Hospitaldonation/>}/>
           <Route path='collegedonation' element={<Collegedonation/>}/>
           <Route path='college' element={<College/>}/>
-          <Route path='managecollege' element={<Vwcollege/>}/>
+          <Route path='managecollege/:id' element={<Vwcollege/>}/>
         </Route>
 
         <Route path='/user' element={<UserNav/>}>

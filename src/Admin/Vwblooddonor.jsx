@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
 
 export const Vwblooddonor = () => {
+    const [data,setData]=useState('')
+    let {id}=useParams()
+    console.log(id);
+    useEffect(()=>{
+        let fetchdata = async ()=>{
+            let response=await axios.get(`http://localhost:5000/user/vwpageblddonor/${id}`)
+            console.log(response.data)
+            setData(response.data)
+        }
+        fetchdata()
+    },[])
+
   return (
     <div className='image3'>
         <div class="bg-transparent w-[50%] m-auto overflow-hidden shadow rounded-lg border mt-10">
     <div class="px-4 py-5 sm:px-6">
         <h3 class="text-lg leading-6 font-medium text-gray-900">
-            Ram
+        {data.name}
         </h3>
         <p class="mt-1 max-w-2xl text-sm text-gray-500">
-            Palakkad,mannarkkad
+        {data.district} {data.place}
         </p>
     </div>
     <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
@@ -19,7 +33,7 @@ export const Vwblooddonor = () => {
                     Age
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    22
+                {data.age}
                 </dd>
             </div>
             <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -27,7 +41,7 @@ export const Vwblooddonor = () => {
                     Email
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    gggg@gmail.com
+                {data.email}
                 </dd>
             </div>
             <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -35,7 +49,7 @@ export const Vwblooddonor = () => {
                     Contact
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    8765433232232
+                {data.contact}
                 </dd>
             </div>
             <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -43,7 +57,7 @@ export const Vwblooddonor = () => {
                     House name
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    paadam
+                {data.housename}
                 </dd>
             </div>
             <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -51,7 +65,7 @@ export const Vwblooddonor = () => {
                     Post office
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                     medicl college
+                {data.postoffice}
             
                 </dd>
             </div>
@@ -60,7 +74,7 @@ export const Vwblooddonor = () => {
                     Pin
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                     763764
+                {data.pin}
             
                 </dd>
             </div>
@@ -69,7 +83,7 @@ export const Vwblooddonor = () => {
                     Blood group
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                     AB+ve
+                {data.bloodgroup}
             
                 </dd>
             </div>
@@ -78,7 +92,7 @@ export const Vwblooddonor = () => {
                     Height
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                     76
+                {data.height}
             
                 </dd>
             </div>
@@ -87,7 +101,7 @@ export const Vwblooddonor = () => {
                     Weight
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                     59
+                {data.weight}
             
                 </dd>
             </div>
