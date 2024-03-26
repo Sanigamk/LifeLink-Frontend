@@ -4,6 +4,12 @@ import axios from 'axios'
 export const Collgregister = () => {
 
     const [data,setData]=useState('')
+
+    let handlefile=(event)=>{
+      console.log(event.target.files);
+      setData({...data,[event.target.name]:event.target.files[0]})
+      console.log(data);
+    }
     
     
      
@@ -11,9 +17,24 @@ export const Collgregister = () => {
             setData({...data,[event.target.name]:event.target.value})
         }
         let handleSubmit=async (event)=>{
+          let formData = new FormData();
+        formData.append('name', data.name);
+        formData.append('place', data.place);
+        formData.append('email', data.email);
+        formData.append('contact', data.contact);
+        formData.append('postoffice',data.postoffice);
+        formData.append('pin',data.pin);
+        formData.append('district',data.district);
+        formData.append('password', data.password);
+        formData.append('certificate', data.certificate);
+        formData.append('userType', 'blooddonor');
             event.preventDefault()
             console.log(data);
-           let response=await axios.post('http://localhost:5000/user/register',{...data,userType:'college'})
+           let response=await axios.post('http://localhost:5000/user/register',formData,{
+            headers: {
+              'Content-Type': 'multipart/form-data'  // Set the content type for FormData
+            }
+           })
            console.log(response);
             
         }
@@ -45,7 +66,7 @@ export const Collgregister = () => {
     </div>
     <div class="mb-5">
       <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Certificate :</label>
-      <input onChange={handleChange} value={data.certificate} name="certificate" type="file" id="file" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
+      <input onChange={handlefile} value={data.certificate} name="certificate" type="file" id="file" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
     </div>
     
     

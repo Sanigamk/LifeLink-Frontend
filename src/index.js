@@ -72,6 +72,7 @@ import { Hosregister } from './Hospital.jsx/Hosregister';
 import { Userregister } from './User/Userregister';
 import { Vwbloodrqst } from './Bdonor.jsx/Vwbloodrqst';
 import { Vwuserbloodrqst } from './Hospital.jsx/Vwuserbloodrqst';
+import { Editcollg } from './College/Editcollg';
 
 
 
@@ -159,6 +160,7 @@ root.render(
         <Route index element={<Collegehomel/>}/>
         <Route path='collegerqst' element={<Reqstblood/>}/>
         <Route path='viewhospitalrqst' element={<Viewrqst/>}/>
+        <Route path='editprofile' element={<Editcollg/>}/>
 
 
 

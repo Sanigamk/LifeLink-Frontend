@@ -4,6 +4,12 @@ import axios from 'axios'
 export const Myorgan = () => {
   let id=localStorage.getItem('id')
   const [data,setData]=useState('')
+
+  let handlefile=(event)=>{
+    console.log(event.target.files);
+    setData({...data,[event.target.name]:event.target.files[0]})
+    console.log(data);
+  }
     
     
      
@@ -11,9 +17,21 @@ export const Myorgan = () => {
             setData({...data,[event.target.name]:event.target.value})
         }
         let handleSubmit=async (event)=>{
+          let formData = new FormData();
+        formData.append('patientname', data.patientname);
+        formData.append('age', data.age);
+        formData.append('organ',data.organ);
+        formData.append('bloodgroup',data.bloodgroup);
+        formData.append('healthcertificate', data.healthcertificate);
+        formData.append('userType', 'hospital');
+  
             event.preventDefault()
             console.log(data);
-           let response=await axios.post('http://localhost:5000/hospital/myorganrqst',{...data,userId:id})
+           let response=await axios.post(`http://localhost:5000/hospital/myorganrqst/${id}`,formData,{
+           headers: {
+            'Content-Type': 'multipart/form-data'  // Set the content type for FormData
+          }
+         })
            console.log(response);
             
         }
@@ -25,7 +43,7 @@ export const Myorgan = () => {
 
   <div class="">
     <label for="name" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Patient name :</label>
-    <input onChange={handleChange} value={data.name} name="patientname" type="text" id="name" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required />
+    <input onChange={handleChange} value={data.patientname} name="patientname" type="text" id="name" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required />
   </div>
   <div class="">
     <label for="age" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Age :</label>
@@ -33,13 +51,13 @@ export const Myorgan = () => {
   </div>
   <div class="">
     <label for="place" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Health certificate :</label>
-    <input onChange={handleChange} value={data.healthcertificate} name="healthcertificate" type="file" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+    <input onChange={handlefile}  name="healthcertificate" type="file" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div>
   {/* <div class="">
     <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Hospital name:</label>
     <input onChange={handleChange} value={data.hospitalname} name="hospitalname"type="text" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div> */}
-  <div class="">
+  {/* <div class="">
     <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Email :</label>
     <input onChange={handleChange} value={data.email} name="email" type="email" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div>
@@ -58,7 +76,7 @@ export const Myorgan = () => {
   <div class="mb-5">
     <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">District:</label>
     <input onChange={handleChange} value={data.district} name="district" type="text" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
-  </div>
+  </div> */}
   <div class="mb-5">
     <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Organ :</label>
     <input onChange={handleChange} value={data.organ} name="organ" type="text" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />

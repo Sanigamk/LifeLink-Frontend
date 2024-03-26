@@ -1,9 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 export const Reqstblood = () => {
   let id=localStorage.getItem('id')
-  const [data,setData]=useState('')
+  const [data,setData]=useState([''])
+
+  useEffect(() => {
+    let fetchdata = async () => {
+        let response = await axios.get(`http://localhost:5000/blooddonor/vwhosdetail`)
+        console.log(response.data)
+        setData(response.data)
+    }
+    fetchdata()
+
+  
+  },[])
+
     
     
      
@@ -27,7 +39,9 @@ export const Reqstblood = () => {
     <label for="name" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">District :</label>
     <select onChange={handleChange} name="district" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
         <option disabled value="">select</option>
-        <option value="">Kozhikode</option>
+        {data.map((item)=>(
+        <option value={item.district}>{item.district}</option>
+        ))}
     </select>
 
   </div>
@@ -35,7 +49,9 @@ export const Reqstblood = () => {
     <label for="age" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Hospital :</label>
     <select onChange={handleChange} name="hospitalname" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
         <option disabled value="">select</option>
-        <option value="">Aster mims</option>
+        {data.map((item)=>(
+        <option value={item.name}>{item.name}</option>
+        ))}
     </select>
   </div>
   <div class="mb-5">
