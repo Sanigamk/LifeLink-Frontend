@@ -27,7 +27,7 @@ export const Collgregister = () => {
         formData.append('district',data.district);
         formData.append('password', data.password);
         formData.append('certificate', data.certificate);
-        formData.append('userType', 'blooddonor');
+        formData.append('userType', 'college');
             event.preventDefault()
             console.log(data);
            let response=await axios.post('http://localhost:5000/user/register',formData,{
@@ -66,7 +66,7 @@ export const Collgregister = () => {
     </div>
     <div class="mb-5">
       <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Certificate :</label>
-      <input onChange={handlefile} value={data.certificate} name="certificate" type="file" id="file" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
+      <input onChange={handlefile}  name="certificate" type="file" id="file" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
     </div>
     
     

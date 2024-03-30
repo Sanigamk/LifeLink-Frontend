@@ -73,6 +73,7 @@ import { Userregister } from './User/Userregister';
 import { Vwbloodrqst } from './Bdonor.jsx/Vwbloodrqst';
 import { Vwuserbloodrqst } from './Hospital.jsx/Vwuserbloodrqst';
 import { Editcollg } from './College/Editcollg';
+import { Vwcollgreq } from './College/Vwcollgreq';
 
 
 
@@ -126,7 +127,7 @@ root.render(
         <Route path='blddonorreq' element={<Blddonorreq/>}/>
         <Route path='managedonorrqst' element={<Mngdonorreq/>}/>
         <Route path='organdonor' element={<Addorgandnr/>}/>
-        <Route path='vworgandonor' element={<Vworgandonor/>}/>
+        <Route path='vworgandonor/:id' element={<Vworgandonor/>}/>
         <Route path='addorgandonor' element={<Addorgandonor/>}/>
         <Route path='vieworganrqst' element={<Vwhosreqst/>}/>
         <Route path='vieworganpage' element={<Assignrqst/>}/>
@@ -159,6 +160,7 @@ root.render(
         <Route path='/college' element={<Collgnav/>}>
         <Route index element={<Collegehomel/>}/>
         <Route path='collegerqst' element={<Reqstblood/>}/>
+        <Route path='viewcollgrqst' element={<Vwcollgreq/>}/>
         <Route path='viewhospitalrqst' element={<Viewrqst/>}/>
         <Route path='editprofile' element={<Editcollg/>}/>
 

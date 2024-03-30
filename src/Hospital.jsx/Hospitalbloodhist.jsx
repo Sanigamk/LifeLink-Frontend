@@ -1,9 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BloodHistory } from './BloodHistory'
+import axios from 'axios'
 
 export const Hospitalbloodhist = () => {
+    
+    
+    const [data,setData]=useState([''])
+    useEffect(()=>{
+        let fetchdata = async ()=>{
+            let response = await axios.get(`http://localhost:5000/hospital/get/sendlist/${localStorage.getItem("id")}`)
+            console.log(response.data,'data')
+            setData(response.data)
+        }
+        fetchdata()
 
+    },[])
     return (
         <div className='images2 w-[100%]'>
            <BloodHistory/>
@@ -30,113 +42,40 @@ export const Hospitalbloodhist = () => {
                             <th scope="col" class="px-6 py-3">
                                 DATE
                             </th>
+                            <th scope="col" class="px-6 py-3">
+                               STATUS
+                            </th>
 
                         </tr>
                     </thead>
                     <tbody>
+                    {data.map((item)=>(
                         <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Manu hospital
+                            {item?.hospitalInfo?.name}
                             </th>
                             <td class="px-6 py-4">
-                                baby hospital
+                                {item.hospitalInfo?.place}
                             </td>
                             <td class="px-6 py-4">
-                                kidney
+                                {item.hospitalInfo?.district}
                             </td>
                             <th scope="col" class="px-6 py-3">
-                                Blood group
+                                {item.bloodgroup}
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Blood group
+                                {item.bloodunit}
                             </th>
                             <td class="px-6 py-4">
-                                6/03/22
+                                {item.date}
+                            </td>
+                            <td class="px-6 py-4">
+                                {item.status}
                             </td>
 
                         </tr>
-                        <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Baby memorial hospital
-                            </th>
-                            <td class="px-6 py-4">
-                                New stand hospital
-                            </td>
-                            <td class="px-6 py-4">
-                                blood
-                            </td>
-                            <th scope="col" class="px-6 py-3">
-                                Blood group
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Blood group
-                            </th>
-
-                            <td class="px-6 py-4">
-                                31/09/24
-                            </td>
-                        </tr>
-                        <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Medical college
-                            </th>
-                            <td class="px-6 py-4">
-                                Black
-                            </td>
-                            <td class="px-6 py-4">
-                                Accessories
-                            </td>
-                            <th scope="col" class="px-6 py-3">
-                                Blood group
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Blood group
-                            </th>
-                            <td class="px-6 py-4">
-                                6/9/20
-                            </td>
-                        </tr>
-                        <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Google Pixel Phone
-                            </th>
-                            <td class="px-6 py-4">
-                                Gray
-                            </td>
-                            <td class="px-6 py-4">
-                                Phone
-                            </td>
-                            <th scope="col" class="px-6 py-3">
-                                Blood group
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Blood group
-                            </th>
-                            <td class="px-6 py-4">
-                                22/3/10
-                            </td>
-                        </tr>
-                        <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Apple Watch 5
-                            </th>
-                            <td class="px-6 py-4">
-                                Red
-                            </td>
-                            <td class="px-6 py-4">
-                                Wearables
-                            </td>
-                            <th scope="col" class="px-6 py-3">
-                                Blood group
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Blood group
-                            </th>
-                            <td class="px-6 py-4">
-                                1/6/22
-                            </td>
-                        </tr>
-                    </tbody>
+                        
+                        ))} </tbody>
                 </table>
             </div>
         </div>

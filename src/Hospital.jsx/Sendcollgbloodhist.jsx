@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BloodHistory } from './BloodHistory'
+import axios from 'axios'
 
 export const Sendcollgbloodhist = () => {
+    const [data,setData]=useState([''])
+    useEffect(()=>{
+        let fetchdata = async ()=>{
+            let response = await axios.get(`http://localhost:5000/hospital/get/sendlist/${localStorage.getItem("id")}`)
+            console.log(response.data,'data')
+            setData(response.data)
+        }
+        fetchdata()
+
+    },[])
   return (
     <div className='images2 w-[100%]'>
         <BloodHistory/>

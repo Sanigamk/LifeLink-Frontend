@@ -1,33 +1,21 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import axios from 'axios'
 
-
-const Collegerqst = () => {
-    const [drop, setDrop] = useState(false)
-    let dropdown = () => {
-        setDrop(!drop)
-    }
-    let dropdownClose = () => {
-
-        setDrop(false)
-
-    }
-    const [data,setdata] = useState([''])
-    // let {id}=useParams()
+export const Vwcollgreq = () => {
     let id=localStorage.getItem('id')
-    console.log(id);
+    const [data,setData]=useState([''])
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response=await axios.get(`http://localhost:5000/hospital/vwcollgreq/${id}`)
+            let response = await axios.get(`http://localhost:5000/college/vwcollgrqst/${id}`)
             console.log(response.data)
-            setdata(response.data)
+            setData(response.data)
         }
         fetchdata()
+
     },[])
-    return (
-        <div className='images2 w-[100%] h-[45rem]'>
-            <div className='  pt-7 ps-10 pe-10'>
+  return (
+    <div className='images2 w-[100%]'>
+                   <div className='basicbg   pt-7 ps-10 pe-10'>
                 <div className='text-3xl text-[#431515] font-semibold text-center pb-7'>BLOOD REQUEST</div>
                 {/* searchbar */}
 
@@ -68,34 +56,29 @@ const Collegerqst = () => {
 
                 {/* tableee */}
 
-                <div class="relative h-[screen] overflow-x-auto shadow-md">
+                <div class="relative overflow-x-auto shadow-md">
                     <table class="w-full text-sm text-left rtl:text-right text-black dark:text-black">
                         <thead class="text-xs text-black uppercase bg-red-800 border-b-2 dark:text-white">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
-                                    COLLEGE NAME
+                                    HOSPITAL NAME
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    PLACE
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    DISTRICT
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    CAMPNAME
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    DISCRIPTION
+                                DISTRICT
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     DATE
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    STATUS
+                                    CAMP
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    ACTION
+                                    DISCRIPTION
                                 </th>
+                                <th scope="col" class="px-6 py-3">
+                                    STATUS
+                                </th>
+                               
 
 
                             </tr>
@@ -104,13 +87,13 @@ const Collegerqst = () => {
                         {data.map((item)=>(
                             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 ">
                                 <td class="px-6 py-4 font-semibold">
-                                    {item.college?.name}
+                                    {item.hospital?.name}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {item.college?.place}
+                                    {item.hospital?.district}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {item.college?.district}
+                                    {item.req?.date}
                                 </td>
                                 <td class="px-6 py-4">
                                     {item.req?.campname}
@@ -118,28 +101,22 @@ const Collegerqst = () => {
                                 <td class="px-6 py-4">
                                     {item.req?.discription}
                                 </td>
-                                <td class="px-6 py-4">
-                                    {item.req?.date}
-                                </td>
 
 
                                 <td class="px-6 py-4">
                                     {item.req?.status}
                                 </td>
-                                <td class="px-6 py-4 flex flex-wrap flex-col gap-3">
-                                    <button class="bg-slate-600 font-bold text-sm text-white hover:underline hover:bg-slate-500 p-1">Accept</button>
-                                    <button class="bg-slate-600 font-bold text-sm text-white hover:underline hover:bg-slate-500 p-1" >Reject</button>
-                                </td>
-
+                                
                             </tr>
-                        ))}
-                        </tbody>
+
+                        ))} </tbody>
+
                     </table>
                 </div>
 
 
             </div>
-        </div>
-    )
+
+    </div>
+  )
 }
-export default Collegerqst
