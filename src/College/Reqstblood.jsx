@@ -23,7 +23,7 @@ export const Reqstblood = () => {
   {
     if(event.target.value){
       setcatid(event.target.value)
-      let response=await axios.get(`http://localhost:5000/college//hosdistrict/${event.target.value}`)
+      let response=await axios.get(`http://localhost:5000/college/hosdistrict/${event.target.value}`)
       console.log(response);
       sethosdetail(response.data)
     }

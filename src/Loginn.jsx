@@ -17,17 +17,35 @@ let handleSubmit=async (event)=>{
    console.log(response);
    if(response.data){
     localStorage.setItem('id',response.data._id)
+
     if(response.data.userType=='user'){
-      navigate('/user')
+      if(response.data.status=='Accepted'){
+      navigate('/user')}
+      else{
+        alert('invalid')
+      }
     }
+
     else if(response.data.userType=='blooddonor'){
-      navigate('/blooddonor')
+      if(response.data.status=='Accepted'){
+      navigate('/blooddonor')}
+      else{
+        alert('invalid')
+      }
     }
     else if(response.data.userType=='college'){
-      navigate('/college')
+      if(response.data.status=='Accepted'){
+      navigate('/college')}
+      else{
+        alert('invalid')
+      }
     }
     else if(response.data.userType=='hospital'){
-      navigate('/hospital')
+      if(response.data.status=='Accepted'){
+      navigate('/hospital')}
+      else{
+        alert('invalid')
+      }
     }
     else if (response.data.userType=='admin'){
       navigate('/admin')

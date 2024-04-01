@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 export const Vwcollege = () => {
     const [data,setData]=useState('')
+    const [refresh,setrefresh]=useState(false)
     let {id}=useParams()
     console.log(id);
     useEffect(()=>{
@@ -13,7 +14,18 @@ export const Vwcollege = () => {
             setData(response.data)
         }
         fetchdata()
-    },[])
+    },[refresh])
+
+
+    let handleSubmit = async (status,id) => {
+        setrefresh(!refresh)
+
+        // console.log(data);
+        let response = await axios.put(`http://localhost:5000/user/mngcllg/${id}`, { ...data,status:status})
+        console.log(response);
+        setData('')
+    
+      }
 
     return (
         <div className='image3'>
@@ -76,8 +88,8 @@ export const Vwcollege = () => {
 </div>
 
             <div className='flex flex-wrap gap-20 justify-center my-48 text-white font-bold'>
-                <button className='bg-red-800 w-20 rounded'>ACCEPT</button>
-                <button className='bg-red-800 w-20 rounded'>REJECT</button>
+                <button onClick={()=>{handleSubmit('Accepted',data._id)}} href="#" className='bg-red-800 w-20 rounded'>ACCEPT</button>
+                <button onClick={()=>{handleSubmit('Rejected',data._id)}} href="#"className='bg-red-800 w-20 rounded'>REJECT</button>
             </div>
         </div>
     )

@@ -2,6 +2,7 @@ import React from 'react'
 import { Footer } from '../Footer'
 
 export const Hospitalhome= () => {
+
   return (
     <>
     <div className='images2 w-[100%] h-[45rem]'>

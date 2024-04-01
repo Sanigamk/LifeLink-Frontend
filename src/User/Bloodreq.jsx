@@ -34,12 +34,12 @@ let handleSubmit=async (event)=>{
             <input onChange={handleChange} value={data.place} name="place" type="text" id="age" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
           </div>
           <div class="mb-5">
-            <label for="place" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Blood group:</label>
-            <input onChange={handleChange} value={data.bloodgroup} name="bloodgroup" type="text" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+            <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">district :</label>
+            <input onChange={handleChange} value={data.district} name="district" type="text" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
           </div>
           <div class="mb-5">
-            <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Blood unit :</label>
-            <input onChange={handleChange} value={data.bloodunit} name="bloodunit" type="text" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+            <label for="place" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Blood group:</label>
+            <input onChange={handleChange} value={data.bloodgroup} name="bloodgroup" type="text" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
           </div>
           
         </div>

@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 
 export const Vwblooddonor = () => {
     const [data,setData]=useState('')
+
     let {id}=useParams()
     console.log(id);
     useEffect(()=>{
@@ -14,6 +15,8 @@ export const Vwblooddonor = () => {
         }
         fetchdata()
     },[])
+
+    
 
   return (
     <div className='image3'>
