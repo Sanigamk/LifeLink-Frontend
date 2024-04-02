@@ -134,7 +134,7 @@ root.render(
         <Route path='Searchorgan' element={<Searchorgandnr/>}/>
         <Route path='assignorgan' element={<Assignorgan/>}/>
         <Route path='bloodrequesthos' element={<Bloodrqsthos/>}/>
-        <Route path='viewbloodrqsthos' element={<Managebloodrqsthos/>}/>
+        <Route path='viewbloodrqsthos/:id' element={<Managebloodrqsthos/>}/>
         <Route path='myorganrqst' element={<Myorgan/>}/>
         <Route path='mybloodrqst' element={<Mybloodrqst/>}/>
         <Route path='mycollegerqst' element={<Mybloodrqstcollg/>}/>
