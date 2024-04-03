@@ -16,21 +16,21 @@ useEffect(()=>{
     fetchdata()
 },[refresh])
 
-let handleSubmit = async (status,id) => {
+let handleSubmit = async (status) => {
     setrefresh(!refresh)
-    let response = await axios.put(`http://localhost:5000/hospital/mngblddonordonationreq/${id}`, { ...data,status:status})
+    let response = await axios.put(`http://localhost:5000/hospital/mngblddonordonationreq/${id}`, {status:status})
     console.log(response);
-    setData('')
+   
 }
   return (
     <div className='image3 h-[40rem]'>
         <div class="bg-transparent w-[50%] m-auto overflow-hidden shadow rounded-lg border">
                 <div class="px-4 py-5 sm:px-6">
                     <h3 class="text-lg leading-6 font-medium text-gray-900">
-                        {data.name}
+                        {data.donor?.name}
                     </h3>
                     <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                        {data.district} {data.place}
+                        {data.donor?.district} {data.donor?.place}
                     </p>
                 </div>
                 <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
@@ -41,7 +41,7 @@ let handleSubmit = async (status,id) => {
                                 Email
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.email}
+                                {data.donor?.email}
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -49,7 +49,7 @@ let handleSubmit = async (status,id) => {
                                 Contact
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.contact}
+                                {data.donor?.contact}
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -65,7 +65,7 @@ let handleSubmit = async (status,id) => {
                                 Blood group
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.postoffice}
+                                {data.vwpageblddonation?.bloodgroup}
 
                             </dd>
                         </div>
@@ -74,7 +74,7 @@ let handleSubmit = async (status,id) => {
                                 Weight
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.postoffice}
+                                {data.donor?.weight}
 
                             </dd>
                         </div>
@@ -83,7 +83,16 @@ let handleSubmit = async (status,id) => {
                                 height
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.pin}
+                                {data.donor?.height}
+
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Date
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {data.vwpageblddonation?.date}
 
                             </dd>
                         </div>
@@ -92,8 +101,8 @@ let handleSubmit = async (status,id) => {
             </div>
 
 <div className='flex flex-wrap gap-20 justify-center my-48 text-white font-bold mt-72'>
-<button onClick={()=>{handleSubmit('Accepted',data._id)}} href="#" className='bg-red-800 w-20 rounded'>ACCEPT</button>
-<button onClick={()=>{handleSubmit('Rejected',data._id)}} href="#" className='bg-red-800 w-20 rounded'>REJECT</button>
+<button onClick={()=>{handleSubmit('Accepted')}} href="#" className='bg-red-800 w-20 rounded'>ACCEPT</button>
+<button onClick={()=>{handleSubmit('Rejected')}} href="#" className='bg-red-800 w-20 rounded'>REJECT</button>
 </div>
     </div>
   )

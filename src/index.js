@@ -125,14 +125,14 @@ root.render(
         <Route path='/hospital' element={<Hosnav/>}>
         <Route index element={<Hospitalhome/>}/>
         <Route path='blddonorreq' element={<Blddonorreq/>}/>
-        <Route path='managedonorrqst' element={<Mngdonorreq/>}/>
+        <Route path='managedonorrqst/:id' element={<Mngdonorreq/>}/>
         <Route path='organdonor' element={<Addorgandnr/>}/>
         <Route path='vworgandonor/:id' element={<Vworgandonor/>}/>
         <Route path='addorgandonor' element={<Addorgandonor/>}/>
         <Route path='vieworganrqst' element={<Vwhosreqst/>}/>
-        <Route path='vieworganpage' element={<Assignrqst/>}/>
+        <Route path='vieworganpage/:id' element={<Assignrqst/>}/>
         <Route path='Searchorgan' element={<Searchorgandnr/>}/>
-        <Route path='assignorgan' element={<Assignorgan/>}/>
+        <Route path='assignorgan/:id' element={<Assignorgan/>}/>
         <Route path='bloodrequesthos' element={<Bloodrqsthos/>}/>
         <Route path='viewbloodrqsthos/:id' element={<Managebloodrqsthos/>}/>
         <Route path='myorganrqst' element={<Myorgan/>}/>

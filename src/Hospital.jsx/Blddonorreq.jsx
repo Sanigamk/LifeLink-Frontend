@@ -40,30 +40,30 @@ export const Blddonorreq = () => {
                         </tr>
                     </thead>
                     <tbody>
-                    {/* {data.map((item)=>( */}
+                    {data.map((item)=>(
                         <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {/* {item.blddonor?.name} */}
+                                {item.blddonor?.name}
                                 yfjyfjf
                             </th>
                             <td class="px-6 py-4">
-                                {/* {item.blddonor?.age} */}
+                                {item.blddonor?.age}
                             </td>
                             <td class="px-6 py-4">
-                                {/* {item.blddonor?.place} */}
+                                {item.blddonor?.place}
                             </td>
                             <td class="px-6 py-4">
-                                {/* {item.req?.status} */}
+                                {item.req?.status}
                             </td>
                             <td class="px-6 py-4">
                                 <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                    <Link to={`/hospital/managedonorrqst/${data._id}`}>
+                                    <Link to={`/hospital/managedonorrqst/${item.req?._id}`}>
                                         View
                                     </Link>
                                 </a>
                             </td>
                         </tr>
-                    {/* // ))}  */}
+                      ))}
                     </tbody>
                 </table>
             </div>

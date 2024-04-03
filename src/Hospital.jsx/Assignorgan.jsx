@@ -1,70 +1,124 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 
 export const Assignorgan = () => {
+    const [data,setData]=useState('')
+    // const [refresh, setrefresh] = useState(false)
+    let {id}=useParams()
+    console.log(id);
+    useEffect(()=>{
+        let fetchdata = async ()=>{
+            let response=await axios.get(`http://localhost:5000/hospital/vwpagsrchorgandnr/${id}`)
+            console.log(response.data)
+            setData(response.data)
+        }
+        fetchdata()
+    },[])
     return (
         <div className='image3 w-[100%]'>
             <div className="w-full h-[250px] pt-40 font-bold text-[20px]">
 
-                <div className=" flex justify-evenly w-[90%] m-auto mb-8">
-                    <div className="flex gap-6">
-                        <p>Name :</p>
-                        <p>abi</p>
-                    </div>
-                    <div className="flex gap-5">
-                        <p>District :</p>
-                        <p>kannur</p>
-                    </div>
+            <div class="bg-transparent w-[50%] m-auto overflow-hidden shadow rounded-lg border">
+                <div class="px-4 py-5 sm:px-6">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">
+                        {data.name}
+                    </h3>
+                    <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                        {data.district} {data.place}
+                    </p>
                 </div>
+                <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+                    <dl class="sm:divide-y sm:divide-gray-200">
 
-                <div className=" flex justify-evenly w-[90%] m-auto mb-8">
-                    <div className="flex gap-6 text-start">
-                        <p>Age :</p>
-                        <p>45</p>
-                    </div>
-                    <div className="flex gap-5">
-                        <p>Organ :</p>
-                        <p>liver</p>
-                    </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Email
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {data.email}
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Contact
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {data.contact}
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                House name
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            {data.housename}
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Postoffice
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            {data.postoffice}
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Pin 
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {data.pin}
+
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                organ
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {data.organ}
+
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Healthcertificate
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                               view
+
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Conformation certificate
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                               view
+
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Witness Name
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {data.witnessname}
+
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Witness Contact
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {data.witnesscontact}
+
+                            </dd>
+                        </div>
+                    </dl>
                 </div>
-                <div className=" flex justify-evenly w-[90%] m-auto mb-8">
-                    <div className="flex gap-6">
-                        <p>Place :</p>
-                        <p>kuti</p>
-                    </div>
-                    <div className="flex gap-5">
-                        <p>Blood group :</p>
-                        <p>B-</p>
-                    </div>
-                </div>
-                <div className=" flex justify-evenly w-[90%] m-auto mb-8">
-                    <div className="flex gap-6">
-                        <p>Email :</p>
-                        <p>kuti@gmail.com</p>
-                    </div>
-                    <div className="flex gap-5">
-                        <p>Height :</p>
-                        <p>98</p>
-                    </div>
-                </div>
-                <div className=" flex justify-evenly w-[90%] m-auto mb-8">
-                    <div className="flex gap-6">
-                        <p>Contact :</p>
-                        <p>0994787855</p>
-                    </div>
-                    <div className="flex gap-5">
-                        <p>Weight :</p>
-                        <p>98</p>
-                    </div>
-                </div>
-                <div className=" flex justify-evenly w-[90%] m-auto mb-8">
-                    <div className="flex gap-6">
-                        <p>Pin :</p>
-                        <p>96654</p>
-                    </div>
-                    <div className="flex gap-5">
-                        <p>Conformation certificate :</p>
-                        <input type='' placeholder='View' />
-                    </div>
                 </div>
 
             </div>

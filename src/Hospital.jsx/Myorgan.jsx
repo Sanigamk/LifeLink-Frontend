@@ -23,11 +23,11 @@ export const Myorgan = () => {
         formData.append('organ',data.organ);
         formData.append('bloodgroup',data.bloodgroup);
         formData.append('healthcertificate', data.healthcertificate);
-        formData.append('userType', 'hospital');
+        formData.append('userId', id)
   
             event.preventDefault()
             console.log(data);
-           let response=await axios.post(`http://localhost:5000/hospital/myorganrqst/${id}`,formData,{
+           let response=await axios.post(`http://localhost:5000/hospital/myorganrqst`,formData,{
            headers: {
             'Content-Type': 'multipart/form-data'  // Set the content type for FormData
           }
