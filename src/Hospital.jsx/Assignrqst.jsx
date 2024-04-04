@@ -115,7 +115,7 @@ useEffect(()=>{
 
             <div className='flex flex-wrap gap-20 justify-center my-48 text-white font-bold '>
                 <button className='bg-red-800 w-28 p-4 mt-[101px] rounded'>
-                    <Link to={'/hospital/Searchorgan'}>
+                    <Link to={`/hospital/Searchorgan/${data.mnghosorganreq?._id}`}>
                         ASSIGN
                     </Link>
                 </button>

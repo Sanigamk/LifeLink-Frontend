@@ -1,9 +1,13 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 
 export const Searchorgandnr = () => {
     const [data, setData] = useState([''])
+    
+    const [refresh,setrefresh]=useState(false)
+    let {id}=useParams()
+    console.log(id);
 
     useEffect(() => {
         let fetchdata = async () => {
@@ -12,7 +16,15 @@ export const Searchorgandnr = () => {
             setData(response.data)
         }
         fetchdata()
-    }, [])
+    }, [refresh])
+
+    let handleSubmit = async (did,statuss) => {
+
+        setrefresh(!refresh)
+        let response = await axios.put(`http://localhost:5000/hospital/assignorgan/${id}`, {status:statuss ,donorId:did})
+        console.log(response);
+       
+    }
   return (
     <div className='images2 w-[100%] h-[42rem]'>
         <form class="max-w-lg mx-auto pb-10 pt-10">
@@ -56,6 +68,12 @@ export const Searchorgandnr = () => {
                 <th scope="col" class="px-6 py-3">
                     Contact
                 </th>
+                <th scope="col" class="px-6 py-3">
+                    Status
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Action
+                </th>
                 
                 <th scope="col" class="px-6 py-3">
                 
@@ -79,6 +97,12 @@ export const Searchorgandnr = () => {
                 </td>
                 <td class="px-6 py-4">
                     {item.contact}
+                </td>
+                <td class="px-6 py-4">
+                    {item.status}
+                </td>
+                <td class="px-6 py-4">
+                <button onClick={()=>handleSubmit(item._id,'ASSIGNED')} className='bg-red-800 w-20 rounded'>ASSIGN</button>
                 </td>
                 <td class="px-6 py-4">
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">

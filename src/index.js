@@ -131,7 +131,7 @@ root.render(
         <Route path='addorgandonor' element={<Addorgandonor/>}/>
         <Route path='vieworganrqst' element={<Vwhosreqst/>}/>
         <Route path='vieworganpage/:id' element={<Assignrqst/>}/>
-        <Route path='Searchorgan' element={<Searchorgandnr/>}/>
+        <Route path='Searchorgan/:id' element={<Searchorgandnr/>}/>
         <Route path='assignorgan/:id' element={<Assignorgan/>}/>
         <Route path='bloodrequesthos' element={<Bloodrqsthos/>}/>
         <Route path='viewbloodrqsthos/:id' element={<Managebloodrqsthos/>}/>
