@@ -12,7 +12,7 @@ export const Adnav1= () => {
         <div>
             <div className='flex gap-5 sm:fixed  w-[100%] bg-red-800 drop-shadow-2xl  text-white p-4 justify-between'>
                 <div>
-                    <div><span className='text-white font-bold font'> BLOOD</span><span className='text-black font-bold'>LINK</span></div>
+                    <div><span className='text-white font-bold font'> LIFE</span><span className='text-black font-bold'>LINK</span></div>
                 </div>
                 <div className='flex flex-wrap gap-4 font1 font-bold'>
                     <Link to='/'><div className>HOME</div></Link>

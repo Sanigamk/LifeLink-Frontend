@@ -1,8 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BloodHistory } from './BloodHistory'
+import axios from 'axios'
 
 export const Blooddonorhist = () => {
+
+    const [data,setData]=useState([''])
+    let id=localStorage.getItem('id')
+    console.log(id)
+
+    useEffect(()=>{
+        let fetchdata = async ()=>{
+            let response = await axios.get(`http://localhost:5000/hospital/vwblddonordonationhist/${id}`)
+            console.log(response.data)
+            setData(response.data)
+        }
+        fetchdata()
+
+    },[])
     
     return (
         <div className='images2 w-[100%]'>
@@ -22,100 +37,40 @@ export const Blooddonorhist = () => {
                                 Place
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Email
+                                Contact
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Contact
+                                Blood group
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Date
                             </th>
 
                         </tr>
                     </thead>
                     <tbody>
+                    {data.map((item)=>(
                         <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Manu
+                                {item.blddonors?.name}
                             </th>
                             <td class="px-6 py-4">
-                                22
+                                {item.blddonors?.age}
                             </td>
                             <td class="px-6 py-4">
-                                new stand
+                                {item.blddonors?.place}
                             </td>
                             <td class="px-6 py-4">
-                                aster mims
+                                {item.blddonors?.contact}
                             </td>
                             <td class="px-6 py-4">
-                                19/7/22
+                                {item.req?.bloodgroup}
+                            </td>
+                            <td class="px-6 py-4">
+                                {item.req?.date}
                             </td>
                         </tr>
-                        <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Baby memorial hospital
-                            </th>
-                            <td class="px-6 py-4">
-                                New stand
-                            </td>
-                            <td class="px-6 py-4">
-                                Baby@gmail.com
-                            </td>
-                            <td class="px-6 py-4">
-                                9782676222
-                            </td>
-                            <td class="px-6 py-4">
-                                31/09/24
-                            </td>
-                        </tr>
-                        <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Medical college
-                            </th>
-                            <td class="px-6 py-4">
-                                Black
-                            </td>
-                            <td class="px-6 py-4">
-                                Accessories
-                            </td>
-                            <td class="px-6 py-4">
-                                $99
-                            </td>
-                            <td class="px-6 py-4">
-                                6/9/20
-                            </td>
-                        </tr>
-                        <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Google Pixel Phone
-                            </th>
-                            <td class="px-6 py-4">
-                                Gray
-                            </td>
-                            <td class="px-6 py-4">
-                                Phone
-                            </td>
-                            <td class="px-6 py-4">
-                                $799
-                            </td>
-                            <td class="px-6 py-4">
-                                22/3/10
-                            </td>
-                        </tr>
-                        <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Apple Watch 5
-                            </th>
-                            <td class="px-6 py-4">
-                                Red
-                            </td>
-                            <td class="px-6 py-4">
-                                Wearables
-                            </td>
-                            <td class="px-6 py-4">
-                                $999
-                            </td>
-                            <td class="px-6 py-4">
-                                1/6/22
-                            </td>
-                        </tr>
+                    ))} 
                     </tbody>
                 </table>
             </div>

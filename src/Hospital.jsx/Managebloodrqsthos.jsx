@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 export const Managebloodrqsthos = () => {
     const [data,setData]=useState([''])
 const [refresh,setrefresh]=useState(false)
+let bid=localStorage.getItem('id')
 let {id}=useParams()
 console.log(id);
 useEffect(()=>{
@@ -18,7 +19,7 @@ useEffect(()=>{
 
 let handleSubmit = async (status) => {
     setrefresh(!refresh)
-    let response = await axios.put(`http://localhost:5000/hospital/mnghosptlbldrqst/${id}`, {status:status})
+    let response = await axios.put(`http://localhost:5000/hospital/mnghosptlbldrqst/${id}`, {status:status,AcceptedId:bid})
     console.log(response);
     // setData('')
 }
@@ -72,7 +73,7 @@ let handleSubmit = async (status) => {
 </div>
 
 <div className='flex flex-wrap gap-20 justify-center my-48 text-white font-bold'>
-<button onClick={()=>{handleSubmit('Accepted',data._id)}} href="#" className='bg-red-800 w-28 p-4 rounded'>ACCEPT</button>
+<button onClick={()=>{handleSubmit('Accepted')}} href="#" className='bg-red-800 w-28 p-4 rounded'>ACCEPT</button>
 
 </div>
     </div>
