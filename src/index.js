@@ -65,7 +65,6 @@ import { Collegehomel } from './College/Collhome';
 import { Footer } from './Footer';
 import { Collgnav1 } from './College/Collnav1';
 import { Reqstblood } from './College/Reqstblood';
-import Viewrqst from './College/Vwhospitalrqst';
 import { Donorregister } from './Bdonor.jsx/Donorregister';
 import { Collgregister } from './College/Collgregister';
 import { Hosregister } from './Hospital.jsx/Hosregister';
@@ -74,6 +73,8 @@ import { Vwbloodrqst } from './Bdonor.jsx/Vwbloodrqst';
 import { Vwuserbloodrqst } from './Hospital.jsx/Vwuserbloodrqst';
 import { Editcollg } from './College/Editcollg';
 import { Vwcollgreq } from './College/Vwcollgreq';
+import { Vworgandonation } from './Admin/Vworgandonation';
+import { Viewrqsts} from './College/Vwhospitalrqst';
 
 
 
@@ -101,6 +102,7 @@ root.render(
           <Route path='viewblood/:id' element={<Vwblooddonor/>}/>
           <Route path='donations' element={<Donations/>}/>
           <Route path='hospitaldonation' element={<Hospitaldonation/>}/>
+          <Route path='hospitalorgandonation' element={<Vworgandonation/>}/>
           <Route path='collegedonation' element={<Collegedonation/>}/>
           <Route path='college' element={<College/>}/>
           <Route path='managecollege/:id' element={<Vwcollege/>}/>
@@ -161,7 +163,7 @@ root.render(
         <Route index element={<Collegehomel/>}/>
         <Route path='collegerqst' element={<Reqstblood/>}/>
         <Route path='viewcollgrqst' element={<Vwcollgreq/>}/>
-        <Route path='viewhospitalrqst' element={<Viewrqst/>}/>
+        <Route path='viewhospitalrqst' element={<Viewrqsts/>}/>
         <Route path='editprofile' element={<Editcollg/>}/>
 
 

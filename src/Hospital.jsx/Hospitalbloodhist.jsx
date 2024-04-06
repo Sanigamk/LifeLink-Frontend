@@ -9,7 +9,7 @@ export const Hospitalbloodhist = () => {
     const [data,setData]=useState([''])
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response = await axios.get(`http://localhost:5000/hospital/get/sendlist/${localStorage.getItem("id")}`)
+            let response = await axios.get(`http://localhost:5000/hospital/viewhossendbldrqsthist/${localStorage.getItem("id")}`)
             console.log(response.data,'data')
             setData(response.data)
         }
@@ -52,25 +52,25 @@ export const Hospitalbloodhist = () => {
                     {data.map((item)=>(
                         <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {item?.hospitalInfo?.name}
+                            {item.acc?.name}
                             </th>
                             <td class="px-6 py-4">
-                                {item.hospitalInfo?.place}
+                                {item.acc?.place}
                             </td>
                             <td class="px-6 py-4">
-                                {item.hospitalInfo?.district}
+                                {item.acc?.district}
                             </td>
                             <th scope="col" class="px-6 py-3">
-                                {item.bloodgroup}
+                                {item.req?.bloodgroup}
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                {item.bloodunit}
+                                {item.req?.bloodunit}
                             </th>
                             <td class="px-6 py-4">
-                                {item.date}
+                                {item.req?.date}
                             </td>
                             <td class="px-6 py-4">
-                                {item.status}
+                                {item.req?.status}
                             </td>
 
                         </tr>

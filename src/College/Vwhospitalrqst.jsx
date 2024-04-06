@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 
-const Viewrqst = () => {
+export const Viewrqsts = () => {
     const [drop, setDrop] = useState(false)
     let dropdown = () => {
         setDrop(!drop)
@@ -15,8 +15,11 @@ const Viewrqst = () => {
     }
 
 const [data,setdata] = useState([''])
-    let {id}=useParams()
+const [refresh,setrefresh]=useState(false)
+
+let id=localStorage.getItem('id')
     console.log(id);
+    
     useEffect(()=>{
         let fetchdata = async ()=>{
             let response=await axios.get(`http://localhost:5000/college/vwhosreq/${id}`)
@@ -24,7 +27,15 @@ const [data,setdata] = useState([''])
             setdata(response.data)
         }
         fetchdata()
-    },[])
+    },[refresh])
+
+    let handleSubmit = async (status,lid) => {
+        setrefresh(!refresh)
+        let response = await axios.put(`http://localhost:5000/college/mnghosbldrqst/${lid}`, {status:status})
+        console.log(response);
+        // setData('')
+    }
+    
 
     return (
         <div className='images2 w-[100%]'>
@@ -119,11 +130,11 @@ const [data,setdata] = useState([''])
 
 
                                 <td class="px-6 py-4">
-                                    {item.status}
+                                    {item.req?.status}
                                 </td>
                                 <td class="px-6 py-4 flex flex-wrap flex-col gap-3">
-                                    <button class="bg-slate-600 font-bold text-sm text-white hover:underline hover:bg-slate-500 p-1">Accept</button>
-                                    <button class="bg-slate-600 font-bold text-sm text-white hover:underline hover:bg-slate-500 p-1" >Reject</button>
+                                    <button onClick={()=>{handleSubmit('Accepted',item.req._id)}} href="#"class="bg-slate-600 font-bold text-sm text-white hover:underline hover:bg-slate-500 p-1">Accept</button>
+                                    <button onClick={()=>{handleSubmit('Rejected',item.req._id)}} href="#"class="bg-slate-600 font-bold text-sm text-white hover:underline hover:bg-slate-500 p-1" >Reject</button>
                                 </td>
 
                             </tr>
@@ -139,4 +150,3 @@ const [data,setdata] = useState([''])
         </div>
     )
 }
-export default Viewrqst

@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import {Link, useParams} from 'react-router-dom'
 
 export const Searchorgandnr = () => {
+
+    let bid=localStorage.getItem('id')
     const [data, setData] = useState([''])
     
     const [refresh,setrefresh]=useState(false)
@@ -21,7 +23,7 @@ export const Searchorgandnr = () => {
     let handleSubmit = async (did,statuss) => {
 
         setrefresh(!refresh)
-        let response = await axios.put(`http://localhost:5000/hospital/assignorgan/${id}`, {status:statuss ,donorId:did})
+        let response = await axios.put(`http://localhost:5000/hospital/assignorgan/${id}`, {status:statuss ,donorId:did, AcceptedId:bid})
         console.log(response);
        
     }

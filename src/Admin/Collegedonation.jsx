@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import  axios  from 'axios'
 
 export const Collegedonation = () => {
+
+    const [data,setData]=useState([''])
+    let id=localStorage.getItem('id')
+    console.log(id)
+
+    useEffect(()=>{
+        let fetchdata = async ()=>{
+            let response = await axios.get(`http://localhost:5000/user/adminvwcllgrequestdonation/${id}`)
+            console.log(response.data)
+            setData(response.data)
+        }
+        fetchdata()
+
+    },[])
+
   return (
     <div className='images2 h-[41rem]'>
         <div className='line flex flex-wrap translate-x-0 gap-10 justify-around pt-10'>
@@ -30,7 +46,10 @@ export const Collegedonation = () => {
                     Received hospital
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Blood group
+                    Camp name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    discription
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Date
@@ -39,78 +58,27 @@ export const Collegedonation = () => {
             </tr>
         </thead>
         <tbody>
+        {data.map((item)=>(
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Awh college
+                    {item.cllgdonation?.name}
                 </th>
                 <td class="px-6 py-4">
-                    baby hospital
+                    {item.hoss?.name}
                 </td>
                 <td class="px-6 py-4">
-                    B +ve
+                    {item.req?.campname}
                 </td>
                 <td class="px-6 py-4">
-                    6/03/22
+                    {item.req?.discription}
+                </td>
+                <td class="px-6 py-4">
+                    {item.req?.date}
                 </td>
                 
             </tr>
-            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Baby memorial hospital
-                </th>
-                <td class="px-6 py-4">
-                   New stand hospital
-                </td>
-                <td class="px-6 py-4">
-                    blood
-                </td>
-                
-                <td class="px-6 py-4">
-                    31/09/24
-                </td>
-            </tr>
-            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Medical college
-                </th>
-                <td class="px-6 py-4">
-                    Black
-                </td>
-                <td class="px-6 py-4">
-                    Accessories
-                </td>
-                <td class="px-6 py-4">
-                    6/9/20
-                </td>
-            </tr>
-            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Google Pixel Phone
-                </th>
-                <td class="px-6 py-4">
-                    Gray
-                </td>
-                <td class="px-6 py-4">
-                    Phone
-                </td>
-                <td class="px-6 py-4">
-                    22/3/10
-                </td>
-            </tr>
-            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Apple Watch 5
-                </th>
-                <td class="px-6 py-4">
-                    Red
-                </td>
-                <td class="px-6 py-4">
-                    Wearables
-                </td>
-                <td class="px-6 py-4">
-                    1/6/22
-                </td>
-            </tr>
+           
+        ))}
         </tbody>
     </table>
 </div>

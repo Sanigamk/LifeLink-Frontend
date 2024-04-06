@@ -1,7 +1,33 @@
-import React from 'react'
+import { Axios } from 'axios'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import  axios  from 'axios'
 
 export const Hospitaldonation = () => {
+    const [drop, setdrop] = useState(false)
+    const [myorganRequest, setorganRequest] = useState(false)
+    const [bloodRequest, setbloodRequest] = useState(false)
+
+    const dropdown = () => {
+        setdrop(!drop)
+        setorganRequest(false)
+        setbloodRequest(false)
+    }
+    const [data, setData] = useState([''])
+    let id = localStorage.getItem('id')
+    console.log(id)
+
+    useEffect(() => {
+        let fetchdata = async () => {
+            let response = await axios.get(`http://localhost:5000/user/adminvwblooddonation/${id}`)
+            console.log(response.data)
+            setData(response.data)
+        }
+        fetchdata()
+
+    }, [])
+
+   
   return (
     <div className='images2 h-[41rem]'>
         <div className='line flex flex-wrap translate-x-0 gap-10 justify-around pt-10'>
@@ -10,7 +36,22 @@ export const Hospitaldonation = () => {
             Donor
         </Link>
             </button>
-        <button className='bg-slate-400 rounded-lg w-24 font-bold'>Hospital</button>
+        <button onClick={dropdown} className='bg-slate-400 rounded-lg w-24 font-bold'><span> hospital </span></button>
+        {
+                        drop &&
+                        <div>
+                        <div>
+                        {/* <Link to={'/admin/hospitaldonation'}> */}
+                        <span>Blood</span>
+                        {/* </Link> */}
+                        </div>
+                        <div>
+                        <Link to={'/admin/hospitalorgandonation'}>
+                        <span>Organ</span>
+                        </Link>
+                        </div>
+                        </div>
+        }
         <button className='bg-white rounded-lg w-24 font-bold'>
         <Link to={'/admin/collegedonation'}>
             College
@@ -28,7 +69,10 @@ export const Hospitaldonation = () => {
                     Received hospital
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Donate
+                    Bloodgroup
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Bloodunit
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Date
@@ -37,78 +81,26 @@ export const Hospitaldonation = () => {
             </tr>
         </thead>
         <tbody>
+        {data.map((item)=>(
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Manu hospital
+                    {item.hosptls?.name}
                 </th>
                 <td class="px-6 py-4">
-                    baby hospital
+                    {item.Accptdhos?.name}
                 </td>
                 <td class="px-6 py-4">
-                    kidney
+                    {item.req?.bloodgroup}
                 </td>
                 <td class="px-6 py-4">
-                    6/03/22
+                    {item.req?.bloodunit}
+                </td>
+                <td class="px-6 py-4">
+                    {item.req?.date}
                 </td>
                 
             </tr>
-            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Baby memorial hospital
-                </th>
-                <td class="px-6 py-4">
-                   New stand hospital
-                </td>
-                <td class="px-6 py-4">
-                    blood
-                </td>
-                
-                <td class="px-6 py-4">
-                    31/09/24
-                </td>
-            </tr>
-            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Medical college
-                </th>
-                <td class="px-6 py-4">
-                    Black
-                </td>
-                <td class="px-6 py-4">
-                    Accessories
-                </td>
-                <td class="px-6 py-4">
-                    6/9/20
-                </td>
-            </tr>
-            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Google Pixel Phone
-                </th>
-                <td class="px-6 py-4">
-                    Gray
-                </td>
-                <td class="px-6 py-4">
-                    Phone
-                </td>
-                <td class="px-6 py-4">
-                    22/3/10
-                </td>
-            </tr>
-            <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Apple Watch 5
-                </th>
-                <td class="px-6 py-4">
-                    Red
-                </td>
-                <td class="px-6 py-4">
-                    Wearables
-                </td>
-                <td class="px-6 py-4">
-                    1/6/22
-                </td>
-            </tr>
+        ))}
         </tbody>
     </table>
 </div>
