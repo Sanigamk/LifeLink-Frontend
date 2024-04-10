@@ -75,6 +75,14 @@ import { Editcollg } from './College/Editcollg';
 import { Vwcollgreq } from './College/Vwcollgreq';
 import { Vworgandonation } from './Admin/Vworgandonation';
 import { Viewrqsts} from './College/Vwhospitalrqst';
+import OrganDonorForm from './Organdonor/Organdonorregister';
+import { Organdonorhome } from './Organdonor/Organdonorhome';
+import { Organnav } from './Organdonor/Organnav';
+import { Vwhosptlrqstorgan } from './Organdonor/Vwhosptlrqstorgan';
+import { Vwpagehosrqstorgn } from './Organdonor/Vwpagehosrqstorgn';
+import { Vwupdateprofile } from './Organdonor/Vwupdateprofile';
+import { Loginorgandonor } from './Loginorgandonor';
+import { Loginnominie } from './Loginnominie';
 
 
 
@@ -89,7 +97,10 @@ root.render(
           <Route path='/collgregistration' element={<Collgregister/>}/>
           <Route path='/hospitalregistration' element={<Hosregister/>}/>
           <Route path='/userregistration' element={<Userregister/>}/>
+          <Route path='/organdonorregistration' element={<OrganDonorForm/>}/>
           <Route path='/login' element={<Loginn/>}/>
+          <Route path='/loginorgandonor' element={<Loginorgandonor/>}/>
+          <Route path='/loginnominee' element={<Loginnominie/>}/>
         </Route>
        
          <Route path='/admin' element={<Adnav/>}>
@@ -169,6 +180,13 @@ root.render(
 
 
         </Route>
+        <Route path='/organdonor' element={<Organnav/>}>
+          <Route index element={<Organdonorhome/>}/>
+          <Route path='viewhospitalrequest' element={<Vwhosptlrqstorgan/>}/>
+          <Route path='viewpagehospitalrequestorgan' element={<Vwpagehosrqstorgn/>}/>
+          <Route path='updateorganprofile' element={<Vwupdateprofile/>}/>
+          </Route>
+
 
      </Routes>
     </BrowserRouter>
