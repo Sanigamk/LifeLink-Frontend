@@ -40,6 +40,13 @@ let handleSubmit=async (event)=>{
         alert('invalid')
       }
     }
+    else if(response.data.userType=='organdonor'){
+      if(response.data.status=='Accepted'){
+      navigate('/organdonor')}
+      else{
+        alert('invalid')
+      }
+    }
     else if(response.data.userType=='hospital'){
       if(response.data.status=='Accepted'){
       navigate('/hospital')}

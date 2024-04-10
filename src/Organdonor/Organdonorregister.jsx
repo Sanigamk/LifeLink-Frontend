@@ -47,18 +47,39 @@ const OrganDonorForm = () => {
       [organ]: !prevOrgans[organ],
     }));
   };
-
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    let response=await axios.post('http://localhost:5000/organdonor/registers',data)
-    console.log(response);
-    // Do something with the selected organs
+  
+    // Log organs before and after death
     console.log('Organs Before Death:', organsBeforeDeath);
     console.log('Organs After Death:', organsAfterDeath);
-    // You can send the data to the server or perform any other action here
-  };
- 
+  
+    // Prepare form data
+    const formData = new FormData();
+    for (const key in data) {
+      if (data[key]) {
+        formData.append(key, data[key]);
+      }
+    }
+    // Append organs before death
+    Object.keys(organsBeforeDeath).forEach((organ) => {
+      formData.append(`organsBeforeDeath[${organ}]`, organsBeforeDeath[organ]);
+    });
+  
+    // Append organs after death
+    Object.keys(organsAfterDeath).forEach((organ) => {
+      formData.append(`organsAfterDeath[${organ}]`, organsAfterDeath[organ]);
+    });
+  
+    // Set user type
+    formData.append('userType', 'organ');
 
+      // Send form data to the server
+      let response = await axios.post('http://localhost:5000/organdonor/registers', formData);
+      console.log(response);
+  
+  };
+  
   let handlefile = (event) => {
     console.log(event.target.files);
     setData({ ...data, [event.target.name]: event.target.files[0] })
@@ -69,23 +90,24 @@ const OrganDonorForm = () => {
         let response = await axios.get(`http://localhost:5000/blooddonor/vwhosdetail`)
         console.log(response.data)
         setDatas(response.data)
+
     }
     fetchdata()
 
   
   },[])
-   
+  
 
   const [catid,setcatid]=useState()
   const [hosdetail,sethosdetail]=useState([''])
   let handleDistrict=async(event)=>
   {
-    if(event.target.value){
+    console.log(event.target.value,'asdsdas');
       setcatid(event.target.value)
-      let response=await axios.get(`http://localhost:5000/organdonor/hosdistrict/${event.target.value}`)
+      let response=datas.filter(hos=>hos.district==event.target.value)
+      // let response=await axios.get(`http://localhost:5000/organdonor/hosdistrict/${event.target.value}`)
       console.log(response);
-      sethosdetail(response.data)
-    }
+      sethosdetail(response)
     }
 
 
@@ -100,11 +122,14 @@ const OrganDonorForm = () => {
       
   // }
 
+  console.log(hosdetail,'sasasas');
 
 
   return (
     <form onSubmit={handleSubmit} className="images2 p-4 mx-auto  flex w-[100%] justify-normal gap-80">
       <div className='w-[30%] flex justify-center gap-14'>
+        <div>
+
         <div className=''>
 
           <div class="mb-5">
@@ -131,6 +156,8 @@ const OrganDonorForm = () => {
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date of birth :</label>
             <input onChange={handleChange} name="dateofbirth" type="date" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
           </div>
+        </div>
+
           <div class="mb-5">
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Adhar Number :</label>
             <input onChange={handleChange} name="adhaarnumber" type="number" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
@@ -143,9 +170,12 @@ const OrganDonorForm = () => {
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Healthcertificate :</label>
             <input onChange={handlefile} name="healthcertificate" type="file" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
           </div>
+          <div class="mb-5">
+            <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Conformationcertificate :</label>
+            <input onChange={handlefile} name="conformationcertificate" type="file" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
+          </div>
           
           
-        </div>
         <div className='w-[70%]'>
         <div class="mb-5">
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Bloodgroup :</label>
@@ -179,25 +209,35 @@ const OrganDonorForm = () => {
           </div>
           <div class="mb-5">
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Witness :</label>
-            <input onChange={handleChange} name="witness" type="text" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
+            <input onChange={handleChange} name="nominie" type="text" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
           </div>
           <div class="mb-5">
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Witness contact :</label>
-            <input onChange={handleChange} name="witnesscontact" type="number" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
+            <input onChange={handleChange} name="nominiecontact" type="number" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
           </div>
           <div class="mb-5">
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Witness relation :</label>
-            <input onChange={handleChange} name="witnessrelation" type="text" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
+            <input onChange={handleChange} name="nominierelation" type="text" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
+          </div>
+          <div class="mb-5">
+            <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password :</label>
+            <input onChange={handleChange} name="password" type="password" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
+          </div>
+          <div class="mb-5">
+            <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Conformpassword :</label>
+            <input onChange={handleChange} name="conformpassword" type="password" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
           </div>
         </div>
       </div>
       <div>
-      <button type="submit" class="text-white m-auto m-a bg-red-800 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={dropdown}>Donate Before death</button>
+      <button type="button" class="text-white m-auto m-a bg-red-800 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={dropdown}>Donate Before death</button>
   
-      <button type="submit" class="text-white m-auto m-a bg-red-800 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={dropdown1}>Donate After death</button>
+      <button type="button" class="text-white m-auto m-a bg-red-800 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={dropdown1}>Donate After death</button>
 
       </div>
-      
+      </div>
+      <div>
+
 
       {/* <h2 className="text-xl font-bold mb-4">Select Organs to Donate</h2> */}
       {drop &&
@@ -214,9 +254,7 @@ const OrganDonorForm = () => {
             {organ}
           </label>
         ))}
-        <button type="submit" className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
-        Submit
-      </button>
+       
       </div>
 }
 
@@ -241,12 +279,13 @@ const OrganDonorForm = () => {
       </button>
       </div>
 }
-      <div>
-
       
-      </div>
 
+      <button type="submit" className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+        Submit
+      </button>
       
+</div>
     </form>
   );
 };

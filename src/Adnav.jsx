@@ -47,6 +47,11 @@ export const Adnav = () => {
           COLLEGE
           </Link>
           </div>
+          <div className='flex gap-5 items-center hover:bg-red-800 p-2 hover:text-white'>
+          <Link to={'/admin/vieworgandonor'}>
+          ORGAN DONORS
+          </Link>
+          </div>
     </div>
 
     {/* <Footer/> */}

@@ -83,6 +83,8 @@ import { Vwpagehosrqstorgn } from './Organdonor/Vwpagehosrqstorgn';
 import { Vwupdateprofile } from './Organdonor/Vwupdateprofile';
 import { Loginorgandonor } from './Loginorgandonor';
 import { Loginnominie } from './Loginnominie';
+import { Vieworgandonor } from './Admin/Vieworgandonor';
+import { Manageorgandonr } from './Admin/Manageorgandonr';
 
 
 
@@ -117,6 +119,9 @@ root.render(
           <Route path='collegedonation' element={<Collegedonation/>}/>
           <Route path='college' element={<College/>}/>
           <Route path='managecollege/:id' element={<Vwcollege/>}/>
+          <Route path='vieworgandonor' element={<Vieworgandonor/>}/>
+          <Route path='Manageorgandonor/:id' element={<Manageorgandonr/>}/>
+          
         </Route>
 
         <Route path='/user' element={<UserNav/>}>
