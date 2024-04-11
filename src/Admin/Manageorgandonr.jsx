@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 
 export const Manageorgandonr = () => {
-    const [data,setData]=useState('')
+    const [data,setData]=useState([''])
     const [refresh, setrefresh] = useState(false)
 
     let {id}=useParams()
@@ -35,10 +35,10 @@ export const Manageorgandonr = () => {
             <div class="bg-transparent w-[50%] m-auto overflow-hidden shadow rounded-lg border mt-10">
                 <div class="px-4 py-5 sm:px-6">
                     <h3 class="text-lg leading-6 font-medium text-gray-900">
-                        {data.req?.name}
+                        {data.managorgan?.name}
                     </h3>
                     <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                    {data.req?.address}
+                    {data.managorgan?.address}
                     </p>
                 </div>
                 <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
@@ -48,7 +48,7 @@ export const Manageorgandonr = () => {
                                 Age
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.req?.age}
+                                {data.managorgan?.age}
                             </dd>
                         </div>
 
@@ -57,7 +57,7 @@ export const Manageorgandonr = () => {
                                 Email
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.req?.email}
+                            {data.managorgan?.email}
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -65,7 +65,7 @@ export const Manageorgandonr = () => {
                                 Adhaarnumber
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.req?.adhaarnumber}
+                                {data.managorgan?.adhaarnumber}
                             </dd>
                         </div>
                         
@@ -74,7 +74,7 @@ export const Manageorgandonr = () => {
                                 Contact
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.req?.contact}
+                                {data.managorgan?.contact}
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -82,7 +82,7 @@ export const Manageorgandonr = () => {
                                 Bloodgroup
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.req?.bloodgroup}
+                                {data.managorgan?.bloodgroup}
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -90,7 +90,7 @@ export const Manageorgandonr = () => {
                                 Date of birth
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.req?.dateofbirth}
+                            {data.managorgan?.dateofbirth}
 
                             </dd>
                         </div>
@@ -99,7 +99,7 @@ export const Manageorgandonr = () => {
                                 Nominie
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.req?.nominie}
+                            {data.managorgan?.nominie}
 
                             </dd>
                         </div>
@@ -108,7 +108,7 @@ export const Manageorgandonr = () => {
                                 Nominie Relation
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.req?.nominierelation}
+                            {data.managorgan?.nominierelation}
 
                             </dd>
                         </div>
@@ -117,7 +117,7 @@ export const Manageorgandonr = () => {
                                 Nominie Contact
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.req?.nominiecontact}
+                            {data.managorgan?.nominiecontact}
 
                             </dd>
                         </div>
@@ -126,7 +126,7 @@ export const Manageorgandonr = () => {
                                 Height
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.req?.height}
+                            {data.managorgan?.height}
 
                             </dd>
                         </div>
@@ -135,7 +135,7 @@ export const Manageorgandonr = () => {
                                 Weight
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.req?.weight}
+                            {data.managorgan?.weight}
 
                             </dd>
                         </div>
@@ -144,7 +144,14 @@ export const Manageorgandonr = () => {
                                 organ for donation before death
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                weight
+                           {data.managorgan?.organsBeforeDeath.liver && <h2>liver</h2>}
+                           {data.managorgan?.organsBeforeDeath.heart && <h2>heart</h2>}
+                           {data.managorgan?.organsBeforeDeath.kidney && <h2>kidney</h2>}
+                           {data.managorgan?.organsBeforeDeath.lung && <h2>lung</h2>}
+                           {data.managorgan?.organsBeforeDeath.pancreas && <h2>pancreas</h2>}
+                           
+                            <span></span>
+                           
 
                             </dd>
                         </div>
@@ -153,7 +160,15 @@ export const Manageorgandonr = () => {
                                 organ for donation After death
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                weight
+                                {data.managorgan?.organsAfterDeath.heart && <h2>heart</h2>}
+                                {data.managorgan?.organsAfterDeath.liver && <h2>liver</h2>}
+                                {data.managorgan?.organsAfterDeath.kidney && <h2>kidney</h2>}
+                                {data.managorgan?.organsAfterDeath.lung && <h2>lung</h2>}
+                                {data.managorgan?.organsAfterDeath.pancreas && <h2>pancreas</h2>}
+                                {data.managorgan?.organsAfterDeath.tissue && <h2>tissue</h2>}
+                                {data.managorgan?.organsAfterDeath.bone && <h2>bone</h2>}
+                                {data.managorgan?.organsAfterDeath.skin && <h2>skin</h2>}
+
 
                             </dd>
                         </div>
@@ -164,7 +179,7 @@ export const Manageorgandonr = () => {
                                 Signature
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                <img src={`http://localhost:5000/uploads/${item.im}`} alt="" />
+                                <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.managorgan?.signature}`} alt="" />
 
                             </dd>
                         </div>
@@ -173,7 +188,7 @@ export const Manageorgandonr = () => {
                                 Conformation certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                view
+                                <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.managorgan?.conformationcertificate}`} alt="" />
 
                             </dd>
                         </div>
@@ -182,7 +197,7 @@ export const Manageorgandonr = () => {
                                 Health Certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                view
+                                <img className= 'h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.managorgan?.healthcertificate}`} alt="" />
 
                             </dd>
                         </div>
@@ -191,7 +206,7 @@ export const Manageorgandonr = () => {
                                 Hospital Details
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                mims calicut
+                                {data.hospital?.name} {data.hospital?.district}
 
                             </dd>
                         </div>
@@ -199,8 +214,8 @@ export const Manageorgandonr = () => {
                 </div>
             </div>
             <div className='flex flex-wrap gap-20 justify-center my-48 text-white font-bold'>
-                <button className='bg-red-800 w-20 rounded'>ACCEPT</button>
-                <button  className='bg-red-800 w-20 rounded'>REJECT</button>
+                <button onClick={() => { handleSubmit('Accepted', data.managorgan?._id) }} href="#" className='bg-red-800 w-20 rounded'>ACCEPT</button>
+                <button onClick={() => { handleSubmit('Rejected', data.managorgan?._id) }} href="#"  className='bg-red-800 w-20 rounded'>REJECT</button>
             </div>
         </div>
     )

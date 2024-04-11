@@ -16,11 +16,11 @@ export const Addorgandnr = () => {
   return (
     <div className='images2 w-[100%] h-[42rem]'>
         <div className='line flex flex-wrap translate-x-0 gap-10 justify-around pt-10'>
-        <button className='bg-white rounded-lg w-24 font-bold hover:bg-slate-300'>
-            <Link to={'/hospital/addorgandonor'}>
-             ADD
-             </Link>
-            </button>
+        <div className='rounded-lg w-40 font-bold hover:bg-slate-300'>
+            {/* <Link to={'/hospital/addorgandonor'}> */}
+             ORGAN DONORS
+             {/* </Link> */}
+            </div>
         
       </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-14 ">
@@ -34,7 +34,7 @@ export const Addorgandnr = () => {
                     Age
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Place
+                    Address
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Email
@@ -43,7 +43,7 @@ export const Addorgandnr = () => {
                     Contact
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    status
+                   Bloodgroup
                 </th>
                 
                 <th scope="col" class="px-6 py-3">
@@ -61,7 +61,7 @@ export const Addorgandnr = () => {
                     {item.age}
                 </td>
                 <td class="px-6 py-4">
-                    {item.place}
+                    {item.address}
                 </td>
                 <td class="px-6 py-4">
                     {item.email}
@@ -70,7 +70,7 @@ export const Addorgandnr = () => {
                     {item.contact}
                 </td>
                 <td class="px-6 py-4">
-                    {item.status}
+                    {item.bloodgroup}
                 </td>
                 <td class="px-6 py-4">
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">

@@ -18,6 +18,7 @@ let handleSubmit=async (event)=>{
    if(response.data){
     localStorage.setItem('id',response.data._id)
 
+
     if(response.data.userType=='user'){
       if(response.data.status=='Accepted'){
       navigate('/user')}
@@ -40,13 +41,9 @@ let handleSubmit=async (event)=>{
         alert('invalid')
       }
     }
-    else if(response.data.userType=='organdonor'){
-      if(response.data.status=='Accepted'){
-      navigate('/organdonor')}
-      else{
-        alert('invalid')
-      }
-    }
+    
+
+    
     else if(response.data.userType=='hospital'){
       if(response.data.status=='Accepted'){
       navigate('/hospital')}
@@ -54,6 +51,9 @@ let handleSubmit=async (event)=>{
         alert('invalid')
       }
     }
+
+
+
     else if (response.data.userType=='admin'){
       navigate('/admin')
     }

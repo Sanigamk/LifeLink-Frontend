@@ -1,7 +1,25 @@
-import React from 'react'
+import axios  from 'axios'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export const Vwhosptlrqstorgan = () => {
+
+
+
+    const [data,setdata] = useState([''])
+const [refresh,setrefresh]=useState(false)
+
+let id=localStorage.getItem('id')
+    console.log(id);
+
+    useEffect(()=>{
+        let fetchdata = async ()=>{
+            let response=await axios.get(`http://localhost:5000/organdonor/vwhosrequest/${id}`)
+            console.log(response.data)
+            setdata(response.data)
+        }
+        fetchdata()
+    },[refresh])
   return (
     <div className='images2 h-[41rem]'>
         <div className='text-lg font-bold text-red-800 pt-10 text-center'>MANAGE HOSPITAL REQUEST</div>
@@ -25,37 +43,50 @@ export const Vwhosptlrqstorgan = () => {
                                 Contact
                             </th>
                             <th scope="col" class="px-6 py-3">
+                               Proof
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                               Status
+                            </th>
+                            <th scope="col" class="px-6 py-3">
 
                             </th>
                         </tr>
                     </thead>
                     <tbody>
+                    {data.map((item)=>(
                         
 
                             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    name                                </th>
+                                    {item.hospital?.name}                               </th>
                                 <td class="px-6 py-4">
-                                    .place
+                                    {item.hospital?.place}
                                 </td>
                                 <td class="px-6 py-4">
-                                    kannur
+                                    {item.hospital?.district}
                                 </td>
                                 <td class="px-6 py-4">
-                                    fgfg@gmail.com
+                                    {item.hospital?.email}
                                 </td>
                                 <td class="px-6 py-4">
-                                    6554544333
+                                    {item.hospital?.contact}
+                                </td>
+                                <td class="px-6 py-4">
+                                    view
+                                </td>
+                                <td class="px-6 py-4">
+                                    {item.request?.status}
                                 </td>
                                 <td class="px-6 py-4">
                                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                        <Link to={'/organdonor/viewpagehospitalrequestorgan/'}>
+                                        <Link to={`/organdonor/viewpagehospitalrequestorgan/${item.request?._id}`}>
                                             View
                                         </Link>
                                     </a>
                                 </td>
                             </tr>
-
+                    ))}
                      </tbody>
                 </table>
             </div>

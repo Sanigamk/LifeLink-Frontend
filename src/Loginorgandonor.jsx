@@ -1,6 +1,9 @@
+import axios from 'axios'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export const Loginorgandonor = () => {
+  const navigate=useNavigate()
     let [data,setData]=useState('')
     let handleChange=(event)=>{
         setData({...data,[event.target.name]:event.target.value})
@@ -9,6 +12,19 @@ export const Loginorgandonor = () => {
     let handleSubmit=async (event)=>{
         event.preventDefault()
         console.log(data);
+        let response=await axios.post('http://localhost:5000/organdonor/login',data)
+        console.log(response);
+        if(response.data){
+         localStorage.setItem('id',response.data._id)
+
+
+         
+          if(response.data.status=='Accepted'){
+          navigate('/organdonor')}
+          else{
+            alert('invalid')
+          }
+      }
     }
 
   return (

@@ -85,6 +85,7 @@ import { Loginorgandonor } from './Loginorgandonor';
 import { Loginnominie } from './Loginnominie';
 import { Vieworgandonor } from './Admin/Vieworgandonor';
 import { Manageorgandonr } from './Admin/Manageorgandonr';
+import { Sendrequestorgandonors } from './Hospital.jsx/Sendrequestorgandonors';
 
 
 
@@ -140,17 +141,25 @@ root.render(
           <Route path='editpro' element={<Editpro/>}/>
         </Route>
 
+
+
+
+
         <Route path='/hospital' element={<Hosnav/>}>
         <Route index element={<Hospitalhome/>}/>
         <Route path='blddonorreq' element={<Blddonorreq/>}/>
         <Route path='managedonorrqst/:id' element={<Mngdonorreq/>}/>
+
         <Route path='organdonor' element={<Addorgandnr/>}/>
         <Route path='vworgandonor/:id' element={<Vworgandonor/>}/>
         <Route path='addorgandonor' element={<Addorgandonor/>}/>
+        <Route path='sendrequestorgandonors/:id' element={<Sendrequestorgandonors/>}/>
+
         <Route path='vieworganrqst' element={<Vwhosreqst/>}/>
         <Route path='vieworganpage/:id' element={<Assignrqst/>}/>
         <Route path='Searchorgan/:id' element={<Searchorgandnr/>}/>
         <Route path='assignorgan/:id' element={<Assignorgan/>}/>
+
         <Route path='bloodrequesthos' element={<Bloodrqsthos/>}/>
         <Route path='viewbloodrqsthos/:id' element={<Managebloodrqsthos/>}/>
         <Route path='myorganrqst' element={<Myorgan/>}/>
@@ -173,6 +182,10 @@ root.render(
 
         </Route>
 
+
+
+
+
         <Route path='/college1' element={<Collgnav1/>}/>
 
         <Route path='/college' element={<Collgnav/>}>
@@ -188,7 +201,7 @@ root.render(
         <Route path='/organdonor' element={<Organnav/>}>
           <Route index element={<Organdonorhome/>}/>
           <Route path='viewhospitalrequest' element={<Vwhosptlrqstorgan/>}/>
-          <Route path='viewpagehospitalrequestorgan' element={<Vwpagehosrqstorgn/>}/>
+          <Route path='viewpagehospitalrequestorgan/:id' element={<Vwpagehosrqstorgn/>}/>
           <Route path='updateorganprofile' element={<Vwupdateprofile/>}/>
           </Route>
 
