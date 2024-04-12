@@ -28,10 +28,19 @@ export const Vwhosreqst = () => {
                                 Place
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                District
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 Email
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Contact
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Postoffice
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Pin
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Status
@@ -52,10 +61,19 @@ export const Vwhosreqst = () => {
                                     {item.hosptldet?.place}
                                 </td>
                                 <td class="px-6 py-4">
+                                    {item.hosptldet?.district}
+                                </td>
+                                <td class="px-6 py-4">
                                     {item.hosptldet?.email}
                                 </td>
                                 <td class="px-6 py-4">
                                     {item.hosptldet?.contact}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {item.hosptldet?.postoffice}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {item.hosptldet?.pin}
                                 </td>
                                 <td class="px-6 py-4">
                                     {item.req?.status}

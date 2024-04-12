@@ -152,7 +152,7 @@ root.render(
 
         <Route path='organdonor' element={<Addorgandnr/>}/>
         <Route path='vworgandonor/:id' element={<Vworgandonor/>}/>
-        <Route path='addorgandonor' element={<Addorgandonor/>}/>
+        {/* <Route path='addorgandonor' element={<Addorgandonor/>}/> */}
         <Route path='sendrequestorgandonors/:id' element={<Sendrequestorgandonors/>}/>
 
         <Route path='vieworganrqst' element={<Vwhosreqst/>}/>

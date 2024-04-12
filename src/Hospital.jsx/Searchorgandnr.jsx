@@ -13,17 +13,17 @@ export const Searchorgandnr = () => {
 
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:5000/hospital/srchorgandonor/${localStorage.getItem("id")}`)
+            let response = await axios.get(`http://localhost:5000/hospital/vworgandonors/${localStorage.getItem("id")}`)
             console.log(response)
             setData(response.data)
         }
         fetchdata()
     }, [refresh])
 
-    let handleSubmit = async (did,statuss) => {
+    let handleSubmit = async (did) => {
 
         setrefresh(!refresh)
-        let response = await axios.put(`http://localhost:5000/hospital/assignorgan/${id}`, {status:statuss ,donorId:did, AcceptedId:bid})
+        let response = await axios.post('http://localhost:5000/hospital/sendrequestorgandonor', {organdonorId:did,hospitalId:bid,requestId:id})
         console.log(response);
        
     }
@@ -62,7 +62,7 @@ export const Searchorgandnr = () => {
                     Age
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Place
+                    Address
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Email
@@ -92,7 +92,7 @@ export const Searchorgandnr = () => {
                     {item.age}
                 </td>
                 <td class="px-6 py-4">
-                    {item.place} 
+                    {item.address} 
                 </td>
                 <td class="px-6 py-4">
                      {item.email}
@@ -104,11 +104,11 @@ export const Searchorgandnr = () => {
                     {item.status}
                 </td>
                 <td class="px-6 py-4">
-                <button onClick={()=>handleSubmit(item._id,'ASSIGNED')} className='bg-red-800 w-20 rounded'>ASSIGN</button>
+                <button onClick={()=>handleSubmit(item._id)} className='bg-red-800 w-20 rounded'>ASSIGN</button>
                 </td>
                 <td class="px-6 py-4">
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                        <Link to={`/hospital/assignorgan/${item._id}`}>
+                        <Link to={`/hospital/vwpageorgandnr/${item._id}`}>
                         View
                         </Link>
                         </a>
