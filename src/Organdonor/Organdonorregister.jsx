@@ -47,7 +47,7 @@ const OrganDonorForm = () => {
       [organ]: !prevOrgans[organ],
     }));
   };
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {  
     e.preventDefault();
   
     // Log organs before and after death
@@ -56,6 +56,8 @@ const OrganDonorForm = () => {
   
     // Prepare form data
     const formData = new FormData();
+          
+          
     for (const key in data) {
       if (data[key]) {
         formData.append(key, data[key]);
@@ -72,6 +74,27 @@ const OrganDonorForm = () => {
     });
   
     // Set user type
+          // formData.append('name', data.name);
+          // formData.append('age', data.age);
+          // formData.append('address', data.address);
+          // formData.append('email', data.email);
+          // formData.append('adhaarnumber', data.adhaarnumber);
+          // formData.append('bloodgroup', data.bloodgroup);
+          // formData.append('weight', data.weight);
+          // formData.append('height', data.height);
+          // formData.append('contact', data.contact);
+          // formData.append('signature',data.signature);
+          // formData.append('reasonofdeath',data.reasonofdeath);
+          // formData.append('dateofdeath',data.dateofdeath);
+          // formData.append('dateofbirth',data.dateofbirth);
+          // formData.append('hospitalId',data.hospitalId);
+          // formData.append('nominie',data.nominie);
+          // formData.append('nominiecontact',data.nominiecontct);
+          // formData.append('nominierelation',data.nominierelation);
+          // formData.append('nominiepassword',data.nominiepassword);
+          // formData.append('password', data.password);
+          // formData.append('conformationcertificate', data.conformationcertificate);
+          // formData.append('heathcertificate', data.heathcertificate);
     formData.append('userType', 'organ');
 
       // Send form data to the server
@@ -114,6 +137,7 @@ const OrganDonorForm = () => {
     let handleChange=(event)=>{
       setData({...data,[event.target.name]:event.target.value})
   }
+
   // let handleSubmit=async (event)=>{
   //     event.preventDefault()
   //     console.log(data);
@@ -121,7 +145,6 @@ const OrganDonorForm = () => {
   //    console.log(response);
       
   // }
-
   console.log(hosdetail,'sasasas');
 
 
@@ -203,21 +226,25 @@ const OrganDonorForm = () => {
             <select onChange={handleChange} name="hospitalId" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
         <option disabled value="">select</option>
         {hosdetail.map((item)=>(
-        <option value={item?._id}>{item.name}</option>
+        <option value={item?._id}>{item?.name}</option>
         ))}
     </select>
           </div>
           <div class="mb-5">
-            <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Witness :</label>
+            <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nominie :</label>
             <input onChange={handleChange} name="nominie" type="text" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
           </div>
           <div class="mb-5">
-            <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Witness contact :</label>
+            <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nominie contact :</label>
             <input onChange={handleChange} name="nominiecontact" type="number" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
           </div>
           <div class="mb-5">
-            <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Witness relation :</label>
+            <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nominie relation :</label>
             <input onChange={handleChange} name="nominierelation" type="text" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
+          </div>
+          <div class="mb-5">
+            <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nominie Password :</label>
+            <input onChange={handleChange} name="nominiepassword" type="password" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
           </div>
           <div class="mb-5">
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password :</label>
@@ -225,7 +252,7 @@ const OrganDonorForm = () => {
           </div>
           <div class="mb-5">
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Conformpassword :</label>
-            <input onChange={handleChange} name="conformpassword" type="password" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
+            <input onChange={handleChange} name="Conformpassword" type="password" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  />
           </div>
         </div>
       </div>

@@ -57,7 +57,7 @@ export const Sendcollgbloodhist = () => {
                     {item.req?.bloodgroup}
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    {item.req?.bloodunit}
+                    {item.req?.students}
                 </th>
                 <td class="px-6 py-4">
                     6/03/22

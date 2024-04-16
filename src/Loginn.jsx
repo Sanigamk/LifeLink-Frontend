@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import img4 from './im5.png'
 import './App.css'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export const Loginn = () => {
   const navigate=useNavigate()
@@ -17,6 +17,7 @@ let handleSubmit=async (event)=>{
    console.log(response);
    if(response.data){
     localStorage.setItem('id',response.data._id)
+    localStorage.setItem('email',response.data.email)
 
 
     if(response.data.userType=='user'){
@@ -66,7 +67,13 @@ let handleSubmit=async (event)=>{
 }
 
   return (
-    <div className='image1 pt-[180px] text-[20px]'>
+    <div className='image1 pt-[98px] text-[20px]'>
+      <div className='flex flex-wrap gap-8 m-auto w-fit'>
+        <Link to='/loginorgandonor'>
+      <button className='bg-white p-2 mt-3 text-lg font-semibold w-32 rounded-lg'>Organ donor</button></Link>
+      <Link to='/loginnominee'>
+      <button className='bg-white p-2 mt-3 text-lg font-semibold w-32 rounded-lg'>Nominie</button></Link>
+      </div>
       <div className='bg-red-800 w-fit p-14 m-auto mt-1 rounded-lg'>
         <div className='text-[25px] text-white pb-6'>Username</div>
         <div className=''>

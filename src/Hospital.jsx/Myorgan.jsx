@@ -30,6 +30,7 @@ export const Myorgan = () => {
         formData.append('prescription',data.prescription);
         formData.append('bystander',data.bystander)
         formData.append('bystandercontact',data.bystandercontact)
+        formData.append('patientidproof',data.patientidproof)
         formData.append('healthcertificate', data.healthcertificate);
         formData.append('userId', id)
   
@@ -103,6 +104,10 @@ export const Myorgan = () => {
         <div class="mb-5">
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">prescription :</label>
             <input onChange={handleChange} name="prescription" type="file" id="contact" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"/>
+        </div>
+        <div class="mb-5">
+            <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">patientidproof :</label>
+            <input onChange={handlefile} name="patientidproof" type="file" id="contact" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"/>
         </div>
         <div class="mb-5">
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Bystander :</label>

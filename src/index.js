@@ -86,6 +86,8 @@ import { Loginnominie } from './Loginnominie';
 import { Vieworgandonor } from './Admin/Vieworgandonor';
 import { Manageorgandonr } from './Admin/Manageorgandonr';
 import { Sendrequestorgandonors } from './Hospital.jsx/Sendrequestorgandonors';
+import { Acceptedreq } from './Bdonor.jsx/Acceptedreqhist';
+import { Detailpageaccpt } from './User/Detailpageaccpt';
 
 
 
@@ -131,6 +133,7 @@ root.render(
           <Route path='viewhistory' element={<Vwhist/>}/>
           <Route path='viewprofile' element={<Vwprofile/>}/>
           <Route path='profile' element={<Profile/>}/>
+          <Route path='detail/:id' element={<Detailpageaccpt/>}/>
         </Route>
 
         <Route path='/blooddonor' element={<Donav/>}>
@@ -138,6 +141,7 @@ root.render(
           <Route path='donorreq' element={<Donatereq/>}/>
           <Route path='donatehist' element={<Reqhist/>}/>
           <Route path='viewbloodrqst' element={<Vwbloodrqst/>}/>
+          <Route path='acceptedreqhist' element={<Acceptedreq/>}/>
           <Route path='editpro' element={<Editpro/>}/>
         </Route>
 
@@ -173,7 +177,7 @@ root.render(
         <Route path='sendcollegehist' element={<Sendcollgbloodhist/>}/>
         <Route path='recvdcollegehist' element={<Recvdcollegehist/>}/>
         <Route path='recvdorganrqst' element={<Recvdorganhist/>}/>
-        <Route path='recvdorganhistpage' element={<Vworganhist/>}/>
+        <Route path='recvdorganhistpage/:id' element={<Vworganhist/>}/>
         <Route path='sendorganrqst' element={<Sendorganhist/>}/>
         <Route path='sendorganhistpage' element={<Sendorganrqsthist/>}/>
         <Route path='editprofile' element={<Updatepro/>}/>

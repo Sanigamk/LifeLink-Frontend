@@ -1,25 +1,20 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-export const Vwbloodrqst = () => {
+export const Acceptedreq = () => {
     const [data,setdata] = useState([''])
     const [refresh,setrefresh]=useState(false)
     let id=localStorage.getItem('id')
     console.log(id);
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response=await axios.get('http://localhost:5000/hospital/vwuserreq')
+            let response=await axios.get(`http://localhost:5000/blooddonor/vwuserreqhist/${id}`)
             console.log(response.data)
             setdata(response.data)
         }
         fetchdata()
     },[refresh])
-    let handleSubmit = async (status,lid) => {
-        setrefresh(!refresh)
-        let response = await axios.put(`http://localhost:5000/hospital/mnguserbldrqst/${lid}`, {status:status,acceptedId:id})
-        console.log(response);
-        // setData('')
-    }
+    
   return (
     <div className='images2 w-[100%] h-[45rem]'>
         <div className='  pt-7 ps-10 pe-10'>
@@ -51,9 +46,7 @@ export const Vwbloodrqst = () => {
                                 <th scope="col" class="px-6 py-3">
                                     STATUS
                                 </th>
-                                <th scope="col" class="px-6 py-3">
-                                    ACTION
-                                </th>
+                                
 
 
                             </tr>
@@ -83,11 +76,6 @@ export const Vwbloodrqst = () => {
                                 <td class="px-6 py-4">
                                     {item.req?.status}
                                 </td>
-                                <td class="px-6 py-4 flex flex-wrap flex-col gap-3">
-                                    <button onClick={()=>{handleSubmit('Accepted',item.req._id)}} href="#" class="bg-slate-600 font-bold text-sm text-white hover:underline hover:bg-slate-500 p-1">Accept</button>
-                                    {/* <button onClick={()=>{handleSubmit('Rejected',item.req._id)}} href="#" class="bg-slate-600 font-bold text-sm text-white hover:underline hover:bg-slate-500 p-1" >Reject</button> */}
-                                </td>
-
                             </tr>
                         ))}
                         </tbody>

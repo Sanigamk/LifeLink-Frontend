@@ -1,11 +1,17 @@
 import React from 'react'
-import { Outlet,Link,useLocation } from 'react-router-dom';
+import { Outlet,Link,useLocation,useNavigate } from 'react-router-dom';
 import { Footer } from '../Footer';
 export const UserNav = () => {
 
   const value = useLocation()
+//   let logout=()=>{
+//     localStorage.removeItem('id')
+//     localStorage.removeItem('email')
+//     navigate('/')
 
+// }
   console.log(value,'value');
+  // const navigate=useNavigate()
   return (
 
     <div>
@@ -15,7 +21,7 @@ export const UserNav = () => {
         </div>
         <div className='flex flex-wrap gap-4 font1 font-bold'>
         <Link to='/'><div className>HOME</div></Link>
-        <div className>LOGOUT</div>  
+        {/* <div className onClick={logout}>LOGOUT</div>   */}
     </div>
     </div>
     <div className='flex'>

@@ -61,7 +61,9 @@ export const Vwpagehosrqstorgn = () => {
                                 Patient name
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.vwpagehosreq?.patientname}
+                               {data.reqDetails?.patientname && <span>{data.reqDetails.patientname}</span>} 
+                               {data.vwpagehosreq?.patientname && <span>{data.vwpagehosreq.patientname}</span>} 
+                               {/* {data.reqDetails ? <span>{data?.rereqDetails?.patientname}</span> : <span>{data?.vwpagehosreq?.patientname}</span>} */}
 
                             </dd>
                         </div>
@@ -70,44 +72,31 @@ export const Vwpagehosrqstorgn = () => {
                                 Age
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.vwpagehosreq?.age}
+                            {data.reqDetails?.age && <span>{data.reqDetails.age}</span>} 
+                            {data.vwpagehosreq?.age && <span>{data.vwpagehosreq.age}</span>} 
 
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
-                                House name
+                                Address
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.vwpagehosreq?.housename}
+                            {data.reqDetails?.address && <span>{data.reqDetails.address}</span>}
+                            {data.vwpagehosreq?.address && <span>{data.vwpagehosreq.address}</span>} 
 
                             </dd>
                         </div>
-                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium text-gray-500">
-                                Post office
-                            </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.vwpagehosreq?.postoffice}
-
-                            </dd>
-                        </div>
-                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium text-gray-500">
-                                Place
-                            </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.vwpagehosreq?.place}
-
-                            </dd>
-                        </div>
+                        
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
                                 Blood group & Organ
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.vwpagehosreq?.bloodgroup}
-                                {data.vwpagehosreq?.organ}
+                            {data.reqDetails?.bloodgroup && <span>{data.reqDetails.bloodgroup}</span>}
+                            {data.reqDetails?.organ && <span>{data.reqDetails.organ}</span>}
+                            {data.vwpagehosreq?.bloodgroup && <span>{data.vwpagehosreq.bloodgroup}</span>}
+                            {data.vwpagehosreq?.organ && <span>{data.vwpagehosreq.organ}</span>}
 
                             </dd>
                         </div>
@@ -116,7 +105,8 @@ export const Vwpagehosrqstorgn = () => {
                                 Date
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.vwpagehosreq?.date}
+                            {data.reqDetails?.date && <span>{data.reqDetails.date}</span>}
+                            {data.vwpagehosreq?.date && <span>{data.vwpagehosreq.date}</span>}
 
                             </dd>
                         </div>
@@ -125,7 +115,8 @@ export const Vwpagehosrqstorgn = () => {
                                 Docter
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.vwpagehosreq?.doctername}
+                            {data.reqDetails?.doctername && <span>{data.reqDetails.doctername}</span>}
+                            {data.vwpagehosreq?.doctername && <span>{data.vwpagehosreq.doctername}</span>}
 
                             </dd>
                         </div>
@@ -134,7 +125,8 @@ export const Vwpagehosrqstorgn = () => {
                                 Prescription
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.vwpagehosreq?.prescription}
+                            {data.reqDetails?.prescription && <span>{data.reqDetails.prescription}</span>}
+                            {data.vwpagehosreq?.prescription && <span>{data.vwpagehosreq.prescription}</span>}
 
                             </dd>
                         </div>
@@ -143,7 +135,8 @@ export const Vwpagehosrqstorgn = () => {
                                 Patient id proof
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.vwpagehosreq?.patientidproof}
+                            {data.reqDetails?.patientidproof && <span>{data.reqDetails.patientidproof}</span>}
+                            {data.vwpagehosreq?.patientidproof && <span>{data.vwpagehosreq.patientidproof}</span>}
 
                             </dd>
                         </div>

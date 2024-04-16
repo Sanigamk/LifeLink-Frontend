@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export const Vwhist = () => {
     let id=localStorage.getItem('id')
@@ -34,9 +35,9 @@ export const Vwhist = () => {
                 <th scope="col" class="px-6 py-3">
                     Status
                 </th>
-                {/* <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-6 py-3">
                 
-                </th> */}
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -57,9 +58,10 @@ export const Vwhist = () => {
                 <td class="px-6 py-4">
                     {item.status}
                 </td>
-                {/* <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
-                </td> */}
+                <td class="px-6 py-4">
+                    <Link to={`/user/detail/${item._id}`}>
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a></Link>
+                </td>
             </tr>
         ))}  
         </tbody>

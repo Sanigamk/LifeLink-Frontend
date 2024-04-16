@@ -20,10 +20,16 @@ export const Navi = () => {
     <div onClick={dropdown} className>REGISTER</div>
     {drop &&
     <div className='list-none absolute right-[30px] sm:right-[9px] p-3 mt-8 ps-4 pe-4 bg-gray-300 rounded-sm text-gray-950'>
-      <li className='pb-2'>Donor</li>
-      <li className='pb-2'> College</li>
-      <li className='pb-2'>Hospital</li>
-      <li>User</li>
+      <Link to='/blooddonor'>
+      <li className='pb-2'>Donor</li></Link>
+      <Link to='/college'>
+      <li className='pb-2'> College</li></Link>
+      <Link to='/hospital'>
+      <li className='pb-2'>Hospital</li></Link>
+      <Link to='/organdonor'>
+      <li className='pb-2'>Organ Donor</li></Link>
+      <Link to='/user'>
+      <li className='pb-2'>User</li></Link>
       </div>
       }
     </div>

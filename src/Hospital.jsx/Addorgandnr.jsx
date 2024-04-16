@@ -45,6 +45,9 @@ export const Addorgandnr = () => {
                 <th scope="col" class="px-6 py-3">
                    Bloodgroup
                 </th>
+                <th scope="col" class="px-6 py-3">
+                   Death of date
+                </th>
                 
                 <th scope="col" class="px-6 py-3">
                 
@@ -71,6 +74,9 @@ export const Addorgandnr = () => {
                 </td>
                 <td class="px-6 py-4">
                     {item.bloodgroup}
+                </td>
+                <td class="px-6 py-4">
+                    
                 </td>
                 <td class="px-6 py-4">
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">

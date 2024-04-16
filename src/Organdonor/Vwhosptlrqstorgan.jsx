@@ -15,11 +15,13 @@ let id=localStorage.getItem('id')
     useEffect(()=>{
         let fetchdata = async ()=>{
             let response=await axios.get(`http://localhost:5000/organdonor/vwhosrequest/${id}`)
-            console.log(response.data)
+            let response1=await axios.get(`http://localhost:5000/organdonor/vwhosendrequest/${id}`)
             setdata(response.data)
+            console.log(response.data)
         }
         fetchdata()
     },[refresh])
+    console.log(data,'=====================');
   return (
     <div className='images2 h-[41rem]'>
         <div className='text-lg font-bold text-red-800 pt-10 text-center'>MANAGE HOSPITAL REQUEST</div>
