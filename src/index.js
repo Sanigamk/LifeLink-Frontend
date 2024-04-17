@@ -88,6 +88,8 @@ import { Manageorgandonr } from './Admin/Manageorgandonr';
 import { Sendrequestorgandonors } from './Hospital.jsx/Sendrequestorgandonors';
 import { Acceptedreq } from './Bdonor.jsx/Acceptedreqhist';
 import { Detailpageaccpt } from './User/Detailpageaccpt';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -211,6 +213,7 @@ root.render(
 
 
      </Routes>
+     <ToastContainer />
     </BrowserRouter>
 
   </React.StrictMode>

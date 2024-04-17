@@ -9,7 +9,7 @@ export const Assignorgan = () => {
     console.log(id);
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response=await axios.get(`http://localhost:5000/hospital/vwpagsrchorgandnr/${id}`)
+            let response=await axios.get(`http://localhost:5000/hospital/vwpageorgandnr/${id}`)
             console.log(response.data)
             setData(response.data)
         }
@@ -25,12 +25,20 @@ export const Assignorgan = () => {
                         {data.name}
                     </h3>
                     <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                        {data.district} {data.place}
+                        {data.address}
                     </p>
                 </div>
                 <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
                     <dl class="sm:divide-y sm:divide-gray-200">
 
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Age
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {data.age}
+                            </dd>
+                        </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
                                 Email
@@ -41,52 +49,115 @@ export const Assignorgan = () => {
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
-                                Contact
+                                Adhaar number
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.contact}
+                            {data.adhaarnumber}
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
-                                House name
+                                Bloodgroup
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.housename}
+                            {data.bloodgroup}
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
-                                Postoffice
+                                Date of birth 
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.postoffice}
-                            </dd>
-                        </div>
-                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium text-gray-500">
-                                Pin 
-                            </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.pin}
+                                {data.dateofbirth}
 
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
-                                organ
+                                Height
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.organ}
+                                {data.height}
 
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
-                                Healthcertificate
+                                weight
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                               view
+                               {data.weight}
+
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Heath Issue
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            {data.healthissue}
+
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Date of death & Time
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            {data.dateofdeath}{data.time}
+
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Reason of death
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            {data.reasonofdeath}
+
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                organ for donation before death
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                           {data.organsBeforeDeath?.liver && <h2>liver</h2>}
+                           {data.organsBeforeDeath?.heart && <h2>heart</h2>}
+                           {data.organsBeforeDeath?.kidney && <h2>kidney</h2>}
+                           {data.organsBeforeDeath?.lung && <h2>lung</h2>}
+                           {data.organsBeforeDeath?.pancreas && <h2>pancreas</h2>}
+                           
+                            <span></span>
+                           
+
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                organ for donation After death
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {data.organsAfterDeath?.heart && <h2>heart</h2>}
+                                {data.organsAfterDeath?.liver && <h2>liver</h2>}
+                                {data.organsAfterDeath?.kidney && <h2>kidney</h2>}
+                                {data.organsAfterDeath?.lung && <h2>lung</h2>}
+                                {data.organsAfterDeath?.pancreas && <h2>pancreas</h2>}
+                                {data.organsAfterDeath?.tissue && <h2>tissue</h2>}
+                                {data.organsAfterDeath?.bone && <h2>bone</h2>}
+                                {data.organsAfterDeath?.skin && <h2>skin</h2>}
+
+
+                            </dd>
+                        </div>
+                        
+                        
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Signature
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.signature}`} alt="" />
 
                             </dd>
                         </div>
@@ -95,25 +166,16 @@ export const Assignorgan = () => {
                                 Conformation certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                               view
+                                <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.conformationcertificate}`} alt="" />
 
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
-                                Witness Name
+                                Health Certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.witnessname}
-
-                            </dd>
-                        </div>
-                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium text-gray-500">
-                                Witness Contact
-                            </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.witnesscontact}
+                                <img className= 'h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.healthcertificate}`} alt="" />
 
                             </dd>
                         </div>
@@ -123,10 +185,10 @@ export const Assignorgan = () => {
 
             </div>
 
-            <div className='flex flex-wrap gap-20 justify-center my-48 text-white font-bold'>
+            {/* <div className='flex flex-wrap gap-20 justify-center my-48 text-white font-bold'>
                 <button className='bg-red-800 w-28 p-4 rounded'>ASSIGN</button>
 
-            </div>
+            </div> */}
         </div>
     )
 }

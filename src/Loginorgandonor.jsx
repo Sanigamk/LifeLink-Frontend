@@ -29,10 +29,10 @@ export const Loginorgandonor = () => {
   }
 
   return (
-    <div className='image1 pt-[180px] text-[20px]'>
-      <div>
+    <div className='image1 pt-[100px] text-[20px]'>
+      {/* <div>
       <button onClick={handleSubmit} className='bg-white p-2 mt-3 text-lg font-semibold w-32 rounded-lg'>NOMINIE</button>
-      </div>
+      </div> */}
       <div className='bg-red-800 w-fit p-14 m-auto mt-1 rounded-lg'>
         <div className='text-[25px] text-white pb-6'> Username</div>
         <div className=''>

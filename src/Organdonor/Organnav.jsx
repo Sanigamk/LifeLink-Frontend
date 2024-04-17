@@ -1,5 +1,6 @@
-import React from 'react'
-import { Link,Outlet  } from 'react-router-dom'
+import axios from 'axios'
+import React, { useEffect } from 'react'
+import { Link,Outlet, useNavigate  } from 'react-router-dom'
 
 // const value = useLocation()
 
@@ -7,6 +8,26 @@ import { Link,Outlet  } from 'react-router-dom'
 
 
 export const Organnav = () => {
+
+
+    const navigate=useNavigate(0)
+    useEffect(()=>{
+        let auth=async ()=>{
+
+          let id=localStorage.getItem('id')
+          let email=localStorage.getItem('email')
+          let response=await axios.post('http://localhost:5000/organdonor/authenticate',{_id:id,email:email})
+          console.log(response);
+          if(response==null){
+            navigate('/login')
+          }
+          else if(response?.data?.userType !=='organdonor'){
+            navigate('/login')
+          }
+
+        }
+        auth()
+      },[])
   return (
     <div>
         <div className='flex gap-5  bg-red-800 drop-shadow-2xl  text-white p-4 justify-between'>
@@ -15,7 +36,7 @@ export const Organnav = () => {
                 </div>
                 <div className='flex flex-wrap gap-4 font1 font-bold'>
                     <Link to='/'><div className>HOME</div></Link>
-                    <div className>LOGOUT</div>
+                    {/* <div className>LOGOUT</div> */}
                 </div>
             </div>
             <div className='flex'>

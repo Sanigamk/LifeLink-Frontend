@@ -46,7 +46,7 @@ export const Addorgandnr = () => {
                    Bloodgroup
                 </th>
                 <th scope="col" class="px-6 py-3">
-                   Death of date
+                   Date of death
                 </th>
                 
                 <th scope="col" class="px-6 py-3">

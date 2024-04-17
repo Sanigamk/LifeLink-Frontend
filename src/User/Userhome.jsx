@@ -15,7 +15,7 @@ export const Userhome = () => {
      <div className='text-[70px]'>WELCOME</div>
      <div className='text-[40px]'>LIFELINK</div>
      <div className=''>GIVE THE GIFT OF LIFE</div>
-     <div className onClick={logout}>LOGOUT</div>
+     <button className='bg-slate-400 w-[10%] text-[20px] font-bold rounded-md' onClick={logout}>LOGOUT</button>
     </div>
     {/* <Footer/> */}
     </div>
