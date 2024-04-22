@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { toast,ToastContainer } from 'react-toastify'
 
 export const Userregister = () => {
   const [data,setData]=useState('')
@@ -10,14 +11,29 @@ export const Userregister = () => {
             setData({...data,[event.target.name]:event.target.value})
         }
         let handleSubmit=async (event)=>{
+          if(data.conformpassword!=data.password){
+            toast.error('password doesnt match')
+          }else{
+
             event.preventDefault()
             console.log(data);
-           let response=await axios.post('http://localhost:5000/user/register',{...data,userType:'user'})
-           console.log(response);
+            let response=await axios.post('http://localhost:5000/user/register',{...data,userType:'user'})
+            console.log(response);
+          }
+          const requiredFields = ['name','age','place','email','contact','housename','postoffice','pin','district','password',];
+          for (const field of requiredFields) {
+            if (!data[field]) {
+                return toast.error(`${field} is required`);
+            }
+        }
+        setData(data)
+    toast.success("successfully registered")
+    console.log(data);
             
         }
   return (
     <div className='images2 w-[100%]'>
+      <ToastContainer/>
         <form onSubmit={handleSubmit} class="w-[100%] ">
 
 <div className='flex w-[100%] justify-center sm:gap-10'>
@@ -26,12 +42,12 @@ export const Userregister = () => {
 
     <div class="mb-5">
       <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name :</label>
-      <input onChange={handleChange} value={data.name} name="name" type="text" id="name" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required />
+      <input onChange={handleChange} value={data.name} name="name" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="name" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required />
     </div>
     
     <div class="mb-5">
       <label for="place" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Place :</label>
-      <input onChange={handleChange} value={data.place} name="place" type="text" id="place" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+      <input onChange={handleChange} value={data.place} name="place" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="place" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
     </div>
     <div class="mb-5">
       <label for="age" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Age :</label>
@@ -43,11 +59,11 @@ export const Userregister = () => {
     </div>
     <div class="mb-5">
       <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact :</label>
-      <input onChange={handleChange} value={data.contact} name="contact" type="number" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+      <input onChange={handleChange} value={data.contact} name="contact" pattern="[0-9]{10}" maxLength={10} type="text" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
     </div>
     <div class="mb-5">
       <label for="housename" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">House name :</label>
-      <input onChange={handleChange} value={data.housename} name="housename" type="text" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+      <input onChange={handleChange} value={data.housename} name="housename" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
     </div>
     
     
@@ -57,24 +73,24 @@ export const Userregister = () => {
 
     <div class="mb-5">
       <label for="house name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Post office :</label>
-      <input onChange={handleChange} value={data.postoffice} name="postoffice" type="text" id="house name" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="" required />
+      <input onChange={handleChange} value={data.postoffice} name="postoffice" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="house name" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="" required />
     </div>
     <div class="mb-5">
       <label for="post" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pin :</label>
-      <input onChange={handleChange} value={data.pin} name="pin" type="number" id="post" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+      <input onChange={handleChange} value={data.pin} name="pin" type="text" pattern="[0-9]{6}" maxLength={6} id="post" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
     </div>
     <div class="mb-5">
       <label for="pin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">District :</label>
-      <input onChange={handleChange} value={data.district} name="district" type="text" id="pin" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+      <input onChange={handleChange} value={data.district} name="district" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="pin" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
     </div>
     
     <div class="mb-5">
       <label for="district" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password :</label>
-      <input onChange={handleChange} value={data.password} name="password" type="password" id="district" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+      <input onChange={handleChange} value={data.password} name="password"  type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$" title='Password must contain at least one lowercase letter,one uppercase letter, one digit, one special character, and be 8 to 30 characters long.' id="district" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
     </div>
     <div class="mb-5">
       <label for="district" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Conform Password:</label>
-      <input onChange={handleChange} value={data.conformpassword} name="conformpassword" type="password" id="district" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+      <input onChange={handleChange} value={data.conformpassword} name="conformpassword" type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$" title='Password must contain at least one lowercase letter,one uppercase letter, one digit, one special character, and be 8 to 30 characters long.' id="district" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
     </div>
   </div>
   

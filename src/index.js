@@ -90,6 +90,9 @@ import { Acceptedreq } from './Bdonor.jsx/Acceptedreqhist';
 import { Detailpageaccpt } from './User/Detailpageaccpt';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AddCategory } from './Admin/Addcategory';
+import { Myorganstatus } from './Hospital.jsx/Myorganstatus';
+import { Myorganstatusviewpage } from './Hospital.jsx/Myorganstatusviewpage';
 
 
 
@@ -126,6 +129,7 @@ root.render(
           <Route path='managecollege/:id' element={<Vwcollege/>}/>
           <Route path='vieworgandonor' element={<Vieworgandonor/>}/>
           <Route path='Manageorgandonor/:id' element={<Manageorgandonr/>}/>
+          <Route path='addcategory' element={<AddCategory/>}/>
           
         </Route>
 
@@ -151,6 +155,15 @@ root.render(
 
 
 
+
+
+
+
+
+
+
+
+
         <Route path='/hospital' element={<Hosnav/>}>
         <Route index element={<Hospitalhome/>}/>
         <Route path='blddonorreq' element={<Blddonorreq/>}/>
@@ -168,7 +181,11 @@ root.render(
 
         <Route path='bloodrequesthos' element={<Bloodrqsthos/>}/>
         <Route path='viewbloodrqsthos/:id' element={<Managebloodrqsthos/>}/>
+
         <Route path='myorganrqst' element={<Myorgan/>}/>
+        <Route path='myorganreqststatus' element={<Myorganstatus/>}/>
+        <Route path='myorganreqststatusviewpage/:id' element={<Myorganstatusviewpage/>}/>
+
         <Route path='mybloodrqst' element={<Mybloodrqst/>}/>
         <Route path='mycollegerqst' element={<Mybloodrqstcollg/>}/>
         <Route path='viewcollegerqst' element={<Collegerqst/>}/>
@@ -192,6 +209,10 @@ root.render(
 
 
 
+
+
+
+
         <Route path='/college1' element={<Collgnav1/>}/>
 
         <Route path='/college' element={<Collgnav/>}>
@@ -203,6 +224,19 @@ root.render(
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
         </Route>
         <Route path='/organdonor' element={<Organnav/>}>
           <Route index element={<Organdonorhome/>}/>
@@ -210,7 +244,6 @@ root.render(
           <Route path='viewpagehospitalrequestorgan/:id' element={<Vwpagehosrqstorgn/>}/>
           <Route path='updateorganprofile' element={<Vwupdateprofile/>}/>
           </Route>
-
 
      </Routes>
      <ToastContainer />

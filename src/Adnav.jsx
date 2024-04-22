@@ -47,6 +47,11 @@ export const Adnav = () => {
     <div className='flex'>
 
     <div className='bg-white w-[15%] h-[40rem] text-red-800 font-bold pt-20 '>
+    <div className='flex gap-5 items-center hover:bg-red-800 p-2 hover:text-white'>
+          <Link to={'/admin/addcategory'}>
+          <span>ADD CATEGORY</span>
+          </Link>
+          </div>
         <div className='flex gap-5 items-center hover:bg-red-800 p-2 hover:text-white'>
           <Link to={'/admin/adhospital'}>
           <span>HOSPITAL</span>

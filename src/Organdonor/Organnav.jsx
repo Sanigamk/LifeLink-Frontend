@@ -9,11 +9,9 @@ import { Link,Outlet, useNavigate  } from 'react-router-dom'
 
 export const Organnav = () => {
 
-
-    const navigate=useNavigate(0)
     useEffect(()=>{
         let auth=async ()=>{
-
+    
           let id=localStorage.getItem('id')
           let email=localStorage.getItem('email')
           let response=await axios.post('http://localhost:5000/organdonor/authenticate',{_id:id,email:email})
@@ -21,13 +19,15 @@ export const Organnav = () => {
           if(response==null){
             navigate('/login')
           }
-          else if(response?.data?.userType !=='organdonor'){
-            navigate('/login')
-          }
-
+    
         }
         auth()
       },[])
+    
+
+
+    const navigate=useNavigate(0)
+    
   return (
     <div>
         <div className='flex gap-5  bg-red-800 drop-shadow-2xl  text-white p-4 justify-between'>

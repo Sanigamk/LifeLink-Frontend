@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 export const Vwpagehosrqstorgn = () => {
+    let bid=localStorage.getItem('id')
 
     let {id}=useParams()
     console.log(id);
@@ -21,7 +22,7 @@ export const Vwpagehosrqstorgn = () => {
 
     let handleSubmit = async (status) => {
         setrefresh(!refresh)
-        let response = await axios.put(`http://localhost:5000/organdonor/mnghosptlorganrqst/${id}`, {status:status})
+        let response = await axios.put(`http://localhost:5000/organdonor/mnghosptlorganrqst/${id}`, {status:status,AcceptedId:bid})
         console.log(response);
         // setData('')
     }
