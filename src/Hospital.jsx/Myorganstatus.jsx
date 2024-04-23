@@ -52,29 +52,29 @@ export const Myorganstatus = () => {
 
                             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    hhhhh
+                                    {item.req?.patientname}
                                 </th>
                                 <td class="px-6 py-4">
-                                    gffgfg
+                                {item.req?.age}
                                 </td>
                                 <td class="px-6 py-4">
-                                    fdfff
+                                {item.req?.contact}
                                 </td>
                                 <td class="px-6 py-4">
-                                    vvvvvvv
+                                {item.req?.email}
                                 </td>
                                 <td class="px-6 py-4">
-                                    vvvvvvv
+                                {item.req?.organ}
                                 </td>
                                 <td class="px-6 py-4">
-                                    vvvvvvv
+                                {item.req?.bloodgroup}
                                 </td>
                                 <td class="px-6 py-4">
-                                    vvvvvvv
+                                {item.req?.status}
                                 </td>
                                 <td class="px-6 py-4">
                                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                        <Link to={`/hospital/myorganreqststatusviewpage/${item._id}`}>
+                                        <Link to={`/hospital/myorganreqststatusviewpage/${item?.req?._id}`}>
                                             View
                                         </Link>
                                     </a>
