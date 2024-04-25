@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 
 export const Myorgan = () => {
   let id=localStorage.getItem('id')
@@ -17,6 +18,13 @@ export const Myorgan = () => {
             setData({...data,[event.target.name]:event.target.value})
         }
         let handleSubmit=async (event)=>{
+            try{
+                if(data.conformpassword!=data.password){
+                  toast.error('password doesnt match')
+                }
+                else{
+
+
           let formData = new FormData();
         formData.append('patientname', data.patientname);
         formData.append('age', data.age);
@@ -41,8 +49,22 @@ export const Myorgan = () => {
             'Content-Type': 'multipart/form-data'  // Set the content type for FormData
           }
          })
-           console.log(response);
+        //    console.log(response);
             
+        }
+        const requiredFields = ['patientname','age','address','email','contact','adhaarnumber','organ','bloodgroup','doctername','prescription','bystander','bystandercontact','patientidproof','healthcertificate'];
+    for (const field of requiredFields) {
+      if (!data[field]) {
+          return toast.error(`${field} is required`);
+      }
+  }
+  setData(data)
+    toast.success("successfully send request")
+    console.log(data);
+}
+catch{
+    toast.alert('error')
+}
         }
   return (
     <div className='images2 w-[100%]'>

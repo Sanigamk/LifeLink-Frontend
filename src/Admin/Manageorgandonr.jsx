@@ -179,7 +179,7 @@ export const Manageorgandonr = () => {
                                 Signature
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.managorgan?.signature}`} alt="" />
+                            <a href={`http://localhost:5000/uploads/${data.managorgan?.signature}`} download>  <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.managorgan?.signature}`} alt="" /></a>
 
                             </dd>
                         </div>
@@ -188,7 +188,7 @@ export const Manageorgandonr = () => {
                                 Conformation certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.managorgan?.conformationcertificate}`} alt="" />
+                            <a href={`http://localhost:5000/uploads/${data.managorgan?.conformationcertificate}`} download>  <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.managorgan?.conformationcertificate}`} alt="" /></a>
 
                             </dd>
                         </div>
@@ -197,7 +197,7 @@ export const Manageorgandonr = () => {
                                 Health Certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                <img className= 'h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.managorgan?.healthcertificate}`} alt="" />
+                            <a href={`http://localhost:5000/uploads/${data.managorgan?.healthcertificate}`} download> <img className= 'h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.managorgan?.healthcertificate}`} alt="" /></a>
 
                             </dd>
                         </div>

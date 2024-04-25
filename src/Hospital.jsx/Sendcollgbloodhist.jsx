@@ -38,6 +38,9 @@ export const Sendcollgbloodhist = () => {
                 <th scope="col" class="px-6 py-3">
                     DATE
                 </th>
+                <th scope="col" class="px-6 py-3">
+                    STATUS
+                </th>
                 
             </tr>
         </thead>
@@ -60,8 +63,13 @@ export const Sendcollgbloodhist = () => {
                     {item.req?.students}
                 </th>
                 <td class="px-6 py-4">
-                    6/03/22
+                    {item.req?.date}
                 </td>
+                <td class="px-6 py-4">
+                    {item.req?.status}
+                </td>
+                
+
                 
             </tr>
         ))} 

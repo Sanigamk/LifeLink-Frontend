@@ -2,6 +2,9 @@ import React, { useEffect } from 'react'
 import { Outlet,Link,useLocation, useNavigate } from 'react-router-dom';
 import { Footer } from './Footer';
 import axios from 'axios';
+import hos from './hospital.png';
+import blooddnr from './blood-donor.png';
+import cllg from './college.png'
 export const Adnav = () => {
 
   const navigate=useNavigate(0)
@@ -52,31 +55,35 @@ export const Adnav = () => {
           <span>ADD CATEGORY</span>
           </Link>
           </div>
-        <div className='flex gap-5 items-center hover:bg-red-800 p-2 hover:text-white'>
           <Link to={'/admin/adhospital'}>
+        <div className='flex flex-wrap gap-2   hover:bg-red-800 p-2 hover:text-white'>
+            <img src={hos} alt="" className='w-[25px] h-[25px]'/>
           <span>HOSPITAL</span>
-          </Link>
           </div>
+          </Link>
         <div className='flex gap-5 items-center hover:bg-red-800 p-2 hover:text-white'>
         <Link to={'/admin/user'}>
           <span>USER</span>
         </Link>
           </div>
-        <div className='flex gap-5 items-center hover:bg-red-800 p-2 hover:text-white'>
           <Link to={'/admin/bloodonor'}>
+        <div className='flex flex-wrap gap-2 hover:bg-red-800 p-2 hover:text-white'>
+        <img src={blooddnr} alt="" className='w-[25px] h-[25px]'/>
            <span>BLOOD DONOR</span>
-           </Link>
+           
           </div>
-        <div className='flex gap-5 items-center hover:bg-red-800 p-2 hover:text-white'>
+          </Link>
+        <div className='flex flex-wrap gap-2  hover:bg-red-800 p-2 hover:text-white'>
           <Link to={'/admin/donations'}>
            <span>DONATION</span>
           </Link>
           </div>
-        <div className='flex gap-5 items-center hover:bg-red-800 p-2 hover:text-white'>
           <Link to={'/admin/college'}>
+        <div className='flex gap-5 items-center hover:bg-red-800 p-2 hover:text-white'>
+        <img src={cllg} alt="" className='w-[25px] h-[25px]'/>
           COLLEGE
-          </Link>
           </div>
+          </Link>
           <div className='flex gap-5 items-center hover:bg-red-800 p-2 hover:text-white'>
           <Link to={'/admin/vieworgandonor'}>
           ORGAN DONORS

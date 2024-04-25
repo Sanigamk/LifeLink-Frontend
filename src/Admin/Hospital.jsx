@@ -36,6 +36,9 @@ export const Hospital = () => {
                                 Contact
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                Status
+                            </th>
+                            <th scope="col" class="px-6 py-3">
 
                             </th>
                         </tr>
@@ -55,6 +58,9 @@ export const Hospital = () => {
                                 </td>
                                 <td class="px-6 py-4">
                                     {item.contact}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {item.status}
                                 </td>
                                 <td class="px-6 py-4">
                                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">

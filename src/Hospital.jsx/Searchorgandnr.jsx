@@ -11,7 +11,7 @@ export const Searchorgandnr = () => {
 
     let { id } = useParams()
 
-    useEffect(() => {
+        useEffect(() => {
         let fetchData = async () => {
             let response = await axios.get(`http://localhost:5000/hospital/vworgandonors/${bid}`, {
                 params: { organ, bloodGroup } // Pass organ and blood group as query parameters
