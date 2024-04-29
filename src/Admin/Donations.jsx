@@ -64,19 +64,20 @@ export const Donations = () => {
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {item.blddonordonation?.name}
                                 </th>
-                                <td class="px-6 py-4">
+                                <td class="px-6 py-4 text-gray-900 font-medium">
                                     {item.blddonordonation?.age}
                                 </td>
-                                <td class="px-6 py-4">
+                                <td class="px-6 py-4 text-gray-900 font-medium">
                                     {item.blddonordonation?.place}
                                 </td>
-                                <td class="px-6 py-4">
+                                <td class="px-6 py-4 text-gray-900 font-medium">
                                     {item.hoss?.name}
+                                    
                                 </td>
-                                <td class="px-6 py-4">
+                                <td class="px-6 py-4 text-gray-900 font-medium">
                                     {item.req?.bloodgroup}
                                 </td>
-                                <td class="px-6 py-4">
+                                <td class="px-6 py-4 text-gray-900 font-medium">
                                     {item.req?.date}
                                 </td>
                             </tr>
