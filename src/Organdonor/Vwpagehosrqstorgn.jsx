@@ -53,8 +53,8 @@ export const Vwpagehosrqstorgn = () => {
                             <dt class="text-sm font-medium text-gray-500">
                                 Certificate
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                view
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 size-16">
+                            <a href={`http://localhost:5000/uploads/${data.hos?.proof}`} download> <img src={`http://localhost:5000/uploads/${data.hos?.proof}`} alt="" /></a>
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

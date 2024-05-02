@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
 
 export const Sendorganrqsthist = () => {
+    // let id = localStorage.getItem('id')
+let {id}=useParams();
+    console.log(id,'----------donorId------------')
+
+    const [data, setData] = useState([''])
+    useEffect(() => {
+        let fetchdata = async () => {
+            let response = await axios.get(`http://localhost:5000/hospital/vwpageorgandnr/${id}`)
+            console.log(response.data)
+            setData(response.data)
+        }
+        fetchdata()
+    }, [])
   return (
     <div className='image3 w-[100%]'>
       <div className="w-full  pt-20 font-bold text-[20px]">
@@ -9,23 +24,28 @@ export const Sendorganrqsthist = () => {
                 <div className=" w-[90%]  m-auto mb-8">
                     <div className="flex flex-wrap  ">
                         <p>Patient name :</p>
-                        <p>abi</p>
+                        {data.vwpageorgandnr?.patientname && <span>{data.vwpageorgandnr?.patientnamr} </span>} 
+                   {data.reqstt?.patientname && <span>{data.reqstt?.patientname} </span>}
                     </div>
                     <div className="flex ">
                         <p>Age :</p>
-                        <p>22</p>
+                        {data.vwpageorgandnr?.age && <span>{data.vwpageorgandnr?.age} </span>} 
+                   {data.reqstt?.age && <span>{data.reqstt?.age} </span>}
                     </div>
                     <div className="flex gap-5">
                         <p>health certificate :</p>
-                        <p></p>
+                        {data.vwpageorgandnr?.healthcertificate && <span>{data.req?.healthcertificate} </span>} 
+                   {data.reqstt?.healthcertificate && <span>{data.reqstt?.healthcertificate} </span>}
                     </div>
                     <div className="flex gap-5">
                         <p>Organ :</p>
-                        <p>View</p>
+                        {data.vwpageorgandnr?.organ && <span>{data.vwpageorgandnr?.organ} </span>} 
+                   {data.reqstt?.organ && <span>{data.reqstt?.organ} </span>}
                     </div>
                     <div className="flex gap-5">
                         <p>Blood group :</p>
-                        <p>B-ve</p>
+                        {data.vwpageorgandnr?.bloodgroup && <span>{data.vwpageorgandnr?.bloodgroupp} </span>} 
+                   {data.reqstt?.bloodgrup && <span>{data.reqstt?.bloodgroup} </span>}
                     </div>
                 </div>
                 <div className="w-full  pt-20 font-bold text-[20px]">
@@ -33,62 +53,55 @@ export const Sendorganrqsthist = () => {
                 <div className=" flex justify-evenly w-[90%] m-auto mb-8">
                     <div className="flex gap-6">
                         <p>Name :</p>
-                        <p>abi</p>
+                        <p>{data?.donorr?.name}
+
+                        </p>
                     </div>
                     <div className="flex gap-5">
-                        <p>District :</p>
-                        <p>kannur</p>
+                        <p>Address :</p>
+                        <p>{data?.donorr?.address}</p>
                     </div>
                 </div>
 
                 <div className=" flex justify-evenly w-[90%] m-auto mb-8">
                     <div className="flex gap-6 text-start">
                         <p>Age :</p>
-                        <p>45</p>
+                        <p>{data?.donorr?.age}</p>
                     </div>
                     <div className="flex gap-5">
                         <p>Organ :</p>
-                        <p>liver</p>
+                        <p>{data?.donorr?.organ}</p>
                     </div>
                 </div>
-                <div className=" flex justify-evenly w-[90%] m-auto mb-8">
-                    <div className="flex gap-6">
-                        <p>Place :</p>
-                        <p>kuti</p>
-                    </div>
-                    <div className="flex gap-5">
-                        <p>Blood group :</p>
-                        <p>B-</p>
-                    </div>
-                </div>
+                
                 <div className=" flex justify-evenly w-[90%] m-auto mb-8">
                     <div className="flex gap-6">
                         <p>Email :</p>
-                        <p>kuti@gmail.com</p>
+                        <p>{data?.donorr?.email}</p>
                     </div>
                     <div className="flex gap-5">
                         <p>Height :</p>
-                        <p>98</p>
+                        <p>{data?.donorr?.height}</p>
                     </div>
                 </div>
                 <div className=" flex justify-evenly w-[90%] m-auto mb-8">
                     <div className="flex gap-6">
                         <p>Contact :</p>
-                        <p>0994787855</p>
+                        <p>{data?.donorr?.contact}</p>
                     </div>
                     <div className="flex gap-5">
                         <p>Weight :</p>
-                        <p>98</p>
+                        <p>{data?.donorr?.weight}</p>
                     </div>
                 </div>
                 <div className=" flex justify-evenly w-[90%] m-auto mb-8">
                     <div className="flex gap-6">
                         <p>Pin :</p>
-                        <p>96654</p>
+                        <p>{data?.donorr?.Pin}</p>
                     </div>
                     <div className="flex gap-5">
                         <p>Conformation certificate :</p>
-                        <input type='' placeholder='View' />
+                        <a href={`http://localhost:5000/uploads/${data.donorr?.conformationcertificate}`} download> <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.donorr?.conformationcertificate}`} alt="" /> </a>
                     </div>
                 </div>
 

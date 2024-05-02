@@ -13,7 +13,7 @@ export const Vworgandonor = () => {
   
   useEffect(() => {
     let fetchdata = async () => {
-      let response = await axios.get(`http://localhost:5000/hospital/vwpageorgandnr/${id}`)
+      let response = await axios.get(`http://localhost:5000/hospital/viewpageorgandnrs/${id}`)
       console.log(response.data);
       setuserData(response.data)
       setData(response.data)

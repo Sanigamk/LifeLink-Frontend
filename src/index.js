@@ -198,7 +198,7 @@ root.render(
         <Route path='recvdorganrqst' element={<Recvdorganhist/>}/>
         <Route path='recvdorganhistpage/:id' element={<Vworganhist/>}/>
         <Route path='sendorganrqst' element={<Sendorganhist/>}/>
-        <Route path='sendorganhistpage' element={<Sendorganrqsthist/>}/>
+        <Route path='sendorganhistpage/:id' element={<Sendorganrqsthist/>}/>
         <Route path='editprofile' element={<Updatepro/>}/>
         <Route path='viewuserbloodrqst' element={<Vwuserbloodrqst/>}/>
 

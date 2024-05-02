@@ -25,9 +25,9 @@ export const Sendorganhist = () => {
                 <th scope="col" class="px-6 py-3">
                     AGE
                 </th>
-                <th scope="col" class="px-6 py-3">
+                {/* <th scope="col" class="px-6 py-3">
                     HEALTH CERTIFICATE
-                </th>
+                </th> */}
                 <th scope="col" class="px-6 py-3">
                     ORGAN
                 </th>
@@ -71,7 +71,7 @@ export const Sendorganhist = () => {
                 </td>
                 <td class="px-6 py-4">
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                        <Link to={'/hospital/sendorganhistpage'}>
+                        <Link to={`/hospital/sendorganhistpage/${item?.req?._id}`}>
                         View
                         </Link>
                         </a>

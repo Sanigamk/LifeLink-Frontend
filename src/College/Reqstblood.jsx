@@ -50,8 +50,8 @@ export const Reqstblood = () => {
 
   <div class="mb-5">
     <label for="name" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">District :</label>
-    <select onChange={handleDistrict} name="district" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
-        <option disabled value="">select</option>
+    <select onChange={handleDistrict} name="district" class="shadow-sm bg-white border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
+        <option value="">select</option>
         {datas.map((item)=>(
         <option value={item?.district}>{item?.district}</option>
         ))}
@@ -60,7 +60,7 @@ export const Reqstblood = () => {
   </div>
   <div class="mb-5">
     <label for="age" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Hospital :</label>
-    <select onChange={handleChange} name="hospitalId" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
+    <select onChange={handleChange} name="hospitalId" class="shadow-sm bg-white border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
         <option  value="">select</option>
         {hosdetail.map((item)=>(
         <option value={item?._id}>{item.name}</option>
@@ -69,15 +69,15 @@ export const Reqstblood = () => {
   </div>
   <div class="mb-5">
     <label for="place" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Discription :</label>
-    <input onChange={handleChange} value={data.discription} name="discription" type="text" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+    <input onChange={handleChange} value={data.discription} name="discription" type="text" id="place" class="shadow-sm bg-white border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div>
   <div class="mb-5">
     <label for="place" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Camp name :</label>
-    <input onChange={handleChange} value={data.campname} name="campname" type="text" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+    <input onChange={handleChange} value={data.campname} name="campname" type="text" id="place" class="shadow-sm bg-white border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div>
   <div class="mb-5">
     <label for="email" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Date :</label>
-    <input onChange={handleChange}  min={currentDate} value={data.date} name="date" type="date" id="place" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+    <input onChange={handleChange}  min={currentDate} value={data.date} name="date" type="date" id="place" class="shadow-sm bg-white border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div>
   
 </div>

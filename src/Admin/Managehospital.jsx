@@ -29,10 +29,10 @@ export const Managehospital = () => {
         <div className='main image3'>
             <div class="bg-transparent w-[50%] m-auto overflow-hidden shadow rounded-lg border">
                 <div class="px-4 py-5 sm:px-6">
-                    <h3 class="text-lg leading-6 font-medium text-gray-900">
+                    <h3 class="text-lg leading-6 font-bold text-gray-900">
                         {data.name}
                     </h3>
-                    <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                    <p class="mt-1 max-w-2xl text-sm font-bold text-gray-900">
                         {data.district} {data.place}
                     </p>
                 </div>
@@ -50,7 +50,7 @@ export const Managehospital = () => {
                             <dt class="text-sm font-medium text-gray-500">
                                 Liscence no
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm font-bold text-gray-900 sm:mt-0 sm:col-span-2">
                                 {data.liscence}
                             </dd>
                         </div>
@@ -58,7 +58,7 @@ export const Managehospital = () => {
                             <dt class="text-sm font-medium text-gray-500">
                                 Email
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm font-bold text-gray-900 sm:mt-0 sm:col-span-2">
                                 {data.email}
                             </dd>
                         </div>
@@ -66,7 +66,7 @@ export const Managehospital = () => {
                             <dt class="text-sm font-medium text-gray-500">
                                 Contact
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm font-bold text-gray-900 sm:mt-0 sm:col-span-2">
                                 {data.contact}
                             </dd>
                         </div>
@@ -74,7 +74,7 @@ export const Managehospital = () => {
                             <dt class="text-sm font-medium text-gray-500">
                                 Post office
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm font-bold text-gray-900 sm:mt-0 sm:col-span-2">
                                 {data.postoffice}
 
                             </dd>
@@ -83,7 +83,7 @@ export const Managehospital = () => {
                             <dt class="text-sm font-medium text-gray-500">
                                 Pin
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm font-bold text-gray-900 sm:mt-0 sm:col-span-2">
                                 {data.pin}
 
                             </dd>

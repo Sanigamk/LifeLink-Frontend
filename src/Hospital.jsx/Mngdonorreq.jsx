@@ -29,7 +29,7 @@ let handleSubmit = async (status) => {
                     <h3 class="text-lg leading-6 font-medium text-gray-900">
                         {data.donor?.name}
                     </h3>
-                    <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                    <p class="mt-1 max-w-2xl text-sm text-gray-500 font-medium text-gray-900">
                         {data.donor?.district} {data.donor?.place}
                     </p>
                 </div>
@@ -40,7 +40,7 @@ let handleSubmit = async (status) => {
                             <dt class="text-sm font-medium text-gray-500">
                                 Email
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm font-medium text-gray-900 sm:mt-0 sm:col-span-2">
                                 {data.donor?.email}
                             </dd>
                         </div>
@@ -48,7 +48,7 @@ let handleSubmit = async (status) => {
                             <dt class="text-sm font-medium text-gray-500">
                                 Contact
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm font-medium text-gray-900 sm:mt-0 sm:col-span-2">
                                 {data.donor?.contact}
                             </dd>
                         </div>
@@ -56,15 +56,15 @@ let handleSubmit = async (status) => {
                             <dt class="text-sm font-medium text-gray-500">
                                 Certificate
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                view
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 size-16">
+                            <a href={`http://localhost:5000/uploads/${data.donor?.healthcertificate}`} download> <img src={`http://localhost:5000/uploads/${data.donor?.healthcertificate}`} alt="" /></a>
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
                                 Blood group
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm font-medium text-gray-900 sm:mt-0 sm:col-span-2">
                                 {data.vwpageblddonation?.bloodgroup}
 
                             </dd>
@@ -73,7 +73,7 @@ let handleSubmit = async (status) => {
                             <dt class="text-sm font-medium text-gray-500">
                                 Weight
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm font-medium text-gray-900 sm:mt-0 sm:col-span-2">
                                 {data.donor?.weight}
 
                             </dd>
@@ -82,7 +82,7 @@ let handleSubmit = async (status) => {
                             <dt class="text-sm font-medium text-gray-500">
                                 height
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm font-medium text-gray-900 sm:mt-0 sm:col-span-2">
                                 {data.donor?.height}
 
                             </dd>
@@ -91,7 +91,7 @@ let handleSubmit = async (status) => {
                             <dt class="text-sm font-medium text-gray-500">
                                 Date
                             </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm font-medium text-gray-900 sm:mt-0 sm:col-span-2">
                                 {data.vwpageblddonation?.date}
 
                             </dd>

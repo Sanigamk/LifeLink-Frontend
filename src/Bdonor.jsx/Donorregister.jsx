@@ -27,6 +27,7 @@ export const Donorregister = () => {
     formData.append('place', data.place);
     formData.append('email', data.email);
     formData.append('contact', data.contact);
+    formData.append('gender',data.gender);
     formData.append('housename', data.housename);
     formData.append('postoffice', data.postoffice);
     formData.append('pin', data.pin);
@@ -107,6 +108,18 @@ export const Donorregister = () => {
 
           </div>
           <div className='w-[25%]'>
+          <div class="mb-5">
+              <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Gender</label>
+              <div>
+                <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Male</label>
+                <input onChange={handleChange} name="gender" value="male" type="radio" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
+                <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Female</label>
+                <input onChange={handleChange} name="gender" value="female"type="radio" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
+                <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Other</label>
+                <input onChange={handleChange} name="gender"  value="other" type="radio" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
+
+              </div>
+            </div>
 
             <div class="mb-5">
               <label for="house name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Blood group:</label>
