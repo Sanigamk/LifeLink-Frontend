@@ -179,7 +179,7 @@ export const Manageorgandonr = () => {
                                 Signature
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a href={`http://localhost:5000/uploads/${data.managorgan?.signature}`} download>  <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.managorgan?.signature}`} alt="" /></a>
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.managorgan?.signature}`} download>  <span> {data.managorgan?.signature}</span></a>
 
                             </dd>
                         </div>
@@ -188,7 +188,7 @@ export const Manageorgandonr = () => {
                                 Conformation certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a href={`http://localhost:5000/uploads/${data.managorgan?.conformationcertificate}`} download>  <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.managorgan?.conformationcertificate}`} alt="" /></a>
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.managorgan?.conformationcertificate}`} download>  <span> {data.managorgan?.conformationcertificate} </span></a>
 
                             </dd>
                         </div>
@@ -197,7 +197,7 @@ export const Manageorgandonr = () => {
                                 Health Certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a href={`http://localhost:5000/uploads/${data.managorgan?.healthcertificate}`} download> <img className= 'h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.managorgan?.healthcertificate}`} alt="" /></a>
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.managorgan?.healthcertificate}`} download> <span> {data.managorgan?.healthcertificate} </span></a>
 
                             </dd>
                         </div>

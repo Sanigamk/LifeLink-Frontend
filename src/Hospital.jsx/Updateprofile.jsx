@@ -85,7 +85,8 @@ setrefresh(!refresh)
   <div className='w-[25%]'>
 
   <div class="mb-5">
-      <img className='w-[80px] h-14' src={`http://localhost:5000/uploads/${userData.proof}`} alt="" />
+     <a target='_blank' href={`http://localhost:5000/uploads/${userData.proof}`} download> <img className='w-[100px] h-14' src={`http://localhost:5000/uploads/${userData.proof}`} alt='click to view & download pdf' /></a>
+     <a target='_blank' href={`http://localhost:5000/uploads/${userData.proof}`} download> <span> </span> </a>
       <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">proof :</label>
       <input onChange={handlefile} name="proof" type="file" id="img" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"placeholder={userData.proof} />
     </div>

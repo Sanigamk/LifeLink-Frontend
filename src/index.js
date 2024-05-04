@@ -93,7 +93,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AddCategory } from './Admin/Addcategory';
 import { Myorganstatus } from './Hospital.jsx/Myorganstatus';
 import { Myorganstatusviewpage } from './Hospital.jsx/Myorganstatusviewpage';
-
+import  Emailotp  from './Forgotpassword.jsx';
+import { Changepass } from './Changepass.jsx';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -111,6 +112,8 @@ root.render(
           <Route path='/login' element={<Loginn/>}/>
           <Route path='/loginorgandonor' element={<Loginorgandonor/>}/>
           <Route path='/loginnominee' element={<Loginnominie/>}/>
+          <Route path='/forgotpassword' element={<Emailotp/>}/>
+          <Route path='/changepass/:email' element={<Changepass/>}/>
         </Route>
        
          <Route path='/admin' element={<Adnav/>}>

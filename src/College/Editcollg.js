@@ -52,11 +52,11 @@ export const Editcollg = () => {
 
                         <div class="mb-5">
                             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name :</label>
-                            <input onChange={handleChange} name="name" type="text" id="name" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.name} />
+                            <input onChange={handleChange} name="name" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed"  type="text" id="name" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.name} />
                         </div>
                         <div class="mb-5">
                             <label for="age" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Place :</label>
-                            <input onChange={handleChange} name="place" type="text" id="age" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.place} />
+                            <input onChange={handleChange} name="place" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="age" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.place} />
                         </div>
                         <div class="mb-5">
                             <label for="place" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email :</label>
@@ -76,23 +76,24 @@ export const Editcollg = () => {
                     </div>
                     <div className='w-[25%]'>
                         <div class="mb-5">
-                            <img className='w-[80px] h-14' src={`http://localhost:5000/uploads/${userData.certificate}`} alt="" />
+                            <a target='_blank' href={`http://localhost:5000/uploads/${userData.certificate}`} download> <img className='w-[100px] h-14' src={`http://localhost:5000/uploads/${userData.certificate}`} alt='click to view & download pdf' /></a>
+                            <a target='_blank' href={`http://localhost:5000/uploads/${userData.certificate}`} download> <span> </span> </a>
                             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Certificate :</label>
                             <input onChange={handlefile} name="certificate" type="file" id="img" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.certificate} />
                         </div>
                         <div class="mb-5">
                             <label for="house name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Post office:</label>
-                            <input onChange={handleChange} name="postoffice" type="text" id="house name" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.postoffice} />
+                            <input onChange={handleChange} name="postoffice" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="house name" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.postoffice} />
                         </div>
 
 
                         <div class="mb-5">
                             <label for="post" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pin :</label>
-                            <input onChange={handleChange} name="pin" type="number" id="post" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.pin} />
+                            <input onChange={handleChange} name="pin" pattern="[0-9]{6}" maxLength={6} title="Please enter a valid 6-digit PIN code" type="number" id="post" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.pin} />
                         </div>
                         <div class="mb-5">
                             <label for="pin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">District :</label>
-                            <input onChange={handleChange} name="district" type="district" id="pin" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.district} />
+                            <input onChange={handleChange} name="district"  pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="district" id="pin" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.district} />
                         </div>
                         <div class="mb-5">
                             <label for="pin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Conform Password :</label>

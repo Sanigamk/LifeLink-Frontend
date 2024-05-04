@@ -94,6 +94,9 @@ let id=localStorage.getItem('id')
                                     DISTRICT
                                 </th>
                                 <th scope="col" class="px-6 py-3">
+                                    PROOF
+                                </th>
+                                <th scope="col" class="px-6 py-3">
                                     BLOOD GROUP
                                 </th>
                                 <th scope="col" class="px-6 py-3">
@@ -120,6 +123,9 @@ let id=localStorage.getItem('id')
                                 </td>
                                 <td class="px-6 py-4">
                                     {item.hospital?.district}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {item.hospital?.proof}
                                 </td>
                                 <td class="px-6 py-4">
                                    {item.req?.bloodgroup}

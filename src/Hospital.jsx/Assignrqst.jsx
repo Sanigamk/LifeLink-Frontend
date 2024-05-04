@@ -57,6 +57,14 @@ useEffect(()=>{
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-medium text-gray-500">
+                                Proof
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.hosptl?.proof}`} download> <span>{data.hosptl?.proof}</span></a>
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
                                 Patientname
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
@@ -94,7 +102,7 @@ useEffect(()=>{
                                 Healthcertificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                               view
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.mnghosorganreq?.healthcertificate}`} download> <span>{data.mnghosorganreq?.healthcertificate}</span></a>
 
                             </dd>
                         </div>

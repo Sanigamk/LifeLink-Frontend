@@ -58,7 +58,7 @@ export const Vwupdateprofile = () => {
                         </div>
                         <div class="mb-5">
                             <label for="age" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Age :</label>
-                            <input onChange={handleChange} name="age" type="number" id="age" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.age} />
+                            <input onChange={handleChange} name="age" type="text" pattern="[0-9]{2}" maxLength={2} title="Please enter a valid 6-digit PIN code" id="age" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.age} />
                         </div>
                         <div class="mb-5">
                             <label for="place" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email :</label>
@@ -77,7 +77,8 @@ export const Vwupdateprofile = () => {
                             <input onChange={handleChange} name="dateofbirth" type="text" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.dateofbirth} />
                         </div>
                         <div class="mb-5">
-                        <img className='w-[80px] h-14' src={`http://localhost:5000/uploads/${userData.healthcertificate}`} alt="" />
+                        <a target='_blank' href={`http://localhost:5000/uploads/${userData.healthcertificate}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${userData.healthcertificate}`} alt='click to view & download pdf' /></a>
+                             <a target='_blank' href={`http://localhost:5000/uploads/${userData.healthcertificate}`} download> <span> </span> </a>
                             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Health certificate :</label>
                             <input onChange={handlefile} name="healthcertificate" type="file" id="img" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.healthcertificate} />
                         </div>
@@ -87,7 +88,8 @@ export const Vwupdateprofile = () => {
                             <input onChange={handleChange} name="healthissue" type="text" id="img" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.healthissue} />
                         </div>
                         <div class="mb-5">
-                            <img className='w-[80px] h-14' src={`http://localhost:5000/uploads/${userData.signature}`} alt="" />
+                             <a target='_blank' href={`http://localhost:5000/uploads/${userData.signature}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${userData.signature}`} alt='click to view & download pdf' /></a>
+                             <a target='_blank' href={`http://localhost:5000/uploads/${userData.signature}`} download> <span> </span> </a>
                             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Signature :</label>
                             <input onChange={handlefile} name="healthcertificate" type="file" id="img" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.signature} />
                         </div>
@@ -111,7 +113,8 @@ export const Vwupdateprofile = () => {
                             <input onChange={handleChange} name="pin" type="number" id="post" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.weight} />
                         </div>
                         <div class="mb-5">
-                            <img className='w-[80px] h-14' src={`http://localhost:5000/uploads/${userData.conformationcertificate}`} alt="" />
+                        <a target='_blank' href={`http://localhost:5000/uploads/${userData.conformationcertificate}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${userData.healthcertificate}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`http://localhost:5000/uploads/${userData.conformationcertificate}`} download> <span> </span> </a>
                             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Conformation certificate :</label>
                             <input onChange={handlefile} name="healthcertificate" type="file" id="img" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.conformationcertificate} />
                         </div>

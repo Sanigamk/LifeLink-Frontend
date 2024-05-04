@@ -200,7 +200,7 @@ export const Vworgandonor = () => {
                                 Signature
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.signature}`} alt="" />
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.signature}`} download> <span>{data.signature}</span></a>
 
                             </dd>
                         </div>
@@ -209,7 +209,7 @@ export const Vworgandonor = () => {
                                 Conformation certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.conformationcertificate}`} alt="" />
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.conformationcertificate}`} download> <span>{data.conformationcertificate}</span></a>
 
                             </dd>
                         </div>
@@ -218,7 +218,7 @@ export const Vworgandonor = () => {
                                 Health Certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                <img className= 'h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.healthcertificate}`} alt="" />
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.heathcertificate}`} download> <span>{data.healthcertificate}</span></a>
 
                             </dd>
                         </div>

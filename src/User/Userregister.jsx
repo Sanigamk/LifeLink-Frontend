@@ -42,7 +42,7 @@ export const Userregister = () => {
 
     <div class="mb-5">
       <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name :</label>
-      <input onChange={handleChange} value={data.name} name="name" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="name" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required />
+      <input onChange={handleChange} value={data.name} name="name" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="name" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
     </div>
     
     <div class="mb-5">
@@ -51,7 +51,7 @@ export const Userregister = () => {
     </div>
     <div class="mb-5">
       <label for="age" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Age :</label>
-      <input onChange={handleChange} value={data.age} name="age" type="number" id="place" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+      <input onChange={handleChange} value={data.age} name="age" pattern="[0-9]{2}" maxLength={2} title="Please enter a valid 6-digit PIN code" type="text" id="place" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
     </div>
     <div class="mb-5">
       <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email :</label>

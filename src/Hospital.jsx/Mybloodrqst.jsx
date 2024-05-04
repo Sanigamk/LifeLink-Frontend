@@ -29,7 +29,7 @@ export const Mybloodrqst = () => {
   </div>
   <div class="">
     <label for="age" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Blood unit:</label>
-    <input onChange={handleChange} value={data.bloodunit} name="bloodunit" type="text" id="age" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+    <input onChange={handleChange} value={data.bloodunit} name="bloodunit" type="number" id="age" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
   </div>
  </div>
 

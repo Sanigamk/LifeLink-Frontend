@@ -91,6 +91,9 @@ const Collegerqst = () => {
                                     DISTRICT
                                 </th>
                                 <th scope="col" class="px-6 py-3">
+                                    COLLEGE MAIL
+                                </th>
+                                <th scope="col" class="px-6 py-3">
                                     CAMPNAME
                                 </th>
                                 <th scope="col" class="px-6 py-3">
@@ -120,6 +123,9 @@ const Collegerqst = () => {
                                 </td>
                                 <td class="px-6 py-4">
                                     {item.college?.district}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {item.college?.email}
                                 </td>
                                 <td class="px-6 py-4">
                                     {item.req?.campname}

@@ -45,7 +45,9 @@ export const Vwuserbloodrqst = () => {
                                 <th scope="col" class="px-6 py-3">
                                     BLOOD GROUP
                                 </th>
-                                
+                                <th scope="col" class="px-6 py-3">
+                                    EMAIL
+                                </th>
                                 <th scope="col" class="px-6 py-3">
                                     CONTACT
                                 </th>
@@ -64,7 +66,6 @@ export const Vwuserbloodrqst = () => {
                             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 ">
                                 <td class="px-6 py-4 font-semibold">
                                     {item.user?.name}
-                                    varna
                                 </td>
                                 <td class="px-6 py-4">
                                     {item.req?.hospitalname}
@@ -77,6 +78,9 @@ export const Vwuserbloodrqst = () => {
                                 </td>
                                 <td class="px-6 py-4">
                                     {item.req?.bloodgroup}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {item.user?.email}
                                 </td>
                                 
                                 <td class="px-6 py-4">
