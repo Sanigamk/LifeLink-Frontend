@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 
 export const Mybloodrqst = () => {
   let id=localStorage.getItem('id')
@@ -15,8 +16,13 @@ export const Mybloodrqst = () => {
             console.log(data);
            let response=await axios.post('http://localhost:5000/hospital/mybloodhos',{...data,hospitalId:id})
            console.log(response);
-            
+         
+           
+           setData(data)
+    toast.success("successfully send request")
+    console.log(data);
         }
+        
   return (
     <div className='images2 w-[100%]'>
         <form onSubmit={handleSubmit} class="w-[100%]">

@@ -103,7 +103,7 @@ catch{
         
         <div class="mb-5">
             <label for="house name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Adhaar number:</label>
-            <input onChange={handleChange} name="adhaarnumber" pattern="[0-9]{4}" title="Please enter a valid adhaar number" maxLength={12} type="text" id="house name" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
+            <input onChange={handleChange} name="adhaarnumber" pattern="[0-9]{12}" title="Please enter a valid adhaar number" maxLength={12} type="text" id="house name" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
         </div>
         
     </div>

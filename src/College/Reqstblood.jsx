@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 
 export const Reqstblood = () => {
   let id=localStorage.getItem('id')
@@ -40,6 +41,10 @@ export const Reqstblood = () => {
             console.log(data);
            let response=await axios.post('http://localhost:5000/college/cllgsendrqst',{...data,userId:id})
            console.log(response);
+
+           setData(data)
+    toast.success("successfully send request")
+    console.log(data);
             
         }
   return (

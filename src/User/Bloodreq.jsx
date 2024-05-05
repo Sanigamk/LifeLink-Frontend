@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { toast } from 'react-toastify'
 
 export const Bloodreq = () => {
   let id=localStorage.getItem('id')
@@ -16,6 +17,9 @@ let handleSubmit=async (event)=>{
    console.log(response);
     
 }
+setData(data)
+    toast.success("successfully send request")
+    console.log(data);
   return (
 
 

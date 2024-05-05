@@ -77,7 +77,7 @@ setrefresh(!refresh)
     </div>
     <div class="mb-5">
       <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password:</label>
-      <input onChange={handleChange} name="password" type="password" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.liscence}/>
+      <input onChange={handleChange} name="password" type="text" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.password}/>
     </div>
     
     
@@ -105,7 +105,7 @@ setrefresh(!refresh)
     </div>
     <div class="mb-5">
       <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Conform Password :</label>
-      <input onChange={handleChange} name="conformpassword" type="password" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.liscence}/>
+      <input onChange={handleChange} name="conformpassword" type="text" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.conformpassword}/>
     </div>
     
     
