@@ -50,6 +50,8 @@ const OrganDonorForm = () => {
     }));
   };
   const handleSubmit = async (e) => {
+
+    try{
     e.preventDefault();
     if (data.Conformpassword != data.password) {
       toast.error('password doesnt match')
@@ -116,6 +118,13 @@ const OrganDonorForm = () => {
     setData(data)
     toast.success("successfully registered")
     console.log(data);
+
+  } catch (error) {
+    console.log(error);
+    // Handle error appropriately, such as displaying a toast or alert
+    toast.error(error.response.data.message|| error.message);
+  }
+    
   };
 
   let handlefile = (event) => {
@@ -249,7 +258,17 @@ const OrganDonorForm = () => {
             <div className='w-[70%]'>
               <div class="mb-5">
                 <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Bloodgroup :</label>
-                <input onChange={handleChange} name="bloodgroup" pattern="[a-zA-Z\s\-\+]*" type="text" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
+                <select>
+                <option >Select Blood Group</option>
+                   <option value="AB+ve"> AB+ve</option>
+                  <option value="AB-ve"> AB-ve</option>
+                   <option value="A+ve"> A+ve</option>
+                    <option value="A-ve"> A-ve</option>
+                    <option value="B+ve"> B+ve</option>
+                     <option value="B-ve"> B-ve</option>
+                       <option value="O-ve"> O-ve</option>
+                        <option value="O+ve"> O+ve</option>
+                </select>
               </div>
               <div class="mb-5">
                 <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Height in cm:</label>

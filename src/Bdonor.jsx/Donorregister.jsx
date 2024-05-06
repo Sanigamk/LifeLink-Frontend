@@ -15,6 +15,7 @@ export const Donorregister = () => {
     setData({ ...data, [event.target.name]: event.target.value })
   }
   let handleSubmit = async (event) => {
+    try{
     if(data.conformpassword!=data.password){
       toast.error('password doesnt match')
     }
@@ -58,6 +59,13 @@ export const Donorregister = () => {
   setData(data)
     toast.success("successfully registered")
     console.log(data);
+
+  } catch (error) {
+    console.log(error);
+    // Handle error appropriately, such as displaying a toast or alert
+    toast.error(error.response.data.message|| error.message);
+
+  }
 
   }
   return (

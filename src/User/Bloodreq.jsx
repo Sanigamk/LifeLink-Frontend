@@ -16,10 +16,9 @@ let handleSubmit=async (event)=>{
    let response=await axios.post('http://localhost:5000/users/usersendrqst',{...data,userId:id})
    console.log(response);
     
+   toast.success("successfully send request")
+   console.log(data);
 }
-setData(data)
-    toast.success("successfully send request")
-    console.log(data);
   return (
 
 

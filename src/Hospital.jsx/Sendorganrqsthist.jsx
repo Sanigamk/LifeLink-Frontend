@@ -24,7 +24,7 @@ let {id}=useParams();
                 <div className=" w-[90%]  m-auto mb-8">
                     <div className="flex flex-wrap  ">
                         <p>Patient name :</p>
-                        {data.vwpageorgandnr?.patientname && <span>{data.vwpageorgandnr?.patientnamr} </span>} 
+                        {data.vwpageorgandnr?.patientname && <span>{data.vwpageorgandnr?.patientname} </span>} 
                    {data.reqstt?.patientname && <span>{data.reqstt?.patientname} </span>}
                     </div>
                     <div className="flex ">
@@ -34,7 +34,7 @@ let {id}=useParams();
                     </div>
                     <div className="flex gap-5">
                         <p>health certificate :</p>
-                        {data.vwpageorgandnr?.healthcertificate && <span>{data.req?.healthcertificate} </span>} 
+                        <a target='_blank' href={`http://localhost:5000/uploads/${data.vwpageorgandnr?.healthcertificate}`} download> <span>{data.vwpageorgandnr?.healthcertificate}</span></a>
                    {data.reqstt?.healthcertificate && <span>{data.reqstt?.healthcertificate} </span>}
                     </div>
                     <div className="flex gap-5">
@@ -44,8 +44,8 @@ let {id}=useParams();
                     </div>
                     <div className="flex gap-5">
                         <p>Blood group :</p>
-                        {data.vwpageorgandnr?.bloodgroup && <span>{data.vwpageorgandnr?.bloodgroupp} </span>} 
-                   {data.reqstt?.bloodgrup && <span>{data.reqstt?.bloodgroup} </span>}
+                        {data.vwpageorgandnr?.bloodgroup && <span>{data.vwpageorgandnr?.bloodgroup} </span>} 
+                   {data.reqstt?.bloodgroup && <span>{data.reqstt?.bloodgroup} </span>}
                     </div>
                 </div>
                 <div className="w-full  pt-20 font-bold text-[20px]">

@@ -40,28 +40,58 @@ export const Searchorgandnr = () => {
         <div className='images2 w-[100%] h-[42rem]'>
             <form className="max-w-lg mx-auto pb-10 pt-10">
                 <div className="flex items-center">
-                <select
+                {/* <select
     value={organ}
     onChange={(e) => setOrgan(e.target.value)}
     className='h-[41px] inline-flex items-center py-2.5 text-[100%] px-4  text-sm font-medium text-center rounded-lg  bg-red-800 border border-gray-300  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-700 dark:bg-gray-950/50 dark:hover:bg-gray-500 dark:focus:ring-gray-700 dark:text-white dark:border-gray-700'
 >
     <option disabled value="">Select Organ</option>
     {data.map((item) => {
-        const organs = Object.keys(item.organsBeforeDeath).filter(organ => item.organsBeforeDeath[organ]);
-        return organs.map((organ, index) => (
-            <option key={index} value={organ}>{organ}</option>
-        ));
-    })}
-</select>
+    const organsBefore = Object.keys(item.organsBeforeDeath).filter(organ => item.organsBeforeDeath[organ]);
+    const organsAfter = Object.keys(item.organsAfterDeath).filter(organ => item.organsAfterDeath[organ]);
+    console.log(organsAfter,'after');
+    const allOrgans = [...organsBefore, ...organsAfter];
+    console.log(allOrgans,'=====================');
+    return organsAfter.map((organ, index) => (
+        <option key={index} value={organ}>{organ}</option>
+    ));
+})}
+</select> */}
+
+
+<input onChange={(e) => setOrgan(e.target.value)} type="text" />
+{/* <select
+    value={organ}
+    onChange={(e) => setOrgan(e.target.value)}
+    className='h-[41px] inline-flex items-center py-2.5 text-[100%] px-4  text-sm font-medium text-center rounded-lg  bg-red-800 border border-gray-300  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-700 dark:bg-gray-950/50 dark:hover:bg-gray-500 dark:focus:ring-gray-700 dark:text-white dark:border-gray-700'
+>
+    <option disabled value="">Select Organ</option>
+    {data.map((item) => {
+    const organsBefore = Object.keys(item.organsBeforeDeath).filter(organ => item.organsBeforeDeath[organ]);
+    const organsAfter = Object.keys(item.organsAfterDeath).filter(organ => item.organsAfterDeath[organ]);
+    console.log(organsBefore,'before');
+    const allOrgans = [...organsBefore, ...organsAfter];
+    console.log(allOrgans,'=====================');
+    return organsBefore.map((organ, index) => (
+        <option key={index} value={organ}>{organ}</option>
+    ));
+})}
+</select> */}
 <select
     value={bloodGroup}
     onChange={(e) => setBloodGroup(e.target.value)}
     className='h-[41px] inline-flex items-center py-2.5 text-[100%] px-4  text-sm font-medium text-center rounded-lg  bg-red-800 border border-gray-300  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-700 dark:bg-gray-950/50 dark:hover:bg-gray-500 dark:focus:ring-gray-700 dark:text-white dark:border-gray-700'
 >
     <option disabled value="">Select Blood Group</option>
-    {data.map((item) => (
-        <option key={item._id} value={item.bloodgroup}>{item.bloodgroup}</option>
-    ))}
+    <option value="AB+ve"> AB+ve</option>
+    <option value="AB-ve"> AB-ve</option>
+    <option value="A+ve"> A+ve</option>
+    <option value="A-ve"> A-ve</option>
+    <option value="B+ve"> B+ve</option>
+    <option value="B-ve"> B-ve</option>
+    <option value="O-ve"> O-ve</option>
+    <option value="O+ve"> O+ve</option>
+
 </select>
 
                     <button onClick={all} className='bg-red-800 text-white p-2 w-20 rounded-lg'>All</button>

@@ -15,9 +15,22 @@ export const Sendrequestorgandonors = () => {
     let {id}=useParams()
 
     let handleSubmit=async (event)=>{
+      
         event.preventDefault()
+        const formData = new FormData();
+  for (const key in data){
+    if (data[key]){
+      formData.append(key,data[key]);
+    }
+  }
+  formData.append('hospitalId',hid)
+formData.append('organdonorId',	id)
         console.log(data);
-       let response=await axios.post('http://localhost:5000/hospital/hossendrqsttoorgandonor',{...data,hospitalId:hid,organdonorId:id})
+       let response=await axios.post('http://localhost:5000/hospital/hossendrqsttoorgandonor',formData,{
+        headers:{
+          'content-Type':'multiport/form-data'
+        }
+      })
        console.log(response);
         
     }

@@ -9,7 +9,7 @@ export const Assignorgan = () => {
     console.log(id);
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response=await axios.get(`http://localhost:5000/hospital/vwpageorgandnr/${id}`)
+            let response=await axios.get(`http://localhost:5000/hospital/viewpageorgandnrs/${id}`)
             console.log(response.data)
             setData(response.data)
         }

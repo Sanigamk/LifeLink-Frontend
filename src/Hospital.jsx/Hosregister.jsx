@@ -56,8 +56,10 @@ export const Hosregister = () => {
     toast.success("successfully registered")
     console.log(data);
 }
-catch{
-  toast.error('email exist')
+ catch (error) {
+  console.log(error);
+  // Handle error appropriately, such as displaying a toast or alert
+  toast.error(error.response.data.message|| error.message);
 }  
         }
   return (

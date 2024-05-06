@@ -18,7 +18,7 @@ export const Mybloodrqst = () => {
            console.log(response);
          
            
-           setData(data)
+           
     toast.success("successfully send request")
     console.log(data);
         }
@@ -27,7 +27,7 @@ export const Mybloodrqst = () => {
     <div className='images2 w-[100%]'>
         <form onSubmit={handleSubmit} class="w-[100%]">
 
-<div className='w-[25%] m-auto my-32'>
+<div className='w-[25%] m-auto pt-20'>
 
   <div class="">
     <label for="name" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Blood group:</label>

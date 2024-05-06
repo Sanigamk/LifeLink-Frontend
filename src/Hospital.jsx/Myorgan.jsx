@@ -19,10 +19,8 @@ export const Myorgan = () => {
         }
         let handleSubmit=async (event)=>{
             try{
-                if(data.conformpassword!=data.password){
-                  toast.error('password doesnt match')
-                }
-                else{
+                
+               
 
 
           let formData = new FormData();
@@ -51,14 +49,13 @@ export const Myorgan = () => {
          })
         //    console.log(response);
             
-        }
         const requiredFields = ['patientname','age','address','email','contact','adhaarnumber','organ','bloodgroup','doctername','prescription','bystander','bystandercontact','patientidproof','healthcertificate'];
     for (const field of requiredFields) {
       if (!data[field]) {
           return toast.error(`${field} is required`);
       }
   }
-  setData(data)
+  
     toast.success("successfully send request")
     console.log(data);
 }

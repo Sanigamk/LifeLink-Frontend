@@ -18,47 +18,48 @@ export const Collgregister = () => {
         let handleChange=(event)=>{
             setData({...data,[event.target.name]:event.target.value})
         }
-        let handleSubmit=async (event)=>{
-
-            if(data.conformpassword!=data.password){
-              toast.error('password doesnt match')
-            }
-            else{
-
-
-          let formData = new FormData();
-        formData.append('name', data.name);
-        formData.append('place', data.place);
-        formData.append('email', data.email);
-        formData.append('contact', data.contact);
-        formData.append('postoffice',data.postoffice);
-        formData.append('pin',data.pin);
-        formData.append('district',data.district);
-        formData.append('password', data.password);
-        formData.append('certificate', data.certificate);
-        formData.append('userType', 'college');
-            event.preventDefault()
-            console.log(data);
-           let response=await axios.post('http://localhost:5000/user/register',formData,{
-            headers: {
-              'Content-Type': 'multipart/form-data'  // Set the content type for FormData
-            }
-           })
-          
-          //  console.log(response);
-
-           const requiredFields = ['name','place','email','contact','postoffice','pin','district','password','certificate'];
-    for (const field of requiredFields) {
-      if (!data[field]) {
-          return toast.error(`${field} is required`);
+        let handleSubmit = async (event) => {
+          try {
+              if (data.conformpassword !== data.password) {
+                  toast.error('Password doesn\'t match');
+              } else {
+                  let formData = new FormData();
+                  formData.append('name', data.name);
+                  formData.append('place', data.place);
+                  formData.append('email', data.email);
+                  formData.append('contact', data.contact);
+                  formData.append('postoffice', data.postoffice);
+                  formData.append('pin', data.pin);
+                  formData.append('district', data.district);
+                  formData.append('password', data.password);
+                  formData.append('certificate', data.certificate);
+                  formData.append('userType', 'college');
+                  event.preventDefault();
+                  console.log(data);
+                  let response = await axios.post('http://localhost:5000/user/register', formData, {
+                      headers: {
+                          'Content-Type': 'multipart/form-data' // Set the content type for FormData
+                      }
+                  });
+      
+                  // console.log(response);
+      
+                  const requiredFields = ['name', 'place', 'email', 'contact', 'postoffice', 'pin', 'district', 'password', 'certificate'];
+                  for (const field of requiredFields) {
+                      if (!data[field]) {
+                          return toast.error(`${field} is required`);
+                      }
+                  }
+                  setData(data);
+                  toast.success("Successfully registered");
+                  console.log(data);
+              }
+          } catch (error) {
+              console.log(error);
+              // Handle error appropriately, such as displaying a toast or alert
+              toast.error(error.response.data.message|| error.message);
+          }
       }
-  }
-  setData(data)
-    toast.success("successfully registered")
-    console.log(data);
-}
-
-        }
   return (
     <div>
       <ToastContainer/>

@@ -25,7 +25,7 @@ export const Vworgandonor = () => {
     
   return (
 
-    <div className='image3'>
+    <div className='image3 '>
       <div class="bg-transparent w-[50%] m-auto overflow-hidden shadow rounded-lg border mt-10">
                 <div class="px-4 py-5 sm:px-6">
                     <h3 class="text-lg leading-6 font-medium text-gray-900">
@@ -225,10 +225,10 @@ export const Vworgandonor = () => {
                     </dl>
                 </div>
             </div>
-            <div class="flex flex-wrap mb-5 mt-5">
+            <div class="flex flex-wrap pb-[200px] mt-2 m-auto w-fit">
             <Link to={`/hospital/sendrequestorgandonors/${data._id}`}>
 
-            <button type="submit" class="text-white m-auto m-a bg-red-800 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">SEND REQUEST</button>
+            <button type="submit" class="text-white m-auto  bg-red-800 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">SEND REQUEST</button>
            </Link>
 
           </div>

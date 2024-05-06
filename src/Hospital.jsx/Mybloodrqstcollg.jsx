@@ -48,7 +48,7 @@ export const Mybloodrqstcollg = () => {
            console.log(response);
          
            
-           setData(data)
+           
     toast.success("successfully send request")
     console.log(data);
         }
