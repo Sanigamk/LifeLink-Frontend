@@ -106,7 +106,7 @@ let {id}=useParams();
                     </div>
                     <div className="flex gap-5">
                         <p>Conformation certificate :</p>
-                        <a href={`http://localhost:5000/uploads/${data.donorr?.conformationcertificate}`} download> <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.donorr?.conformationcertificate}`} alt="" /> </a>
+                        <a target="_blank" href={`http://localhost:5000/uploads/${data.donorr?.conformationcertificate}`} download> <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.donorr?.conformationcertificate}`} alt="" /> </a>
                     </div>
                 </div>
 

@@ -107,7 +107,7 @@ export const Vwblooddonor = () => {
                                Health Certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.healthcerificate}`} download> <span> {data.healthcerificate} </span> </a>
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.healthcertificate}`} download> <span> {data.healthcertificate} </span> </a>
 
                             </dd>
                         </div>

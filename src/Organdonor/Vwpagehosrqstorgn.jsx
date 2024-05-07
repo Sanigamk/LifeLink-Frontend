@@ -109,8 +109,11 @@ export const Vwpagehosrqstorgn = () => {
                                 Date
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.reqDetails?.date && <span>{data.reqDetails.date}</span>}
-                            {data.vwpagehosreq?.date && <span>{data.vwpagehosreq.date}</span>}
+                            {/* {data.reqDetails?.date && <span>{data.reqDetails.date}</span>} */}
+                            { new Date(data.reqDetails?.date).toLocaleDateString('en-GB')}
+                            {/* {data.vwpagehosreq?.date && <span>{data.vwpagehosreq.date}</span>} */}
+                            { new Date(data.vwpagehosreq?.date).toLocaleDateString('en-GB')}
+                            
 
                             </dd>
                         </div>

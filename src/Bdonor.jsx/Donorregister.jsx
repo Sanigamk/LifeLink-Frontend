@@ -79,7 +79,7 @@ export const Donorregister = () => {
 
             <div class="mb-5">
               <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name :</label>
-              <input onChange={handleChange} value={data.name} pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" name="name" type="text" id="name" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required />
+              <input onChange={handleChange} value={data.name} pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" name="name" type="text" id="name" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  required />
             </div>
             <div class="mb-5">
               <label for="age" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Age :</label>
@@ -113,7 +113,7 @@ export const Donorregister = () => {
               <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">District :</label>
               <select onChange={handleChange} name="district" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" class="shadow-sm bg-red-200  border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-40 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
                     <option value="">Select Dustrict</option>
-                    <option value="Kozhikkod"> Kozhikode</option>
+                    <option value="Kozhikode"> Kozhikode</option>
                     <option value="Kasargod"> Kasargod</option>
                     <option value="Kannur"> Kannur</option>
                     <option value="Wayanad"> Wayanad</option>
@@ -167,7 +167,7 @@ export const Donorregister = () => {
             </div>
             <div class="mb-5">
               <label for="pin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Weight in kg :</label>
-              <input onChange={handleChange} value={data.weight} name="weight" type="text" pattern="[0-9]{3}" maxLength={3} title="Please enter a weight" id="pin" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+              <input onChange={handleChange} value={data.weight} name="weight" type="text" pattern="[0-9]{2,3}" title="Please enter a weight" id="pin" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
             </div>
             <div class="mb-5">
               <label for="district" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Health certificate :</label>

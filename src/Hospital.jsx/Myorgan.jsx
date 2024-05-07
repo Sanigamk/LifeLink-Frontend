@@ -100,7 +100,7 @@ catch{
         
         <div class="mb-5">
             <label for="house name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Adhaar number:</label>
-            <input onChange={handleChange} name="adhaarnumber" pattern="[0-9]{12}" title="Please enter a valid adhaar number" maxLength={12} type="text" id="house name" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
+            <input onChange={handleChange} name="adhaarnumber" pattern="[0-9]{12}" title="Please enter a valid adhaar number" maxLength={12} type="text" id="house name" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
         </div>
         
     </div>
@@ -124,11 +124,11 @@ catch{
 
         <div class="mb-5">
             <label for="organ" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Organ:</label>
-            <input onChange={handleChange} name="organ" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="house name" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
+            <input onChange={handleChange} name="organ" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="house name" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
         </div>
         <div class="mb-5">
             <label for="doctername" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Docter name:</label>
-            <input onChange={handleChange} name="doctername" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="post" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"/>
+            <input onChange={handleChange} name="doctername" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="post" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"/>
         </div>
         
         <div class="mb-5">
@@ -141,11 +141,11 @@ catch{
         </div>
         <div class="mb-5">
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Bystander :</label>
-            <input onChange={handleChange} name="bystander" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="contact" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"/>
+            <input onChange={handleChange} name="bystander" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"/>
         </div>
         <div class="mb-5">
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Bystander contact:</label>
-            <input onChange={handleChange} name="bystandercontact" type="text" pattern="[0-9]{10}" title="Please enter a valid phone number" maxLength={10} id="contact" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"/>
+            <input onChange={handleChange} name="bystandercontact" type="text" pattern="[0-9]{10}" title="Please enter a valid phone number" maxLength={10} id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"/>
         </div>
        
         

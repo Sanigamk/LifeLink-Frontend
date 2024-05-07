@@ -49,7 +49,9 @@ export const Myorganstatusviewpage = () => {
                                 Liscence Proof
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {data.hosp?.proof}
+                                {/* {data.hosp?.proof} */}
+                                <a target='_blank' href={`http://localhost:5000/uploads/${data.hosp?.proof}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.hosp?.proof}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`http://localhost:5000/uploads/${data.hosp?.proof}`} download> <span> </span> </a>
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -74,8 +76,11 @@ export const Myorganstatusviewpage = () => {
                                 Docter
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                               {data.vwsendorganrqstpage?.doctername}
-                               {data.vwsendorganrqstpage?.prescription}
+                               {data.vwsendorganrqstpage?.doctername}<br/>
+
+                               <a target='_blank' href={`http://localhost:5000/uploads/${data.vwsendorganrqstpage?.prescription}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.vwsendorganrqstpage?.prescription}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`http://localhost:5000/uploads/${data.vwsendorganrqstpage?.prescription}`} download> <span> </span> </a>
+                               {/* {data.vwsendorganrqstpage?.prescription} */}
 
                             </dd>
                         </div>
@@ -84,7 +89,9 @@ export const Myorganstatusviewpage = () => {
                                 Patient Id Proof
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                               {data.vwsendorganrqstpage?.patientidproof}
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.vwsendorganrqstpage?.patientidproof}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.vwsendorganrqstpage?.patientidproof}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`http://localhost:5000/uploads/${data.vwsendorganrqstpage?.patientidproof}`} download> <span> </span> </a>
+                               {/* {data.vwsendorganrqstpage?.patientidproof} */}
 
                             </dd>
                         </div>
