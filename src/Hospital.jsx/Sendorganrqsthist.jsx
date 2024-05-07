@@ -35,7 +35,7 @@ let {id}=useParams();
                     <div className="flex gap-5">
                         <p>health certificate :</p>
                         <a target='_blank' href={`http://localhost:5000/uploads/${data.vwpageorgandnr?.healthcertificate}`} download> <span>{data.vwpageorgandnr?.healthcertificate}</span></a>
-                   {data.reqstt?.healthcertificate && <span>{data.reqstt?.healthcertificate} </span>}
+                    {data.reqstt?.healthcertificate &&  <a target='_blank' href={`http://localhost:5000/uploads/${data.reqstt?.healthcertificate}`} download> <span>{data.reqstt?.healthcertificate} </span></a>}
                     </div>
                     <div className="flex gap-5">
                         <p>Organ :</p>
@@ -46,6 +46,11 @@ let {id}=useParams();
                         <p>Blood group :</p>
                         {data.vwpageorgandnr?.bloodgroup && <span>{data.vwpageorgandnr?.bloodgroup} </span>} 
                    {data.reqstt?.bloodgroup && <span>{data.reqstt?.bloodgroup} </span>}
+                    </div>
+                    <div className="flex gap-5">
+                        <p>Request send Hospital :</p>
+                        {/* {data.vwpageorgandnr?.bloodgroup && <span>{data.vwpageorgandnr?.bloodgroup} </span>}  */}
+                   {data.userr?.name && <span>{data.userr?.name} </span>}
                     </div>
                 </div>
                 <div className="w-full  pt-20 font-bold text-[20px]">

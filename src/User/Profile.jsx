@@ -1,5 +1,6 @@
 import axios  from 'axios';
 import React, { useEffect, useState } from 'react'
+import { toast } from 'react-toastify';
 
 export const Profile = () => {
 
@@ -27,6 +28,14 @@ let handleChange = (event) => {
 
 let handleSubmit=async (event)=>{
   event.preventDefault()
+
+  if(data.conformpassword!=data.password){
+    return toast.error('password doesnt match')
+
+  }
+  toast.success('Profile updated')
+      setrefresh(!refresh)
+
   console.log(data);
  let response=await axios.put(`http://localhost:5000/users/updatepro/${id}`,data)
  console.log(response);

@@ -157,7 +157,8 @@ export const Assignorgan = () => {
                                 Signature
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.signature}`} alt="" />
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.signature}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.signature}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`http://localhost:5000/uploads/${data.signature}`} download> <span> </span> </a>
 
                             </dd>
                         </div>
@@ -166,7 +167,8 @@ export const Assignorgan = () => {
                                 Conformation certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.conformationcertificate}`} alt="" />
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.conformationcertificate}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.conformationcertificate}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`http://localhost:5000/uploads/${data.conformationcertificate}`} download> <span> </span> </a>
 
                             </dd>
                         </div>
@@ -175,7 +177,8 @@ export const Assignorgan = () => {
                                 Health Certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                <img className= 'h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.healthcertificate}`} alt="" />
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.healthcertificate}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.healthcertificate}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`http://localhost:5000/uploads/${data.healthcertificate}`} download> <span> </span> </a>
 
                             </dd>
                         </div>

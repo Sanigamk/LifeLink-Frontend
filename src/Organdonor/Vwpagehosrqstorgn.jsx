@@ -84,7 +84,10 @@ export const Vwpagehosrqstorgn = () => {
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                             {data.reqDetails?.address && <span>{data.reqDetails.address}</span>}
-                            {data.vwpagehosreq?.address && <span>{data.vwpagehosreq.address}</span>} 
+                            {data.vwpagehosreq?.postoffice && <span>{data.vwpagehosreq.postoffice}</span>}<br/> 
+                            {data.vwpagehosreq?.place && <span>{data.vwpagehosreq.place}</span>}<br/>
+                            {data.vwpagehosreq?.district && <span>{data.vwpagehosreq.district}</span>}<br/>
+                            {data.vwpagehosreq?.pin && <span>{data.vwpagehosreq.pin}</span>}
 
                             </dd>
                         </div>
@@ -94,9 +97,9 @@ export const Vwpagehosrqstorgn = () => {
                                 Blood group & Organ
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.reqDetails?.bloodgroup && <span>{data.reqDetails.bloodgroup}</span>}
-                            {data.reqDetails?.organ && <span>{data.reqDetails.organ}</span>}
-                            {data.vwpagehosreq?.bloodgroup && <span>{data.vwpagehosreq.bloodgroup}</span>}
+                            {data.reqDetails?.bloodgroup && <span>{data.reqDetails.bloodgroup}</span>} <br />
+                            {data.reqDetails?.organ && <span>{data.reqDetails.organ}</span>} 
+                            {data.vwpagehosreq?.bloodgroup && <span>{data.vwpagehosreq.bloodgroup}</span>} <br />
                             {data.vwpagehosreq?.organ && <span>{data.vwpagehosreq.organ}</span>}
 
                             </dd>
@@ -126,8 +129,10 @@ export const Vwpagehosrqstorgn = () => {
                                 Prescription
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.reqDetails?.prescription && <span>{data.reqDetails.prescription}</span>}
-                            {data.vwpagehosreq?.prescription && <span>{data.vwpagehosreq.prescription}</span>}
+                           {data.reqDetails?.prescription && <a target='_blank' href={`http://localhost:5000/uploads/${data.reqDetails?.prescription}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.reqDetails?.prescription}`} alt='click to view & download pdf' /></a>}
+                           <a target='_blank' href={`http://localhost:5000/uploads/${data.reqDetails?.prescription}`} download> <span> </span> </a>
+                            {data.vwpagehosreq?.prescription && <> <a target='_blank' href={`http://localhost:5000/uploads/${data.vwpagehosreq?.prescription}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.reqDetails?.prescription}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`http://localhost:5000/uploads/${data.vwpagehosreq?.prescription}`} download> <span> </span> </a></>}
 
                             </dd>
                         </div>
@@ -136,8 +141,12 @@ export const Vwpagehosrqstorgn = () => {
                                 Patient id proof
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.reqDetails?.patientidproof && <span>{data.reqDetails.patientidproof}</span>}
-                            {data.vwpagehosreq?.patientidproof && <span>{data.vwpagehosreq.patientidproof}</span>}
+                            {data.reqDetails?.patientidproof && <a target='_blank' href={`http://localhost:5000/uploads/${data.reqDetails?.patientidproof}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.reqDetails?.patientidproof}`} alt='click to view & download pdf' /></a>}
+                           <a target='_blank' href={`http://localhost:5000/uploads/${data.reqDetails?.patientidproof}`} download> <span> </span> </a>
+                            {data.vwpagehosreq?.prescription && <> <a target='_blank' href={`http://localhost:5000/uploads/${data.vwpagehosreq?.patientidproof}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.reqDetails?.patientidproof}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`http://localhost:5000/uploads/${data.vwpagehosreq?.patientidproof}`} download> <span> </span> </a></>}  
+                            {/* {data.reqDetails?.patientidproof && <span>{data.reqDetails.patientidproof}</span>}
+                            {data.vwpagehosreq?.patientidproof && <span>{data.vwpagehosreq.patientidproof}</span>} */}
 
                             </dd>
                         </div>

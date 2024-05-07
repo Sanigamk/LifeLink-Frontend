@@ -89,7 +89,7 @@ catch{
         </div>
         <div class="mb-5">
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address:</label>
-            <input onChange={handleChange} name="address" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"/>
+            <input onChange={handleChange} name="address" type="text" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"/>
         </div>
        
         <div class="mb-5">
@@ -108,7 +108,18 @@ catch{
 
     <div class="mb-5">
             <label for="post" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Blood group :</label>
-            <input onChange={handleChange} name="bloodgroup" type="text" id="post" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"/>
+            {/* <input onChange={handleChange} name="bloodgroup" type="text" id="post" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"/> */}
+            <select onChange={handleChange} name='bloodgroup'>
+                    <option >Select Blood Group</option>
+                    <option value="AB+ve"> AB+ve</option>
+                    <option value="AB-ve"> AB-ve</option>
+                    <option value="A+ve"> A+ve</option>
+                    <option value="A-ve"> A-ve</option>
+                    <option value="B+ve"> B+ve</option>
+                    <option value="B-ve"> B-ve</option>
+                    <option value="O-ve"> O-ve</option>
+                    <option value="O+ve"> O+ve</option>
+                  </select>
         </div>
 
         <div class="mb-5">
@@ -122,7 +133,7 @@ catch{
         
         <div class="mb-5">
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">prescription :</label>
-            <input onChange={handleChange} name="prescription" type="file" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"/>
+            <input onChange={handlefile} name="prescription" type="file" id="contact" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"/>
         </div>
         <div class="mb-5">
             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">patientidproof :</label>

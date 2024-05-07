@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 
 export const Editcollg = () => {
     let id = localStorage.getItem('id')
@@ -26,6 +27,14 @@ export const Editcollg = () => {
     }
     let handlesubmit = async (event) => {
         event.preventDefault()
+
+        if(data.conformpassword!=data.password){
+            return toast.error('password doesnt match')
+        
+          }
+          toast.success('Profile updated')
+              setrefresh(!refresh)
+
         const formData = new FormData();
         for (const key in data) {
             if (data[key]) {

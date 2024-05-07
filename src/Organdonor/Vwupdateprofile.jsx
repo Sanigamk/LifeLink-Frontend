@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 
 export const Vwupdateprofile = () => {
 
@@ -30,6 +31,14 @@ export const Vwupdateprofile = () => {
       }
       let handlesubmit = async (event) => {
         event.preventDefault()
+
+        if(data.conformpassword!=data.password){
+            return toast.error('password doesnt match')
+        
+          }
+          toast.success('Profile updated')
+              setrefresh(!refresh)
+
         const formData = new FormData();
         for (const key in data) {
             if (data[key]) {
@@ -113,7 +122,7 @@ export const Vwupdateprofile = () => {
                             <input onChange={handleChange} name="pin" type="number" id="post" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.weight} />
                         </div>
                         <div class="mb-5">
-                        <a target='_blank' href={`http://localhost:5000/uploads/${userData.conformationcertificate}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${userData.healthcertificate}`} alt='click to view & download pdf' /></a>
+                        <a target='_blank' href={`http://localhost:5000/uploads/${userData.conformationcertificate}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${userData.healthcertificate}`} alt='click to view & download' /></a>
                            <a target='_blank' href={`http://localhost:5000/uploads/${userData.conformationcertificate}`} download> <span> </span> </a>
                             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Conformation certificate :</label>
                             <input onChange={handlefile} name="healthcertificate" type="file" id="img" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.conformationcertificate} />

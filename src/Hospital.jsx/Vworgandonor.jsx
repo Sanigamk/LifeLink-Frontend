@@ -21,6 +21,15 @@ export const Vworgandonor = () => {
     fetchdata()
 
   }, [refresh])
+
+  const convertTo12HourFormat = (time) => {
+    const timeParts = time.split(':');
+    const hours = parseInt(timeParts[0]);
+    const minutes = parseInt(timeParts[1]);
+    const ampm = hours >= 12 ? 'pm' : 'am';
+    const hours12 = hours % 12 || 12;
+    return `${hours12}:${minutes < 10 ? '0' : ''}${minutes} ${ampm}`;
+};
  
     
   return (
@@ -84,7 +93,8 @@ export const Vworgandonor = () => {
                                 Date of birth
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.dateofbirth}
+                            {/* {data.dateofbirth} */}
+                            { new Date(data.dateofbirth).toLocaleDateString('en-GB')}
 
                             </dd>
                         </div>
@@ -147,7 +157,9 @@ export const Vworgandonor = () => {
                                 Date of death & Time
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.dateofdeath}{data.time}
+                            {data.dateofdeath}<br/>
+                            {/* {data.time} */}
+                            {data.time && convertTo12HourFormat(data.time)}
 
                             </dd>
                         </div>
@@ -200,7 +212,10 @@ export const Vworgandonor = () => {
                                 Signature
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.signature}`} download> <span>{data.signature}</span></a>
+
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.signature}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.signature}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`http://localhost:5000/uploads/${data.signature}`} download> <span> </span> </a>
+                            {/* <a target='_blank' href={`http://localhost:5000/uploads/${data.signature}`} download> <span>{data.signature}</span></a> */}
 
                             </dd>
                         </div>
@@ -209,7 +224,9 @@ export const Vworgandonor = () => {
                                 Conformation certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.conformationcertificate}`} download> <span>{data.conformationcertificate}</span></a>
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.conformationcertififcate}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.conformationcertificate}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`http://localhost:5000/uploads/${data.conformationcertificate}`} download> <span> </span> </a>
+                            {/* <a target='_blank' href={`http://localhost:5000/uploads/${data.conformationcertificate}`} download> <span>{data.conformationcertificate}</span></a> */}
 
                             </dd>
                         </div>
@@ -218,7 +235,9 @@ export const Vworgandonor = () => {
                                 Health Certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.heathcertificate}`} download> <span>{data.healthcertificate}</span></a>
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.healthcertificate}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.heathcertificate}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`http://localhost:5000/uploads/${data.healthcertificate}`} download> <span> </span> </a>
+                            {/* <a target='_blank' href={`http://localhost:5000/uploads/${data.heathcertificate}`} download> <span>{data.healthcertificate}</span></a> */}
 
                             </dd>
                         </div>

@@ -125,7 +125,9 @@ let id=localStorage.getItem('id')
                                     {item.hospital?.district}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {item.hospital?.proof}
+                                    {/* {item.hospital?.proof} */}
+                                    <a target='_blank' href={`http://localhost:5000/uploads/${item.hospital?.proof}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${item.hospital?.proof}`} alt='click to view & download pdf' /></a>
+                                    <a target='_blank' href={`http://localhost:5000/uploads/${item.hospital?.proof}`} download> <span> </span> </a>
                                 </td>
                                 <td class="px-6 py-4">
                                    {item.req?.bloodgroup}

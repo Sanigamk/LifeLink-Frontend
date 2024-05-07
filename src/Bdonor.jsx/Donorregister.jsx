@@ -83,7 +83,7 @@ export const Donorregister = () => {
             </div>
             <div class="mb-5">
               <label for="age" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Age :</label>
-              <input onChange={handleChange} value={data.age} name="age" type="number" id="age" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+              <input onChange={handleChange} value={data.age} name="age" type="text" pattern="[0-9]{2}" maxLength={2} title="Please enter a age"  id="age" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
             </div>
             <div class="mb-5">
               <label for="place" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Place :</label>
@@ -111,7 +111,24 @@ export const Donorregister = () => {
             </div>
             <div class="mb-5">
               <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">District :</label>
-              <input onChange={handleChange} value={data.ditrict} pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" name="district" type="text" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+              <select onChange={handleChange} name="district" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" class="shadow-sm bg-red-200  border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-40 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
+                    <option value="">Select Dustrict</option>
+                    <option value="Kozhikkod"> Kozhikode</option>
+                    <option value="Kasargod"> Kasargod</option>
+                    <option value="Kannur"> Kannur</option>
+                    <option value="Wayanad"> Wayanad</option>
+                    <option value="Malappuram"> Malappuram</option>
+                    <option value="Thrissur"> Thrissur</option>
+                    <option value="Palakkad"> Palakkad</option>
+                    <option value="Idukki"> Idukki</option>
+                    <option value="Kottayam"> Kottayam</option>
+                    <option value="Aalappuzha"> Aalappuzha</option>
+                    <option value="Pathanamthitta"> Pathanamthitta</option>
+                    <option value="Kollam"> Kollam</option>
+                    <option value="Earanakulam"> Earanakulam</option>
+                    <option value="Thiruvananthapuram"> Thiruvananthapuram</option>
+                    </select>
+              {/* <input onChange={handleChange} value={data.ditrict} pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" name="district" type="text" id="contact" class="shadow-sm bg-white  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required /> */}
             </div>
 
           </div>
@@ -131,15 +148,26 @@ export const Donorregister = () => {
 
             <div class="mb-5">
               <label for="house name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Blood group:</label>
-              <input onChange={handleChange} value={data.bloodgroup} pattern="[a-zA-Z\s\-\+]*"  name="bloodgroup" type="text" id="house name" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="" required />
+              <select onChange={handleChange} name='bloodgroup'>
+                    <option >Select Blood Group</option>
+                    <option value="AB+ve"> AB+ve</option>
+                    <option value="AB-ve"> AB-ve</option>
+                    <option value="A+ve"> A+ve</option>
+                    <option value="A-ve"> A-ve</option>
+                    <option value="B+ve"> B+ve</option>
+                    <option value="B-ve"> B-ve</option>
+                    <option value="O-ve"> O-ve</option>
+                    <option value="O+ve"> O+ve</option>
+                  </select>
+              {/* <input onChange={handleChange} value={data.bloodgroup} pattern="[a-zA-Z\s\-\+]*"  name="bloodgroup" type="text" id="house name" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="" required /> */}
             </div>
             <div class="mb-5">
-              <label for="post" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Height :</label>
-              <input onChange={handleChange} value={data.height} name="height" type="text" id="post" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+              <label for="post" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Height in kg :</label>
+              <input onChange={handleChange} value={data.height} name="height" type="text" pattern="[0-9]{3}" maxLength={3} title="Please enter a height" id="post" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
             </div>
             <div class="mb-5">
-              <label for="pin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Weight :</label>
-              <input onChange={handleChange} value={data.weight} name="weight" type="number" id="pin" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+              <label for="pin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Weight in kg :</label>
+              <input onChange={handleChange} value={data.weight} name="weight" type="text" pattern="[0-9]{3}" maxLength={3} title="Please enter a weight" id="pin" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
             </div>
             <div class="mb-5">
               <label for="district" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Health certificate :</label>

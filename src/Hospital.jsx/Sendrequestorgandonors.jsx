@@ -1,6 +1,7 @@
 import axios  from 'axios'
 import React, { useState } from 'react'
 import {useParams} from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 export const Sendrequestorgandonors = () => {
    
@@ -14,6 +15,12 @@ export const Sendrequestorgandonors = () => {
     let hid=localStorage.getItem('id')
     let {id}=useParams()
 
+    let handlefile=(event)=>{
+      console.log(event.target.files);
+      setData({...data,[event.target.name]:event.target.files[0]})
+      console.log(data);
+    }
+
     let handleSubmit=async (event)=>{
       
         event.preventDefault()
@@ -23,6 +30,9 @@ export const Sendrequestorgandonors = () => {
       formData.append(key,data[key]);
     }
   }
+  
+  
+
   formData.append('hospitalId',hid)
 formData.append('organdonorId',	id)
         console.log(data);
@@ -33,6 +43,8 @@ formData.append('organdonorId',	id)
       })
        console.log(response);
         
+       toast.success("successfully send request")
+    console.log(data);
     }
 
 
@@ -48,7 +60,7 @@ formData.append('organdonorId',	id)
 
             <div class="mb-5">
               <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Patient name :</label>
-              <input onChange={handleChange} value={data.patientname} pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed"  name="patientname" type="name" id="name" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required />
+              <input onChange={handleChange} value={data.patientname} pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed"  name="patientname" type="name" id="name" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  required />
             </div>
             <div class="mb-5">
               <label for="age" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Age :</label>
@@ -80,20 +92,31 @@ formData.append('organdonorId',	id)
           <div className='w-[25%]'>
           <div class="mb-5">
               <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact :</label>
-              <input  onChange={handleChange} value={data.contact} name="contact" pattern="[0-9]{10}" title="Please enter a valid phone number" maxLength={10} type="number" id="contact" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+              <input  onChange={handleChange} value={data.contact} name="contact" pattern="[0-9]{10}" title="Please enter a valid phone number" maxLength={10} type="tel" id="contact" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
             </div>
           <div class="mb-5">
               <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Health certificate :</label>
-              <input  onChange={handleChange} value={data.healthcertificate} name="healthcertificate" type="file" id="file" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+              <input  onChange={handlefile} value={data.healthcertificate} name="healthcertificate" type="file" id="file" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
             </div>
 
             <div class="mb-5">
               <label for="house name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Organ :</label>
-              <input  onChange={handleChange} value={data.organ} name="organ" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="house name" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required />
+              <input  onChange={handleChange} value={data.organ} name="organ" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="house name" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"  required />
             </div>
             <div class="mb-5">
               <label for="post" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Bloodgroup :</label>
-              <input  onChange={handleChange} value={data.bloodgroup} name="bloodgroup" type="text" id="post" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+              {/* <input  onChange={handleChange} value={data.bloodgroup} name="bloodgroup" type="text" id="post" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required /> */}
+              <select onChange={handleChange} name='bloodgroup'>
+                    <option >Select Blood Group</option>
+                    <option value="AB+ve"> AB+ve</option>
+                    <option value="AB-ve"> AB-ve</option>
+                    <option value="A+ve"> A+ve</option>
+                    <option value="A-ve"> A-ve</option>
+                    <option value="B+ve"> B+ve</option>
+                    <option value="B-ve"> B-ve</option>
+                    <option value="O-ve"> O-ve</option>
+                    <option value="O+ve"> O+ve</option>
+                  </select>
             </div>
             <div class="mb-5">
               <label for="pin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Docter name:</label>
@@ -102,11 +125,11 @@ formData.append('organdonorId',	id)
             
             <div class="mb-5">
               <label for="district" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prescription:</label>
-              <input onChange={handleChange} value={data.prescription} name="prescription" type="file" id="district" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+              <input onChange={handlefile}  name="prescription" type="file" id="district" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
             </div>
             <div class="mb-5">
               <label for="district" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Patient id proof :</label>
-              <input  onChange={handleChange} value={data.patientidproof} name="patientidproof" type="file" id="district" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+              <input  onChange={handlefile}  name="patientidproof" type="file" id="district" class="shadow-sm bg-red-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
             </div>
             
           </div>

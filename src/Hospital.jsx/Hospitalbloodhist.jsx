@@ -74,7 +74,9 @@ export const Hospitalbloodhist = () => {
                             {item.acc?.district}
                             </th>
                             <td class="px-6 py-4">
-                            {item.acc?.proof}
+                            {/* {item.acc?.proof} */}
+                            {item.acc?.proof && <> <a target='_blank' href={`http://localhost:5000/uploads/${item.acc?.proof}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${item.acc?.proof}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`http://localhost:5000/uploads/${item.acc?.proof}`} download> <span> </span> </a> </> }
                             </td>
                             <td class="px-6 py-4">
                                 {item.req?.status}

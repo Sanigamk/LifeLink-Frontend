@@ -110,7 +110,23 @@ export const Hosregister = () => {
     </div>
     <div class="mb-5">
       <label for="pin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">District :</label>
-      <input onChange={handleChange} value={data.district} name="district" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" type="text" id="pin" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+      <select onChange={handleChange} name="district" pattern="^[a-zA-Z ]*$" title="Only alphabets are allowed" class="shadow-sm bg-red-200  border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-40 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
+                    <option value="">Select Dustrict</option>
+                    <option value="Kozhikode"> Kozhikode</option>
+                    <option value="Kasargod"> Kasargod</option>
+                    <option value="Kannur"> Kannur</option>
+                    <option value="Wayanad"> Wayanad</option>
+                    <option value="Malappuram"> Malappuram</option>
+                    <option value="Thrissur"> Thrissur</option>
+                    <option value="Palakkad"> Palakkad</option>
+                    <option value="Idukki"> Idukki</option>
+                    <option value="Kottayam"> Kottayam</option>
+                    <option value="Aalappuzha"> Aalappuzha</option>
+                    <option value="Pathanamthitta"> Pathanamthitta</option>
+                    <option value="Kollam"> Kollam</option>
+                    <option value="Earanakulam"> Earanakulam</option>
+                    <option value="Thiruvananthapuram"> Thiruvananthapuram</option>
+                    </select>
     </div>
     
     <div class="mb-5">

@@ -60,7 +60,9 @@ useEffect(()=>{
                                 Proof
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.hosptl?.proof}`} download> <span>{data.hosptl?.proof}</span></a>
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.hosptl?.proof}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.hosptl?.proof}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`http://localhost:5000/uploads/${data.hosptl?.proof}`} download> <span> </span> </a>
+                            {/* <a target='_blank' href={`http://localhost:5000/uploads/${data.hosptl?.proof}`} download> <span>{data.hosptl?.proof}</span></a> */}
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -102,7 +104,9 @@ useEffect(()=>{
                                 Healthcertificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.mnghosorganreq?.healthcertificate}`} download> <span>{data.mnghosorganreq?.healthcertificate}</span></a>
+                            <a target='_blank' href={`http://localhost:5000/uploads/${data.mnghosorganreq?.healthcertificate}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.mnghosorganreq?.healthcertificate}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`http://localhost:5000/uploads/${data.mnghosorganreq?.healthcertificate}`} download> <span> </span> </a>
+                            {/* <a target='_blank' href={`http://localhost:5000/uploads/${data.mnghosorganreq?.healthcertificate}`} download> <span>{data.mnghosorganreq?.healthcertificate}</span></a> */}
 
                             </dd>
                         </div>

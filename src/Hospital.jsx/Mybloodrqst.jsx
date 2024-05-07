@@ -31,7 +31,18 @@ export const Mybloodrqst = () => {
 
   <div class="">
     <label for="name" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Blood group:</label>
-    <input onChange={handleChange} value={data.bloodgroup} name="bloodgroup" type="text" id="name" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required />
+    {/* <input onChange={handleChange} value={data.bloodgroup} name="bloodgroup" type="text" id="name" class="shadow-sm bg-red-200 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required /> */}
+    <select onChange={handleChange} name='bloodgroup'>
+                    <option >Select Blood Group</option>
+                    <option value="AB+ve"> AB+ve</option>
+                    <option value="AB-ve"> AB-ve</option>
+                    <option value="A+ve"> A+ve</option>
+                    <option value="A-ve"> A-ve</option>
+                    <option value="B+ve"> B+ve</option>
+                    <option value="B-ve"> B-ve</option>
+                    <option value="O-ve"> O-ve</option>
+                    <option value="O+ve"> O+ve</option>
+                  </select>
   </div>
   <div class="">
     <label for="age" class="block mb-2 text-lg font-bold font-medium text-gray-900 dark:text-white">Blood unit:</label>

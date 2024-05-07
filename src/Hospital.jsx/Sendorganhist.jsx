@@ -53,10 +53,10 @@ export const Sendorganhist = () => {
                 {item.req?.age && <span>{item.req?.age} </span>} 
                    {item.requests?.age && <span>{item.requests?.age} </span>}
                 </td>
-                <td class="px-6 py-4">
+                {/* <td class="px-6 py-4">
                 {item.req?.healthcertificate && <span>{item.req?.healthcertificate} </span>} 
                    {item.requests?.healthcertificate && <span>{item.requests?.healthcertificate} </span>}
-                </td>
+                </td> */}
                 <td class="px-6 py-4">
                 {item.req?.organ && <span>{item.req?.organ} </span>} 
                    {item.requests?.organ && <span>{item.requests?.organ} </span>}
