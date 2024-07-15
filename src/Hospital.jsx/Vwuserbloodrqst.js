@@ -91,18 +91,18 @@ export const Vwuserbloodrqst = () => {
                                     {item.req?.status}
                                 </td>
                                 <td class="px-6 py-4 flex flex-wrap flex-col gap-3">
-                                {item.status === 'pending' && (
+                                {item.req?.status === 'pending' && (
                                    <>
                                     <button onClick={()=>{handleSubmit('Accepted',item.req._id)}} href="#" class="bg-slate-600 font-bold text-sm text-white hover:underline hover:bg-slate-500 p-1">Accept</button>
                                     <button onClick={()=>{handleSubmit('Rejected',item.req._id)}} href="#"class="bg-slate-600 font-bold text-sm text-white hover:underline hover:bg-slate-500 p-1" >Reject</button>
                                     </>
                                     )}
-                                    {item.status === 'Rejected' && (
+                                    {item.req?.status === 'Rejected' && (
                                   <>
                                    <button onClick={()=>{handleSubmit('Accepted',item.req._id)}} href="#" class="bg-slate-600 font-bold text-sm text-white hover:underline hover:bg-slate-500 p-1">Accept</button>
                                   </>
                                     )}
-                                    {item.status === 'Accepted' && (
+                                    {item.req?.status === 'Accepted' && (
                                     <>
                                     <button onClick={()=>{handleSubmit('Rejected',item.req._id)}} href="#"class="bg-slate-600 font-bold text-sm text-white hover:underline hover:bg-slate-500 p-1" >Reject</button>
                                     </>

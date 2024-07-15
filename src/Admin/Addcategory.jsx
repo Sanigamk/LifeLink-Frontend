@@ -43,11 +43,8 @@ export const AddCategory = () => {
     <div className='images2 w-[100%] h-[42rem]'>
         <div>
       <form onSubmit={handleSubmit} className='pt-20 ps-24 '>
-        <input className='px-4 py-5 rounded-md me-14'
-          type="text"
-          placeholder="Organs before death"
-          name="beforedeathorgans"
-          value={category.beforedeathorgans}
+        <input className='px-4 py-5 rounded-md me-14' type="text" placeholder="Organs before death"
+          name="beforedeathorgans" value={category.beforedeathorgans}
           onChange={handleChange}
         />
         <input className='px-4 py-5 rounded-md me-14'
