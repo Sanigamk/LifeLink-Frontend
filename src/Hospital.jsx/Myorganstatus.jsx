@@ -6,7 +6,7 @@ export const Myorganstatus = () => {
     const [data,setData]=useState([''])
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response = await axios.get(`http://localhost:5000/hospital/viewmyorgannrqststatus/${localStorage.getItem("id")}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/hospital/viewmyorgannrqststatus/${localStorage.getItem("id")}`)
             console.log(response.data,'data')
             setData(response.data)
         }

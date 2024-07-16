@@ -10,7 +10,7 @@ export const Collegedonation = () => {
 
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response = await axios.get(`http://localhost:5000/user/adminvwcllgrequestdonation/${id}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/user/adminvwcllgrequestdonation/${id}`)
             console.log(response.data)
             setData(response.data)
         }

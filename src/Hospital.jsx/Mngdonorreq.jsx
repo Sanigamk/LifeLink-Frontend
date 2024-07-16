@@ -9,7 +9,7 @@ let {id}=useParams()
 console.log(id);
 useEffect(()=>{
     let fetchdata = async ()=>{
-        let response=await axios.get(`http://localhost:5000/hospital/vwpageblddonation/${id}`)
+        let response=await axios.get(`https://lifelink-backend-evaw.onrender.com/hospital/vwpageblddonation/${id}`)
         console.log(response.data)
         setData(response.data)
     }
@@ -18,7 +18,7 @@ useEffect(()=>{
 
 let handleSubmit = async (status) => {
     setrefresh(!refresh)
-    let response = await axios.put(`http://localhost:5000/hospital/mngblddonordonationreq/${id}`, {status:status})
+    let response = await axios.put(`https://lifelink-backend-evaw.onrender.com/hospital/mngblddonordonationreq/${id}`, {status:status})
     console.log(response);
    
 }
@@ -57,9 +57,9 @@ let handleSubmit = async (status) => {
                                 Certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 size-16">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.donor?.healthcertificate}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.donor?.healthcertificate}`} alt='click to view & download pdf' /></a>
-                           <a target='_blank' href={`http://localhost:5000/uploads/${data.donor?.healthcertificate}`} download> <span> </span> </a>
-                            {/* <a href={`http://localhost:5000/uploads/${data.donor?.healthcertificate}`} download> <img src={`http://localhost:5000/uploads/${data.donor?.healthcertificate}`} alt="" /></a> */}
+                            <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.donor?.healthcertificate}`} download> <img className='w-[80px] h-20' src={`https://lifelink-backend-evaw.onrender.com/uploads/${data.donor?.healthcertificate}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.donor?.healthcertificate}`} download> <span> </span> </a>
+                            {/* <a href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.donor?.healthcertificate}`} download> <img src={`https://lifelink-backend-evaw.onrender.com/uploads/${data.donor?.healthcertificate}`} alt="" /></a> */}
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

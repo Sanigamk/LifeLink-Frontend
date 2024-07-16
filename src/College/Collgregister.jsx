@@ -36,7 +36,7 @@ export const Collgregister = () => {
                   formData.append('userType', 'college');
                   event.preventDefault();
                   console.log(data);
-                  let response = await axios.post('http://localhost:5000/user/register', formData, {
+                  let response = await axios.post('https://lifelink-backend-evaw.onrender.com/user/register', formData, {
                       headers: {
                           'Content-Type': 'multipart/form-data' // Set the content type for FormData
                       }

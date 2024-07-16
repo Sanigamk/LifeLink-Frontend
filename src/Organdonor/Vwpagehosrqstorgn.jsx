@@ -13,7 +13,7 @@ export const Vwpagehosrqstorgn = () => {
 
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response=await axios.get(`http://localhost:5000/organdonor/vwpagehosrequest/${id}`)
+            let response=await axios.get(`https://lifelink-backend-evaw.onrender.com/organdonor/vwpagehosrequest/${id}`)
             console.log(response.data)
             setdata(response.data)
         }
@@ -22,7 +22,7 @@ export const Vwpagehosrqstorgn = () => {
 
     let handleSubmit = async (status) => {
         setrefresh(!refresh)
-        let response = await axios.put(`http://localhost:5000/organdonor/mnghosptlorganrqst/${id}`, {status:status,AcceptedId:bid})
+        let response = await axios.put(`https://lifelink-backend-evaw.onrender.com/organdonor/mnghosptlorganrqst/${id}`, {status:status,AcceptedId:bid})
         console.log(response);
         // setData('')
     }
@@ -54,7 +54,7 @@ export const Vwpagehosrqstorgn = () => {
                                 Certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 size-16">
-                            <a href={`http://localhost:5000/uploads/${data.hos?.proof}`} download> <img src={`http://localhost:5000/uploads/${data.hos?.proof}`} alt="" /></a>
+                            <a href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.hos?.proof}`} download> <img src={`https://lifelink-backend-evaw.onrender.com/uploads/${data.hos?.proof}`} alt="" /></a>
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -132,10 +132,10 @@ export const Vwpagehosrqstorgn = () => {
                                 Prescription
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                           {data.reqDetails?.prescription && <a target='_blank' href={`http://localhost:5000/uploads/${data.reqDetails?.prescription}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.reqDetails?.prescription}`} alt='click to view & download pdf' /></a>}
-                           <a target='_blank' href={`http://localhost:5000/uploads/${data.reqDetails?.prescription}`} download> <span> </span> </a>
-                            {data.vwpagehosreq?.prescription && <> <a target='_blank' href={`http://localhost:5000/uploads/${data.vwpagehosreq?.prescription}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.reqDetails?.prescription}`} alt='click to view & download pdf' /></a>
-                           <a target='_blank' href={`http://localhost:5000/uploads/${data.vwpagehosreq?.prescription}`} download> <span> </span> </a></>}
+                           {data.reqDetails?.prescription && <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.reqDetails?.prescription}`} download> <img className='w-[80px] h-20' src={`https://lifelink-backend-evaw.onrender.com/uploads/${data.reqDetails?.prescription}`} alt='click to view & download pdf' /></a>}
+                           <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.reqDetails?.prescription}`} download> <span> </span> </a>
+                            {data.vwpagehosreq?.prescription && <> <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.vwpagehosreq?.prescription}`} download> <img className='w-[80px] h-20' src={`https://lifelink-backend-evaw.onrender.com/uploads/${data.reqDetails?.prescription}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.vwpagehosreq?.prescription}`} download> <span> </span> </a></>}
 
                             </dd>
                         </div>
@@ -144,10 +144,10 @@ export const Vwpagehosrqstorgn = () => {
                                 Patient id proof
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {data.reqDetails?.patientidproof && <a target='_blank' href={`http://localhost:5000/uploads/${data.reqDetails?.patientidproof}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.reqDetails?.patientidproof}`} alt='click to view & download pdf' /></a>}
-                           <a target='_blank' href={`http://localhost:5000/uploads/${data.reqDetails?.patientidproof}`} download> <span> </span> </a>
-                            {data.vwpagehosreq?.prescription && <> <a target='_blank' href={`http://localhost:5000/uploads/${data.vwpagehosreq?.patientidproof}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.reqDetails?.patientidproof}`} alt='click to view & download pdf' /></a>
-                           <a target='_blank' href={`http://localhost:5000/uploads/${data.vwpagehosreq?.patientidproof}`} download> <span> </span> </a></>}  
+                            {data.reqDetails?.patientidproof && <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.reqDetails?.patientidproof}`} download> <img className='w-[80px] h-20' src={`https://lifelink-backend-evaw.onrender.com/uploads/${data.reqDetails?.patientidproof}`} alt='click to view & download pdf' /></a>}
+                           <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.reqDetails?.patientidproof}`} download> <span> </span> </a>
+                            {data.vwpagehosreq?.prescription && <> <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.vwpagehosreq?.patientidproof}`} download> <img className='w-[80px] h-20' src={`https://lifelink-backend-evaw.onrender.com/uploads/${data.reqDetails?.patientidproof}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.vwpagehosreq?.patientidproof}`} download> <span> </span> </a></>}  
                             {/* {data.reqDetails?.patientidproof && <span>{data.reqDetails.patientidproof}</span>}
                             {data.vwpagehosreq?.patientidproof && <span>{data.vwpagehosreq.patientidproof}</span>} */}
 

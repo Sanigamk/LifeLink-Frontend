@@ -18,7 +18,7 @@ export const Userregister = () => {
 
         event.preventDefault()
         console.log(data);
-        let response = await axios.post('http://localhost:5000/user/register', { ...data, userType: 'user' })
+        let response = await axios.post('https://lifelink-backend-evaw.onrender.com/user/register', { ...data, userType: 'user' })
         console.log(response);
       }
       const requiredFields = ['name', 'age', 'place', 'email', 'contact', 'housename', 'postoffice', 'pin', 'district', 'password',];

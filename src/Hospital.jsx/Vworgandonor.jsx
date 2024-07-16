@@ -13,7 +13,7 @@ export const Vworgandonor = () => {
   
   useEffect(() => {
     let fetchdata = async () => {
-      let response = await axios.get(`http://localhost:5000/hospital/viewpageorgandnrs/${id}`)
+      let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/hospital/viewpageorgandnrs/${id}`)
       console.log(response.data);
       setuserData(response.data)
       setData(response.data)
@@ -213,9 +213,9 @@ export const Vworgandonor = () => {
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
 
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.signature}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.signature}`} alt='click to view & download pdf' /></a>
-                           <a target='_blank' href={`http://localhost:5000/uploads/${data.signature}`} download> <span> </span> </a>
-                            {/* <a target='_blank' href={`http://localhost:5000/uploads/${data.signature}`} download> <span>{data.signature}</span></a> */}
+                            <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.signature}`} download> <img className='w-[80px] h-20' src={`https://lifelink-backend-evaw.onrender.com/uploads/${data.signature}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.signature}`} download> <span> </span> </a>
+                            {/* <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.signature}`} download> <span>{data.signature}</span></a> */}
 
                             </dd>
                         </div>
@@ -224,9 +224,9 @@ export const Vworgandonor = () => {
                                 Conformation certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.conformationcertificate}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.conformationcertificate}`} alt='click to view & download pdf' /></a>
-                           <a target='_blank' href={`http://localhost:5000/uploads/${data.conformationcertificate}`} download> <span> </span> </a>
-                            {/* <a target='_blank' href={`http://localhost:5000/uploads/${data.conformationcertificate}`} download> <span>{data.conformationcertificate}</span></a> */}
+                            <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.conformationcertificate}`} download> <img className='w-[80px] h-20' src={`https://lifelink-backend-evaw.onrender.com/uploads/${data.conformationcertificate}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.conformationcertificate}`} download> <span> </span> </a>
+                            {/* <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.conformationcertificate}`} download> <span>{data.conformationcertificate}</span></a> */}
 
                             </dd>
                         </div>
@@ -235,9 +235,9 @@ export const Vworgandonor = () => {
                                 Health Certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.healthcertificate}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.heathcertificate}`} alt='click to view & download pdf' /></a>
-                           <a target='_blank' href={`http://localhost:5000/uploads/${data.healthcertificate}`} download> <span> </span> </a>
-                            {/* <a target='_blank' href={`http://localhost:5000/uploads/${data.heathcertificate}`} download> <span>{data.healthcertificate}</span></a> */}
+                            <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.healthcertificate}`} download> <img className='w-[80px] h-20' src={`https://lifelink-backend-evaw.onrender.com/uploads/${data.heathcertificate}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.healthcertificate}`} download> <span> </span> </a>
+                            {/* <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.heathcertificate}`} download> <span>{data.healthcertificate}</span></a> */}
 
                             </dd>
                         </div>

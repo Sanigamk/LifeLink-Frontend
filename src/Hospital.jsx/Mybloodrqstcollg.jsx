@@ -9,7 +9,7 @@ export const Mybloodrqstcollg = () => {
 
   useEffect(() => {
     let fetchdata = async () => {
-      let response = await axios.get(`http://localhost:5000/hospital/vwcollgdetail`)
+      let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/hospital/vwcollgdetail`)
       console.log(response.data)
       setDatas(response.data)
     }
@@ -24,7 +24,7 @@ export const Mybloodrqstcollg = () => {
   {
     if(event.target.value){
       setcatid(event.target.value)
-      let response=await axios.get(`http://localhost:5000/college/cllgdistrict/${event.target.value}`)
+      let response=await axios.get(`https://lifelink-backend-evaw.onrender.com/college/cllgdistrict/${event.target.value}`)
       console.log(response);
       setcllgdetail(response.data)
     }
@@ -44,7 +44,7 @@ export const Mybloodrqstcollg = () => {
         let handleSubmit=async (event)=>{
             event.preventDefault()
             console.log(data);
-           let response=await axios.post('http://localhost:5000/hospital/mybloodrqstcllg',{...data,userId:id})
+           let response=await axios.post('https://lifelink-backend-evaw.onrender.com/hospital/mybloodrqstcllg',{...data,userId:id})
            console.log(response);
          
            

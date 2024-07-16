@@ -113,7 +113,7 @@ const OrganDonorForm = () => {
         formData.append('userType', 'organ');
 
         // Send form data to the server
-        let response = await axios.post('http://localhost:5000/organdonor/registers', formData);
+        let response = await axios.post('https://lifelink-backend-evaw.onrender.com/organdonor/registers', formData);
         console.log(response);
       }
 
@@ -136,7 +136,7 @@ const OrganDonorForm = () => {
   }
   useEffect(() => {
     let fetchdata = async () => {
-      let response = await axios.get(`http://localhost:5000/blooddonor/vwhosdetail`)
+      let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/blooddonor/vwhosdetail`)
       console.log(response.data)
       setDatas(response.data)
 
@@ -150,7 +150,7 @@ const OrganDonorForm = () => {
   let [categories, setcategories] = useState([])
   useEffect(() => {
     let fetchdata = async () => {
-      let response = await axios.get(`http://localhost:5000/organdonor/viewcategory`)
+      let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/organdonor/viewcategory`)
       console.log(response.data)
       const filteredCategories = response.data.filter(category => category.beforedeathorgans || category.afterdeathorgans);
       setcategories(filteredCategories);
@@ -166,7 +166,7 @@ const OrganDonorForm = () => {
     console.log(event.target.value, 'asdsdas');
     setcatid(event.target.value)
     let response = datas.filter(hos => hos.district == event.target.value)
-    // let response=await axios.get(`http://localhost:5000/organdonor/hosdistrict/${event.target.value}`)
+    // let response=await axios.get(`https://lifelink-backend-evaw.onrender.com/organdonor/hosdistrict/${event.target.value}`)
     console.log(response);
     sethosdetail(response)
   }
@@ -180,7 +180,7 @@ const OrganDonorForm = () => {
   // let handleSubmit=async (event)=>{
   //     event.preventDefault()
   //     console.log(data);
-  //    let response=await axios.post('http://localhost:5000/organdonor/registers',{...data,userId:id})
+  //    let response=await axios.post('https://lifelink-backend-evaw.onrender.com/organdonor/registers',{...data,userId:id})
   //    console.log(response);
 
   // }

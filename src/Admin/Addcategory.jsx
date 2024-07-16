@@ -17,7 +17,7 @@ export const AddCategory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/user/addcategory', category);
+      const response = await axios.post('https://lifelink-backend-evaw.onrender.com/user/addcategory', category);
       console.log('Category added:', response.data);
       // Clear form after successful submission if needed
       setCategory({
@@ -31,7 +31,7 @@ export const AddCategory = () => {
 
   useEffect(()=>{
     let fetchdata = async ()=>{
-        let response = await axios.get(`http://localhost:5000/user/viewcategory`)
+        let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/user/viewcategory`)
         console.log(response.data)
         setData(response.data)
     }

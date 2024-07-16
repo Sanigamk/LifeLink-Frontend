@@ -13,7 +13,7 @@ export const Loginnominie = () => {
     let handleSubmit = async (event) => {
         event.preventDefault()
         console.log(data);
-        let response = await axios.post('http://localhost:5000/organdonor/loginnominie', data)
+        let response = await axios.post('https://lifelink-backend-evaw.onrender.com/organdonor/loginnominie', data)
     console.log(response);
     if (response.data) {
         localStorage.setItem('id', response.data._id)

@@ -9,7 +9,7 @@ export const Vworgandonation = () => {
 
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:5000/user/adminvworgandonation/${id}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/user/adminvworgandonation/${id}`)
             console.log(response.data)
             setData(response.data)
         }

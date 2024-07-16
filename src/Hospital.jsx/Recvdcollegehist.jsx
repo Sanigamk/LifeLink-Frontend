@@ -9,7 +9,7 @@ export const Recvdcollegehist = () => {
     const [data, setData] = useState([''])
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:5000/hospital/viewhosreceivdcollgbldrqsthist/${id}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/hospital/viewhosreceivdcollgbldrqsthist/${id}`)
             console.log(response.data)
             setData(response.data)
         }

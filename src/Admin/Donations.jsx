@@ -11,7 +11,7 @@ export const Donations = () => {
 
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:5000/user/adminvwblddonordonation/${id}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/user/adminvwblddonordonation/${id}`)
             console.log(response.data)
             setData(response.data)
         }

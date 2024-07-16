@@ -6,7 +6,7 @@ export const User = () => {
     const [data, setData] = useState([''])
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:5000/user/vwuser`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/user/vwuser`)
             console.log(response.data)
             setData(response.data)
         }

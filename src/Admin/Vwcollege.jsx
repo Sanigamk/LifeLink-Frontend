@@ -9,7 +9,7 @@ export const Vwcollege = () => {
     console.log(id);
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:5000/user/managcollg/${id}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/user/managcollg/${id}`)
             console.log(response.data)
             setData(response.data)
         }
@@ -21,7 +21,7 @@ export const Vwcollege = () => {
         setrefresh(!refresh)
 
         // console.log(data);
-        let response = await axios.put(`http://localhost:5000/user/mngcllg/${id}`, { ...data, status: status })
+        let response = await axios.put(`https://lifelink-backend-evaw.onrender.com/user/mngcllg/${id}`, { ...data, status: status })
         console.log(response);
         setData('')
 
@@ -62,7 +62,7 @@ export const Vwcollege = () => {
                                 Certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 size-1/3">
-                                <a target='_blank' href={`http://localhost:5000/uploads/${data.certificate}`} download> <span>{data.certificate} </span></a>
+                                <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.certificate}`} download> <span>{data.certificate} </span></a>
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

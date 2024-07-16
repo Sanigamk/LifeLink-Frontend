@@ -9,7 +9,7 @@ export const Editcollg = () => {
     const [data, setData] = useState('')
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:5000/user/vwcollgprofile/${id}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/user/vwcollgprofile/${id}`)
             console.log(response.data);
             setuserData(response.data)
         }
@@ -41,7 +41,7 @@ export const Editcollg = () => {
                 formData.append(key, data[key]);
             }
         }
-        let response = await axios.put(`http://localhost:5000/user/editdonorprofile/${id}`, formData, {
+        let response = await axios.put(`https://lifelink-backend-evaw.onrender.com/user/editdonorprofile/${id}`, formData, {
             headers: {
                 'content-Type': 'multiport/form-data'
             }
@@ -85,8 +85,8 @@ export const Editcollg = () => {
                     </div>
                     <div className='w-[25%]'>
                         <div class="mb-5">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${userData.certificate}`} download> <img className='w-[100px] h-14' src={`http://localhost:5000/uploads/${userData.certificate}`} alt='click to view & download pdf' /></a>
-                            <a target='_blank' href={`http://localhost:5000/uploads/${userData.certificate}`} download> <span> </span> </a>
+                            <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${userData.certificate}`} download> <img className='w-[100px] h-14' src={`https://lifelink-backend-evaw.onrender.com/uploads/${userData.certificate}`} alt='click to view & download pdf' /></a>
+                            <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${userData.certificate}`} download> <span> </span> </a>
                             <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Certificate :</label>
                             <input onChange={handlefile} name="certificate" type="file" id="img" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder={userData.certificate} />
                         </div>

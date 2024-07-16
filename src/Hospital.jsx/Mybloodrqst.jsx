@@ -14,7 +14,7 @@ export const Mybloodrqst = () => {
         let handleSubmit=async (event)=>{
             event.preventDefault()
             console.log(data);
-           let response=await axios.post('http://localhost:5000/hospital/mybloodhos',{...data,hospitalId:id})
+           let response=await axios.post('https://lifelink-backend-evaw.onrender.com/hospital/mybloodhos',{...data,hospitalId:id})
            console.log(response);
          
            

@@ -9,7 +9,7 @@ export const Vwuser = () => {
     console.log(id);
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:5000/user/vwpageuser/${id}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/user/vwpageuser/${id}`)
             console.log(response.data)
             setData(response.data)
         }
@@ -20,7 +20,7 @@ export const Vwuser = () => {
         setrefresh(!refresh)
 
         // console.log(data);
-        let response = await axios.put(`http://localhost:5000/user/mnguser/${id}`, { ...data, status: status })
+        let response = await axios.put(`https://lifelink-backend-evaw.onrender.com/user/mnguser/${id}`, { ...data, status: status })
         console.log(response);
         setData('')
 

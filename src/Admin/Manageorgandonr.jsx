@@ -12,7 +12,7 @@ export const Manageorgandonr = () => {
 
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response=await axios.get(`http://localhost:5000/user/managorgandonor/${id}`)
+            let response=await axios.get(`https://lifelink-backend-evaw.onrender.com/user/managorgandonor/${id}`)
             console.log(response.data)
             setData(response.data)
         }
@@ -23,7 +23,7 @@ export const Manageorgandonr = () => {
         setrefresh(!refresh)
 
         // console.log(data);
-        let response = await axios.put(`http://localhost:5000/user/mngorgandnr/${id}`, { ...data, status: status })
+        let response = await axios.put(`https://lifelink-backend-evaw.onrender.com/user/mngorgandnr/${id}`, { ...data, status: status })
         console.log(response);
         setData('')
 
@@ -179,7 +179,7 @@ export const Manageorgandonr = () => {
                                 Signature
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.managorgan?.signature}`} download>  <span> {data.managorgan?.signature}</span></a>
+                            <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.managorgan?.signature}`} download>  <span> {data.managorgan?.signature}</span></a>
 
                             </dd>
                         </div>
@@ -188,7 +188,7 @@ export const Manageorgandonr = () => {
                                 Conformation certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.managorgan?.conformationcertificate}`} download>  <span> {data.managorgan?.conformationcertificate} </span></a>
+                            <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.managorgan?.conformationcertificate}`} download>  <span> {data.managorgan?.conformationcertificate} </span></a>
 
                             </dd>
                         </div>
@@ -197,7 +197,7 @@ export const Manageorgandonr = () => {
                                 Health Certificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.managorgan?.healthcertificate}`} download> <span> {data.managorgan?.healthcertificate} </span></a>
+                            <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.managorgan?.healthcertificate}`} download> <span> {data.managorgan?.healthcertificate} </span></a>
 
                             </dd>
                         </div>

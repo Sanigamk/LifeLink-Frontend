@@ -13,7 +13,7 @@ export const Profile = () => {
 
   useEffect(() => {
     let fetchdata = async () => {
-        let response = await axios.get(`http://localhost:5000/users/uservwpro/${id}`)
+        let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/users/uservwpro/${id}`)
         console.log(response.data);
         setuserData(response.data)
     }
@@ -37,7 +37,7 @@ let handleSubmit=async (event)=>{
       setrefresh(!refresh)
 
   console.log(data);
- let response=await axios.put(`http://localhost:5000/users/updatepro/${id}`,data)
+ let response=await axios.put(`https://lifelink-backend-evaw.onrender.com/users/updatepro/${id}`,data)
  console.log(response);
   
 }

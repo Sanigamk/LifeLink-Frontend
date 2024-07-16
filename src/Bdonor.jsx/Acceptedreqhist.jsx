@@ -8,7 +8,7 @@ export const Acceptedreq = () => {
     console.log(id);
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response=await axios.get(`http://localhost:5000/blooddonor/vwuserreqhist/${id}`)
+            let response=await axios.get(`https://lifelink-backend-evaw.onrender.com/blooddonor/vwuserreqhist/${id}`)
             console.log(response.data)
             setdata(response.data)
         }

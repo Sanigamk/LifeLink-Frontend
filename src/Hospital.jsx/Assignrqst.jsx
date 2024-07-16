@@ -10,7 +10,7 @@ let {id}=useParams()
 console.log(id);
 useEffect(()=>{
     let fetchdata = async ()=>{
-        let response=await axios.get(`http://localhost:5000/hospital//mnghosorganrqst/${id}`,data)
+        let response=await axios.get(`https://lifelink-backend-evaw.onrender.com/hospital//mnghosorganrqst/${id}`,data)
         console.log(response.data)
         setData(response.data)
     }
@@ -19,7 +19,7 @@ useEffect(()=>{
 
 // let handleSubmit = async (status) => {
 //     setrefresh(!refresh)
-//     let response = await axios.put(`http://localhost:5000/hospital/mnghosptlbldrqst/${id}`, {status:status})
+//     let response = await axios.put(`https://lifelink-backend-evaw.onrender.com/hospital/mnghosptlbldrqst/${id}`, {status:status})
 //     console.log(response);
     // setData('')
 // }
@@ -60,9 +60,9 @@ useEffect(()=>{
                                 Proof
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.hosptl?.proof}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.hosptl?.proof}`} alt='click to view & download pdf' /></a>
-                           <a target='_blank' href={`http://localhost:5000/uploads/${data.hosptl?.proof}`} download> <span> </span> </a>
-                            {/* <a target='_blank' href={`http://localhost:5000/uploads/${data.hosptl?.proof}`} download> <span>{data.hosptl?.proof}</span></a> */}
+                            <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.hosptl?.proof}`} download> <img className='w-[80px] h-20' src={`https://lifelink-backend-evaw.onrender.com/uploads/${data.hosptl?.proof}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.hosptl?.proof}`} download> <span> </span> </a>
+                            {/* <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.hosptl?.proof}`} download> <span>{data.hosptl?.proof}</span></a> */}
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -104,9 +104,9 @@ useEffect(()=>{
                                 Healthcertificate
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.mnghosorganreq?.healthcertificate}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${data.mnghosorganreq?.healthcertificate}`} alt='click to view & download pdf' /></a>
-                           <a target='_blank' href={`http://localhost:5000/uploads/${data.mnghosorganreq?.healthcertificate}`} download> <span> </span> </a>
-                            {/* <a target='_blank' href={`http://localhost:5000/uploads/${data.mnghosorganreq?.healthcertificate}`} download> <span>{data.mnghosorganreq?.healthcertificate}</span></a> */}
+                            <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.mnghosorganreq?.healthcertificate}`} download> <img className='w-[80px] h-20' src={`https://lifelink-backend-evaw.onrender.com/uploads/${data.mnghosorganreq?.healthcertificate}`} alt='click to view & download pdf' /></a>
+                           <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.mnghosorganreq?.healthcertificate}`} download> <span> </span> </a>
+                            {/* <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.mnghosorganreq?.healthcertificate}`} download> <span>{data.mnghosorganreq?.healthcertificate}</span></a> */}
 
                             </dd>
                         </div>

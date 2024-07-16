@@ -12,7 +12,7 @@ const Emailotp = () => {
 
     const sendOTP = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/user/sendOTP', { email });
+            const response = await axios.post('https://lifelink-backend-evaw.onrender.com/user/sendOTP', { email });
             setMessage(response.data.message);
             console.log(response.data.otp, '--------------------');
             setVerifyotp(response.data.otp)

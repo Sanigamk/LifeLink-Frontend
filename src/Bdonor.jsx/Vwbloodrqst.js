@@ -8,7 +8,7 @@ export const Vwbloodrqst = () => {
     console.log(id);
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response=await axios.get('http://localhost:5000/hospital/vwuserreq')
+            let response=await axios.get('https://lifelink-backend-evaw.onrender.com/hospital/vwuserreq')
             console.log(response.data)
             setdata(response.data)
         }
@@ -16,7 +16,7 @@ export const Vwbloodrqst = () => {
     },[refresh])
     let handleSubmit = async (status,lid) => {
         setrefresh(!refresh)
-        let response = await axios.put(`http://localhost:5000/hospital/mnguserbldrqst/${lid}`, {status:status,acceptedId:id})
+        let response = await axios.put(`https://lifelink-backend-evaw.onrender.com/hospital/mnguserbldrqst/${lid}`, {status:status,acceptedId:id})
         console.log(response);
         // setData('')
     }

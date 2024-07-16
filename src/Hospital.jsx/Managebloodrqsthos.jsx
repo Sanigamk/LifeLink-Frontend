@@ -10,7 +10,7 @@ let {id}=useParams()
 console.log(id);
 useEffect(()=>{
     let fetchdata = async ()=>{
-        let response=await axios.get(`http://localhost:5000/hospital/mnghosbloodrqst/${id}`,data)
+        let response=await axios.get(`https://lifelink-backend-evaw.onrender.com/hospital/mnghosbloodrqst/${id}`,data)
         console.log(response.data)
         setData(response.data)
     }
@@ -19,7 +19,7 @@ useEffect(()=>{
 
 let handleSubmit = async (status) => {
     setrefresh(!refresh)
-    let response = await axios.put(`http://localhost:5000/hospital/mnghosptlbldrqst/${id}`, {status:status,AcceptedId:bid})
+    let response = await axios.put(`https://lifelink-backend-evaw.onrender.com/hospital/mnghosptlbldrqst/${id}`, {status:status,AcceptedId:bid})
     console.log(response);
     // setData('')
 }

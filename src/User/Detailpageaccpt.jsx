@@ -8,7 +8,7 @@ export const Detailpageaccpt = () => {
     console.log(id);
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:5000/users/vwuseraccptdreqhist/${id}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/users/vwuseraccptdreqhist/${id}`)
             console.log(response.data)
             setData(response.data)
         }

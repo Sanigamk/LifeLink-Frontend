@@ -9,7 +9,7 @@ export const Bloodrqsthos = () => {
     const [data, setData] = useState([''])
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:5000/hospital/viewhosbldrqst/${id}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/hospital/viewhosbldrqst/${id}`)
             console.log(response.data)
             setData(response.data)
         }

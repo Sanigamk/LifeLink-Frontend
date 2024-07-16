@@ -10,7 +10,7 @@ export const Managehospital = () => {
     console.log(id);
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:5000/user/mnghos/${id}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/user/mnghos/${id}`)
             console.log(response.data)
             setData(response.data)
         }
@@ -19,7 +19,7 @@ export const Managehospital = () => {
 
     let handleSubmit = async (status, id) => {
         setrefresh(!refresh)
-        let response = await axios.put(`http://localhost:5000/user/mnghosptl/${id}`, { ...data, status: status })
+        let response = await axios.put(`https://lifelink-backend-evaw.onrender.com/user/mnghosptl/${id}`, { ...data, status: status })
         console.log(response);
         setData('')
     }
@@ -43,7 +43,7 @@ export const Managehospital = () => {
                                 Liscence proof
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <a target='_blank' href={`http://localhost:5000/uploads/${data.proof}`} download> <span>{data.proof}</span></a>
+                            <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.proof}`} download> <span>{data.proof}</span></a>
                             </dd>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

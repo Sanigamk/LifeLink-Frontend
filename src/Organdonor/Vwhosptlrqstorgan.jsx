@@ -14,8 +14,8 @@ let id=localStorage.getItem('id')
 
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response=await axios.get(`http://localhost:5000/organdonor/vwhosrequest/${id}`)
-            let response1=await axios.get(`http://localhost:5000/organdonor/vwhosendrequest/${id}`)
+            let response=await axios.get(`https://lifelink-backend-evaw.onrender.com/organdonor/vwhosrequest/${id}`)
+            let response1=await axios.get(`https://lifelink-backend-evaw.onrender.com/organdonor/vwhosendrequest/${id}`)
             setdata(response.data)
             console.log(response.data)
         }

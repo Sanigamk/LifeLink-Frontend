@@ -9,7 +9,7 @@ export const Donatereq = () => {
 
   useEffect(() => {
     let fetchdata = async () => {
-      let response = await axios.get(`http://localhost:5000/blooddonor/vwhosdetail`)
+      let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/blooddonor/vwhosdetail`)
       console.log(response.data)
       setDatas(response.data)
     }
@@ -26,7 +26,7 @@ export const Donatereq = () => {
   let handleSubmit = async (event) => {
     event.preventDefault()
     console.log(data);
-    let response = await axios.post('http://localhost:5000/blooddonor/donorsendrqst', { ...data, userId: id })
+    let response = await axios.post('https://lifelink-backend-evaw.onrender.com/blooddonor/donorsendrqst', { ...data, userId: id })
     console.log(response);
 
     
@@ -40,7 +40,7 @@ export const Donatereq = () => {
   {
     if(event.target.value){
       setcatid(event.target.value)
-      let response=await axios.get(`http://localhost:5000/college/hosdistrict/${event.target.value}`)
+      let response=await axios.get(`https://lifelink-backend-evaw.onrender.com/college/hosdistrict/${event.target.value}`)
       console.log(response);
       sethosdetail(response.data)
     }

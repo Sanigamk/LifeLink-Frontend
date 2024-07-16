@@ -13,7 +13,7 @@ export const Searchorgandnr = () => {
 
         useEffect(() => {
         let fetchData = async () => {
-            let response = await axios.get(`http://localhost:5000/hospital/vworgandonors/${bid}`, {
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/hospital/vworgandonors/${bid}`, {
                 params: { organ, bloodGroup } // Pass organ and blood group as query parameters
             })
             setData(response.data)
@@ -23,7 +23,7 @@ export const Searchorgandnr = () => {
 
     let handleSubmit = async (did) => {
         setRefresh(!refresh)
-        let response = await axios.post('http://localhost:5000/hospital/sendrequestorgandonor', {
+        let response = await axios.post('https://lifelink-backend-evaw.onrender.com/hospital/sendrequestorgandonor', {
             organdonorId: did,
             hospitalId: bid,
             requestId: id

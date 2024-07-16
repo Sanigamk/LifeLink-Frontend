@@ -20,7 +20,7 @@ const Collegerqst = () => {
     console.log(id);
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response=await axios.get(`http://localhost:5000/hospital/vwcollgreq/${id}`)
+            let response=await axios.get(`https://lifelink-backend-evaw.onrender.com/hospital/vwcollgreq/${id}`)
             console.log(response.data)
             setdata(response.data)
         }
@@ -29,7 +29,7 @@ const Collegerqst = () => {
 
     let handleSubmit = async (status,lid) => {
         setrefresh(!refresh)
-        let response = await axios.put(`http://localhost:5000/hospital/mngcllgbldrqst/${lid}`, {status:status})
+        let response = await axios.put(`https://lifelink-backend-evaw.onrender.com/hospital/mngcllgbldrqst/${lid}`, {status:status})
         console.log(response);
         // setData('')
     }

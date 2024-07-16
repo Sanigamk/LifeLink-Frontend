@@ -7,7 +7,7 @@ export const Hospital = () => {
     const [data, setData] = useState([''])
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:5000/user/managehos`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/user/managehos`)
             console.log(response.data)
             setData(response.data)
         }

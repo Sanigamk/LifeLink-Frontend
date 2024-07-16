@@ -10,7 +10,7 @@ let {id}=useParams();
     const [data, setData] = useState([''])
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:5000/hospital/vwpageorgandnr/${id}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/hospital/vwpageorgandnr/${id}`)
             console.log(response.data)
             setData(response.data)
         }
@@ -34,8 +34,8 @@ let {id}=useParams();
                     </div>
                     <div className="flex gap-5">
                         <p>health certificate :</p>
-                        <a target='_blank' href={`http://localhost:5000/uploads/${data.vwpageorgandnr?.healthcertificate}`} download> <span>{data.vwpageorgandnr?.healthcertificate}</span></a>
-                    {data.reqstt?.healthcertificate &&  <a target='_blank' href={`http://localhost:5000/uploads/${data.reqstt?.healthcertificate}`} download> <span>{data.reqstt?.healthcertificate} </span></a>}
+                        <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.vwpageorgandnr?.healthcertificate}`} download> <span>{data.vwpageorgandnr?.healthcertificate}</span></a>
+                    {data.reqstt?.healthcertificate &&  <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.reqstt?.healthcertificate}`} download> <span>{data.reqstt?.healthcertificate} </span></a>}
                     </div>
                     <div className="flex gap-5">
                         <p>Organ :</p>
@@ -106,7 +106,7 @@ let {id}=useParams();
                     </div>
                     <div className="flex gap-5">
                         <p>Conformation certificate :</p>
-                        <a target="_blank" href={`http://localhost:5000/uploads/${data.donorr?.conformationcertificate}`} download> <img className='h-[45px] w-[50px]' src={`http://localhost:5000/uploads/${data.donorr?.conformationcertificate}`} alt="" /> </a>
+                        <a target="_blank" href={`https://lifelink-backend-evaw.onrender.com/uploads/${data.donorr?.conformationcertificate}`} download> <img className='h-[45px] w-[50px]' src={`https://lifelink-backend-evaw.onrender.com/uploads/${data.donorr?.conformationcertificate}`} alt="" /> </a>
                     </div>
                 </div>
 

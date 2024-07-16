@@ -7,7 +7,7 @@ export const Vwhist = () => {
     const [data,setData]=useState([''])
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response = await axios.get(`http://localhost:5000/users/uservwsendrqst/${id}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/users/uservwsendrqst/${id}`)
             console.log(response.data)
             setData(response.data)
         }

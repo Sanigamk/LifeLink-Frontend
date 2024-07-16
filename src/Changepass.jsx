@@ -21,7 +21,7 @@ export const Changepass = () => {
           toast.success('Password updated')
           event.preventDefault()
           setData(data)
-          let response = axios.put(`http://localhost:5000/user/changepass/${email}`,data);
+          let response = axios.put(`https://lifelink-backend-evaw.onrender.com/user/changepass/${email}`,data);
           console.log(response);
           setData('');
           navigate('/login')

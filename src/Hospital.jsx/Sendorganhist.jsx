@@ -6,7 +6,7 @@ export const Sendorganhist = () => {
     const [data,setData]=useState([''])
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response = await axios.get(`http://localhost:5000/hospital/viewhossendorganrqsthist/${localStorage.getItem("id")}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/hospital/viewhossendorganrqsthist/${localStorage.getItem("id")}`)
             console.log(response.data,'data')
             setData(response.data)
         }

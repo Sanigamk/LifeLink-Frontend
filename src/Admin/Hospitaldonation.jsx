@@ -19,7 +19,7 @@ export const Hospitaldonation = () => {
 
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:5000/user/adminvwblooddonation/${id}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/user/adminvwblooddonation/${id}`)
             console.log(response.data)
             setData(response.data)
         }

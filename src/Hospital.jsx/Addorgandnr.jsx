@@ -7,7 +7,7 @@ export const Addorgandnr = () => {
 
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:5000/hospital/vworgandonor/${localStorage.getItem("id")}`)
+            let response = await axios.get(`https://lifelink-backend-evaw.onrender.com/hospital/vworgandonor/${localStorage.getItem("id")}`)
             console.log(response)
             setData(response.data)
         }

@@ -22,7 +22,7 @@ let id=localStorage.getItem('id')
     
     useEffect(()=>{
         let fetchdata = async ()=>{
-            let response=await axios.get(`http://localhost:5000/college/vwhosreq/${id}`)
+            let response=await axios.get(`https://lifelink-backend-evaw.onrender.com/college/vwhosreq/${id}`)
             console.log(response.data)
             setdata(response.data)
         }
@@ -31,7 +31,7 @@ let id=localStorage.getItem('id')
 
     let handleSubmit = async (status,lid) => {
         setrefresh(!refresh)
-        let response = await axios.put(`http://localhost:5000/college/mnghosbldrqst/${lid}`, {status:status})
+        let response = await axios.put(`https://lifelink-backend-evaw.onrender.com/college/mnghosbldrqst/${lid}`, {status:status})
         console.log(response);
         // setData('')
     }
@@ -126,8 +126,8 @@ let id=localStorage.getItem('id')
                                 </td>
                                 <td class="px-6 py-4">
                                     {/* {item.hospital?.proof} */}
-                                    <a target='_blank' href={`http://localhost:5000/uploads/${item.hospital?.proof}`} download> <img className='w-[80px] h-20' src={`http://localhost:5000/uploads/${item.hospital?.proof}`} alt='click to view & download pdf' /></a>
-                                    <a target='_blank' href={`http://localhost:5000/uploads/${item.hospital?.proof}`} download> <span> </span> </a>
+                                    <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${item.hospital?.proof}`} download> <img className='w-[80px] h-20' src={`https://lifelink-backend-evaw.onrender.com/uploads/${item.hospital?.proof}`} alt='click to view & download pdf' /></a>
+                                    <a target='_blank' href={`https://lifelink-backend-evaw.onrender.com/uploads/${item.hospital?.proof}`} download> <span> </span> </a>
                                 </td>
                                 <td class="px-6 py-4">
                                    {item.req?.bloodgroup}
